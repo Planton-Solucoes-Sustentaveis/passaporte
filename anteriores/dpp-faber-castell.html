@@ -1,0 +1,2695 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#F2F2F2" />
+<title>Passaporte Digital do Produto — Faber-Castell Grip 2011 · Planton</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   PLANTON DESIGN TOKENS
+   ========================================================= */
+:root{
+  --forest:#145559;
+  --forest-2:#0F4448;
+  --dark:#0A2D30;
+  --accent:#ADCF78;
+  --accent-2:#C2E08F;
+  --cream:#F2F2F2;
+  --ink:#191919;
+  --surface:#F0F4F0;
+  --white:#FFFFFF;
+  --line:rgba(10,45,48,0.14);
+  --line-strong:rgba(10,45,48,0.28);
+  --muted:rgba(10,45,48,0.62);
+  --bg:#F2F2F2;
+  --fg:#0A2D30;
+  --card:#FFFFFF;
+  --card-2:#F0F4F0;
+  --chip:rgba(20,85,89,0.08);
+  --shadow-1:0 1px 0 rgba(10,45,48,0.06), 0 12px 32px -16px rgba(10,45,48,0.18);
+  --shadow-2:0 1px 0 rgba(10,45,48,0.08), 0 24px 60px -28px rgba(10,45,48,0.32);
+  --radius-sm:8px;
+  --radius:14px;
+  --radius-lg:20px;
+  --grid-line:rgba(10,45,48,0.06);
+
+  --font-display:"Space Grotesk", ui-sans-serif, system-ui;
+  --font-body:"Instrument Sans", ui-sans-serif, system-ui;
+  --font-mono:"Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+html[data-theme="dark"]{
+  --forest:#7BB28A;
+  --forest-2:#5E9D72;
+  --dark:#E9EFE5;
+  --accent:#ADCF78;
+  --accent-2:#C2E08F;
+  --cream:#0A2D30;
+  --ink:#F7F3DB;
+  --surface:#0F3A3D;
+  --white:#0A2D30;
+  --line:rgba(247,243,219,0.14);
+  --line-strong:rgba(247,243,219,0.32);
+  --muted:rgba(247,243,219,0.6);
+  --bg:#072528;
+  --fg:#EDE9D2;
+  --card:#0F3A3D;
+  --card-2:#0B3134;
+  --chip:rgba(173,207,120,0.12);
+  --shadow-1:0 1px 0 rgba(0,0,0,0.4), 0 14px 40px -20px rgba(0,0,0,0.6);
+  --shadow-2:0 1px 0 rgba(0,0,0,0.5), 0 28px 80px -28px rgba(0,0,0,0.8);
+  --grid-line:rgba(247,243,219,0.05);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--fg);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  transition:background .35s ease, color .35s ease;
+  overflow-x:hidden;
+}
+
+/* Subtle grid backdrop */
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size:64px 64px;
+  pointer-events:none;
+  z-index:0;
+  mask-image:radial-gradient(ellipse at 50% 30%, black 30%, transparent 80%);
+}
+
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+a{color:inherit;text-decoration:none}
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+.h-display{
+  font-family:var(--font-display);
+  font-weight:600;
+  letter-spacing:-0.02em;
+  line-height:1.02;
+}
+.mono{font-family:var(--font-mono);letter-spacing:-0.01em}
+.uppercase{text-transform:uppercase;letter-spacing:0.12em}
+.muted{color:var(--muted)}
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+.app-header{
+  position:sticky;top:0;z-index:50;
+  background:color-mix(in oklab, var(--bg) 80%, transparent);
+  backdrop-filter:saturate(140%) blur(14px);
+  -webkit-backdrop-filter:saturate(140%) blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.app-header__inner{
+  max-width:1280px;margin:0 auto;
+  padding:14px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand__mark{
+  width:36px;height:36px;
+  border-radius:10px;
+  background:var(--forest);
+  color:var(--cream);
+  display:grid;place-items:center;
+  font-family:var(--font-display);
+  font-weight:700;font-size:18px;letter-spacing:-0.02em;
+  position:relative;flex-shrink:0;
+}
+.brand__mark::after{
+  content:"";position:absolute;inset:3px;border:1px solid color-mix(in oklab, var(--cream) 50%, transparent);border-radius:7px;
+}
+.brand__title{
+  font-family:var(--font-mono);
+  font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;
+  line-height:1.1;
+}
+.brand__sub{
+  font-family:var(--font-mono);font-size:10px;color:var(--muted);
+  letter-spacing:0.12em;text-transform:uppercase;margin-top:2px;
+}
+.header-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{
+  width:40px;height:40px;border-radius:10px;
+  border:1px solid var(--line);
+  background:var(--card);
+  display:grid;place-items:center;
+  transition:transform .15s ease, border-color .2s ease, background .25s ease;
+}
+.icon-btn:hover{border-color:var(--line-strong);transform:translateY(-1px)}
+.icon-btn svg{width:18px;height:18px}
+
+/* Language dropdown */
+.lang{position:relative}
+.lang__btn{
+  height:40px;padding:0 12px;border-radius:10px;
+  border:1px solid var(--line);
+  background:var(--card);
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--font-mono);font-size:12px;
+  transition:border-color .2s ease;
+}
+.lang__btn:hover{border-color:var(--line-strong)}
+.lang__flag{font-size:16px;line-height:1}
+.lang__caret{width:12px;height:12px;opacity:.6}
+.lang__menu{
+  position:absolute;top:calc(100% + 8px);right:0;
+  min-width:200px;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow:var(--shadow-2);
+  padding:6px;
+  display:none;
+  z-index:60;
+}
+.lang.open .lang__menu{display:block;animation:popIn .18s ease}
+.lang__item{
+  width:100%;display:flex;align-items:center;gap:10px;
+  padding:10px 10px;border-radius:8px;
+  font-family:var(--font-body);font-size:14px;
+  text-align:left;
+}
+.lang__item:hover{background:var(--chip)}
+.lang__item.active{background:var(--chip)}
+.lang__item .mono{font-size:11px;color:var(--muted);margin-left:auto}
+
+@keyframes popIn{from{opacity:0;transform:translateY(-4px) scale(.98)}to{opacity:1;transform:none}}
+
+/* =========================================================
+   LAYOUT
+   ========================================================= */
+.container{
+  max-width:1280px;margin:0 auto;
+  padding:0 20px;
+  position:relative;z-index:1;
+}
+section{padding:50px 0;scroll-margin-top:80px}
+section.container{padding-top:50px;padding-bottom:50px}
+@media (min-width:900px){
+  section{padding:50px 0}
+  section.container{padding-top:50px;padding-bottom:50px}
+}
+
+.section-head{
+  display:flex;align-items:end;justify-content:space-between;gap:24px;
+  margin-bottom:32px;flex-wrap:wrap;
+}
+.section-title{
+  font-family:var(--font-display);
+  font-size:clamp(28px, 4.5vw, 44px);
+  font-weight:600;letter-spacing:-0.025em;line-height:1.05;
+  margin:0;
+}
+.section-sub{
+  color:var(--muted);max-width:540px;
+  font-size:15px;line-height:1.55;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{padding-top:32px;padding-bottom:24px}
+.hero__grid{
+  display:grid;gap:32px;
+  grid-template-columns:1fr;
+}
+@media (min-width:980px){
+  .hero__grid{grid-template-columns:1.05fr 1fr;align-items:center;gap:48px}
+}
+
+.hero__visual{
+  position:relative;
+  aspect-ratio:1/1.05;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, color-mix(in oklab, var(--accent) 18%, transparent), transparent 60%),
+    var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow-2);
+}
+.hero__visual::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size:32px 32px;
+  opacity:.4;
+  mask-image:radial-gradient(ellipse at 50% 50%, black 40%, transparent 85%);
+}
+.hero__corner{
+  position:absolute;
+  font-family:var(--font-mono);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--muted);
+  padding:6px 10px;
+  border:1px solid var(--line);
+  border-radius:6px;
+  background:color-mix(in oklab, var(--card) 85%, transparent);
+  z-index:2;
+}
+.hero__corner.tl{top:16px;left:16px}
+.hero__corner.tr{top:16px;right:16px}
+.hero__corner.bl{bottom:16px;left:16px}
+.hero__corner.br{bottom:16px;right:16px}
+
+.pencil-stage{
+  position:absolute;inset:0;
+  display:grid;place-items:center;
+  z-index:1;
+}
+.pencil-svg{
+  width:78%;max-width:520px;
+  filter:drop-shadow(0 30px 24px rgba(10,45,48,0.18)) drop-shadow(0 6px 6px rgba(10,45,48,0.1));
+  transform:rotate(-22deg);
+  animation:floaty 8s ease-in-out infinite;
+}
+@keyframes floaty{
+  0%,100%{transform:rotate(-22deg) translateY(0)}
+  50%{transform:rotate(-22deg) translateY(-10px)}
+}
+
+.hero__meta{display:flex;flex-direction:column;gap:20px}
+.status-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 12px;border-radius:999px;
+  background:var(--chip);
+  border:1px solid color-mix(in oklab, var(--forest) 30%, transparent);
+  font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
+  width:fit-content;
+  color:var(--forest);
+}
+.status-pill__dot{
+  width:6px;height:6px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 0 4px color-mix(in oklab, var(--accent) 30%, transparent);
+  animation:pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px color-mix(in oklab, var(--accent) 30%, transparent)}50%{box-shadow:0 0 0 8px color-mix(in oklab, var(--accent) 0%, transparent)}}
+
+.hero__title{
+  font-family:var(--font-display);
+  font-size:clamp(40px, 6.5vw, 72px);
+  font-weight:600;letter-spacing:-0.035em;line-height:0.98;
+  margin:0;
+}
+.hero__title em{
+  font-style:normal;
+  color:var(--forest);
+  font-weight:500;
+}
+.hero__sub{
+  font-size:clamp(16px,1.8vw,19px);
+  color:var(--muted);max-width:520px;line-height:1.5;margin:0;
+}
+
+.id-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  margin-top:8px;
+}
+.id-cell{
+  background:var(--card);
+  padding:14px 16px;
+  display:flex;flex-direction:column;gap:4px;
+}
+.id-cell__label{
+  font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--muted);
+}
+.id-cell__value{
+  font-family:var(--font-mono);font-size:13px;
+  color:var(--fg);word-break:break-all;
+}
+
+.hero__bottom{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  margin-top:4px;
+}
+.qr-card{
+  display:flex;align-items:center;gap:14px;
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--card);
+}
+.qr-card__qr{
+  width:56px;height:56px;border-radius:6px;
+  background:
+    repeating-conic-gradient(var(--fg) 0% 25%, transparent 0% 50%) 50%/8px 8px;
+  position:relative;flex-shrink:0;
+  border:1px solid var(--line);
+}
+.qr-card__qr::before,.qr-card__qr::after{
+  content:"";position:absolute;width:14px;height:14px;border:3px solid var(--fg);background:var(--card);
+}
+.qr-card__qr::before{top:2px;left:2px}
+.qr-card__qr::after{top:2px;right:2px}
+.qr-card__txt{display:flex;flex-direction:column;gap:2px}
+.qr-card__lbl{font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted)}
+.qr-card__val{font-family:var(--font-display);font-size:14px;font-weight:500}
+
+.mock-disclaimer{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--font-mono);font-size:11px;color:var(--muted);
+  padding:8px 12px;border:1px dashed var(--line-strong);border-radius:8px;
+}
+.mock-disclaimer svg{width:14px;height:14px;flex-shrink:0;opacity:.7}
+
+/* =========================================================
+   HIGHLIGHTS
+   ========================================================= */
+.highlights{
+  display:grid;gap:14px;
+  grid-template-columns:repeat(2, 1fr);
+}
+@media (min-width:780px){.highlights{grid-template-columns:repeat(4, 1fr)}}
+
+/* mobile: carousel horizontal (igual ao aftercare) */
+@media (max-width:779px){
+  .highlights{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    gap:14px;
+    padding:6px 2px 18px;
+    margin:0 -20px;
+    padding-left:20px;padding-right:20px;
+    scrollbar-width:none;
+  }
+  .highlights::-webkit-scrollbar{display:none}
+  .h-card{
+    flex:0 0 78%;max-width:300px;
+    scroll-snap-align:start;
+  }
+}
+
+.h-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:20px;
+  display:flex;flex-direction:column;gap:14px;
+  transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  position:relative;overflow:hidden;
+}
+.h-card:hover{transform:translateY(-2px);border-color:var(--line-strong);box-shadow:var(--shadow-1)}
+.h-card__icon{
+  width:40px;height:40px;border-radius:10px;
+  background:var(--chip);
+  display:grid;place-items:center;
+  color:var(--forest);
+}
+.h-card__icon svg{width:20px;height:20px}
+.h-card__num{
+  font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);
+}
+.h-card__title{
+  font-family:var(--font-display);font-size:17px;font-weight:600;letter-spacing:-0.01em;margin:0;
+}
+.h-card__txt{font-size:13.5px;color:var(--muted);line-height:1.45;margin:0}
+
+/* =========================================================
+   CARBON SIGNATURE
+   ========================================================= */
+.carbon{
+  background:var(--forest);color:var(--cream);
+  border-radius:var(--radius-lg);
+  padding:32px 24px;
+  position:relative;overflow:hidden;
+}
+html[data-theme="dark"] .carbon{
+  background:linear-gradient(180deg, #0F3A3D, #072528);
+  border:1px solid var(--line);
+  color:var(--fg);
+}
+@media (min-width:900px){.carbon{padding:56px}}
+.carbon::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(247,243,219,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247,243,219,0.06) 1px, transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse at 70% 30%, black, transparent 70%);
+}
+.carbon > *{position:relative}
+
+.carbon__grid{
+  display:grid;gap:32px;
+  grid-template-columns:1fr;
+}
+@media (min-width:980px){.carbon__grid{grid-template-columns:1fr 1fr;gap:48px;align-items:center}}
+
+.carbon__eyebrow{color:color-mix(in oklab, var(--cream) 70%, transparent);font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase}
+html[data-theme="dark"] .carbon__eyebrow{color:var(--muted)}
+.carbon__title{
+  font-family:var(--font-display);font-weight:600;letter-spacing:-0.03em;line-height:1;
+  font-size:clamp(36px, 5.5vw, 60px);
+  margin:14px 0 18px;color:var(--cream);
+}
+html[data-theme="dark"] .carbon__title{color:var(--fg)}
+.carbon__lead{font-size:16px;line-height:1.55;color:color-mix(in oklab, var(--cream) 80%, transparent);max-width:520px;margin:0}
+html[data-theme="dark"] .carbon__lead{color:var(--muted)}
+
+.carbon__number{
+  font-family:var(--font-display);font-weight:600;letter-spacing:-0.04em;
+  font-size:clamp(72px, 12vw, 132px);
+  line-height:0.9;color:var(--accent);
+  display:flex;align-items:baseline;gap:10px;
+}
+.carbon__number sup{font-size:0.32em;font-weight:500;letter-spacing:0;color:var(--accent-2)}
+.carbon__number small{font-size:0.18em;font-family:var(--font-mono);letter-spacing:0.18em;text-transform:uppercase;color:color-mix(in oklab, var(--cream) 70%, transparent);font-weight:500;align-self:center;margin-left:8px}
+html[data-theme="dark"] .carbon__number small{color:var(--muted)}
+
+.carbon__breakdown{margin-top:28px}
+.bd-bar{
+  display:flex;height:14px;border-radius:999px;overflow:hidden;
+  border:1px solid color-mix(in oklab, var(--cream) 18%, transparent);
+}
+html[data-theme="dark"] .bd-bar{border:1px solid var(--line)}
+.bd-seg{
+  height:100%;transition:flex .35s ease, opacity .25s ease;
+  cursor:pointer;position:relative;
+}
+.bd-seg:hover{filter:brightness(1.1)}
+.bd-list{
+  display:grid;gap:8px;margin-top:18px;
+  grid-template-columns:repeat(2, 1fr);
+}
+@media (min-width:680px){.bd-list{grid-template-columns:repeat(5, 1fr)}}
+.bd-item{
+  display:flex;flex-direction:column;gap:4px;
+  padding:12px;border:1px solid color-mix(in oklab, var(--cream) 14%, transparent);
+  border-radius:10px;cursor:pointer;
+  transition:background .2s ease, border-color .2s ease;
+  background:transparent;
+  text-align:left;width:100%;
+}
+html[data-theme="dark"] .bd-item{border-color:var(--line)}
+.bd-item:hover{background:color-mix(in oklab, var(--cream) 6%, transparent)}
+.bd-item.active{
+  background:color-mix(in oklab, var(--accent) 16%, transparent);
+  border-color:var(--accent);
+}
+.bd-item__dot{width:8px;height:8px;border-radius:2px}
+.bd-item__label{font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:color-mix(in oklab, var(--cream) 70%, transparent)}
+html[data-theme="dark"] .bd-item__label{color:var(--muted)}
+.bd-item__value{font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--cream)}
+html[data-theme="dark"] .bd-item__value{color:var(--fg)}
+
+.bd-context{
+  margin-top:24px;padding:20px;
+  background:color-mix(in oklab, var(--cream) 8%, transparent);
+  border:1px solid color-mix(in oklab, var(--cream) 16%, transparent);
+  border-radius:14px;
+  min-height:110px;
+}
+html[data-theme="dark"] .bd-context{background:var(--card-2);border-color:var(--line)}
+.bd-context__title{font-family:var(--font-display);font-size:17px;font-weight:600;margin:0 0 8px;color:var(--cream)}
+html[data-theme="dark"] .bd-context__title{color:var(--fg)}
+.bd-context__txt{margin:0;font-size:14px;line-height:1.55;color:color-mix(in oklab, var(--cream) 82%, transparent)}
+html[data-theme="dark"] .bd-context__txt{color:var(--muted)}
+
+/* Quote */
+.pull-quote{
+  margin:64px auto 0;max-width:880px;text-align:center;
+  font-family:var(--font-display);font-weight:500;letter-spacing:-0.02em;
+  font-size:clamp(24px, 3.2vw, 36px);
+  line-height:1.2;
+}
+.pull-quote em{font-style:italic;color:var(--forest);font-weight:500}
+.pull-quote::before,.pull-quote::after{
+  content:"";display:block;width:32px;height:1px;background:var(--line-strong);margin:18px auto;
+}
+
+/* =========================================================
+   MATERIALS ACCORDION
+   ========================================================= */
+.mat-list{display:flex;flex-direction:column;gap:10px}
+.mat{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:border-color .2s ease, box-shadow .2s ease;
+}
+.mat.open{border-color:var(--line-strong);box-shadow:var(--shadow-1)}
+.mat__head{
+  display:grid;
+  grid-template-columns:56px 1fr auto;
+  gap:14px;align-items:center;
+  padding:14px;cursor:pointer;width:100%;text-align:left;
+}
+@media (min-width:700px){
+  .mat__head{grid-template-columns:64px 2fr 1fr 1fr auto;padding:18px 20px}
+}
+.mat__thumb{
+  width:56px;height:56px;border-radius:10px;
+  border:1px solid var(--line);overflow:hidden;
+  flex-shrink:0;
+}
+@media (min-width:700px){.mat__thumb{width:64px;height:64px}}
+.mat__main{display:flex;flex-direction:column;gap:2px;min-width:0}
+.mat__name{font-family:var(--font-display);font-size:16px;font-weight:600;letter-spacing:-0.01em}
+.mat__sub{font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:0.08em}
+.mat__pct{
+  display:none;align-items:center;gap:10px;
+}
+@media (min-width:700px){.mat__pct{display:flex}}
+.mat__pct-bar{width:80px;height:6px;background:var(--chip);border-radius:99px;overflow:hidden;position:relative}
+.mat__pct-fill{position:absolute;left:0;top:0;bottom:0;background:var(--forest);border-radius:99px}
+.mat__pct-val{font-family:var(--font-mono);font-size:13px;min-width:40px;text-align:right}
+.mat__origin{
+  display:none;align-items:center;gap:8px;
+  font-family:var(--font-mono);font-size:12px;
+}
+@media (min-width:700px){.mat__origin{display:flex}}
+.mat__flag{font-size:18px;line-height:1}
+.mat__chev{
+  width:32px;height:32px;border-radius:8px;
+  border:1px solid var(--line);display:grid;place-items:center;
+  transition:transform .25s ease, background .2s ease;
+}
+.mat.open .mat__chev{transform:rotate(180deg);background:var(--chip)}
+.mat__chev svg{width:14px;height:14px}
+
+.mat__mobile-meta{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--font-mono);font-size:11px;color:var(--muted);
+  margin-top:4px;
+}
+@media (min-width:700px){.mat__mobile-meta{display:none}}
+
+.mat__body{
+  max-height:0;overflow:hidden;
+  transition:max-height .35s ease;
+  border-top:1px solid transparent;
+}
+.mat.open .mat__body{max-height:600px;border-top-color:var(--line)}
+.mat__body-inner{
+  padding:18px 20px 22px;
+  display:grid;gap:14px;
+  grid-template-columns:1fr;
+}
+@media (min-width:700px){.mat__body-inner{grid-template-columns:repeat(2, 1fr) 1fr;gap:24px}}
+.mat__info{display:flex;flex-direction:column;gap:4px}
+.mat__info-lbl{font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted)}
+.mat__info-val{font-size:14px;line-height:1.4}
+
+/* Texture placeholders */
+.tex-polymer{background:linear-gradient(135deg,#1a1a1a,#3a3a3a),repeating-linear-gradient(45deg,rgba(255,255,255,0.04) 0 2px,transparent 2px 4px);background-blend-mode:overlay}
+.tex-metal{background:linear-gradient(90deg,#9a9a9a 0%, #d4d4d4 25%, #6e6e6e 50%, #c0c0c0 75%, #8a8a8a 100%)}
+.tex-paper{background:#e8dcc0;background-image:radial-gradient(circle at 30% 20%, rgba(0,0,0,0.06) 0 1px, transparent 1px),radial-gradient(circle at 70% 60%, rgba(0,0,0,0.06) 0 1px, transparent 1px);background-size:6px 6px,8px 8px}
+.tex-rubber{background:#222;background-image:radial-gradient(circle at 50% 50%, rgba(255,255,255,0.18) 0 1.5px, transparent 1.5px);background-size:8px 8px}
+.tex-graphite{background:linear-gradient(135deg,#2a2a2a 0%, #555 50%, #1a1a1a 100%)}
+.tex-eraser{background:#f3ead0;background-image:linear-gradient(0deg, rgba(0,0,0,0.04) 1px, transparent 1px),linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);background-size:5px 5px}
+
+.status-chip{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:3px 8px;border-radius:99px;
+  font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
+  border:1px solid var(--line-strong);
+}
+.status-chip.s-mock{color:var(--muted)}
+.status-chip.s-pending{color:#B5772B;border-color:rgba(181,119,43,0.35);background:rgba(181,119,43,0.08)}
+.status-chip.s-validated{color:var(--forest);border-color:color-mix(in oklab, var(--forest) 40%, transparent);background:var(--chip)}
+.status-chip.s-required{color:#B53A3A;border-color:rgba(181,58,58,0.35);background:rgba(181,58,58,0.08)}
+
+/* =========================================================
+   AFTERCARE
+   ========================================================= */
+.after-grid{
+  display:grid;gap:14px;
+  grid-template-columns:1fr;
+}
+@media (min-width:640px){.after-grid{grid-template-columns:1fr 1fr}}
+
+.after{
+  display:flex;flex-direction:column;gap:14px;
+  padding:24px;
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  background:var(--card);
+  transition:transform .25s ease, border-color .25s ease, background .25s ease;
+  position:relative;overflow:hidden;
+}
+.after:hover{transform:translateY(-3px);border-color:var(--line-strong)}
+.after:nth-child(1){background:linear-gradient(135deg, var(--card) 0%, color-mix(in oklab, var(--accent) 18%, var(--card)) 100%)}
+.after__icon{
+  width:48px;height:48px;border-radius:12px;
+  background:var(--chip);color:var(--forest);
+  display:grid;place-items:center;
+}
+.after__icon svg{width:22px;height:22px}
+.after__title{font-family:var(--font-display);font-size:22px;font-weight:600;letter-spacing:-0.02em;margin:0}
+.after__txt{font-size:14.5px;color:var(--muted);margin:0;line-height:1.5;flex:1}
+.after__cta{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 18px;border-radius:10px;
+  background:var(--forest);color:var(--cream);
+  font-family:var(--font-mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;
+  width:fit-content;
+  transition:transform .15s ease, background .2s ease;
+}
+.after__cta:hover{transform:translateY(-1px)}
+.after__cta svg{width:14px;height:14px}
+html[data-theme="dark"] .after__cta{background:var(--accent);color:var(--dark)}
+
+/* =========================================================
+   MOBILE DOCK NAV
+   ========================================================= */
+.dock{
+  position:fixed;left:50%;transform:translateX(-50%);
+  bottom:16px;z-index:55;
+  display:flex;align-items:center;gap:2px;
+  padding:6px;
+  background:color-mix(in oklab, var(--card) 92%, transparent);
+  backdrop-filter:saturate(140%) blur(20px);
+  -webkit-backdrop-filter:saturate(140%) blur(20px);
+  border:1px solid var(--line-strong);
+  border-radius:99px;
+  box-shadow:var(--shadow-2);
+  max-width:calc(100vw - 24px);
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.dock::-webkit-scrollbar{display:none}
+.dock__btn{
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  padding:8px 10px;border-radius:99px;
+  font-family:var(--font-mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--muted);
+  transition:color .2s ease, background .2s ease;
+  flex-shrink:0;
+}
+.dock__btn svg{width:18px;height:18px}
+.dock__btn.active{color:var(--cream);background:var(--forest)}
+html[data-theme="dark"] .dock__btn.active{color:var(--dark);background:var(--accent)}
+@media (min-width:980px){
+  .dock{bottom:24px;padding:8px}
+  .dock__btn{padding:10px 16px;font-size:10px;flex-direction:row;gap:8px}
+}
+
+/* Back to top */
+.to-top{
+  position:fixed;right:16px;bottom:88px;z-index:54;
+  width:44px;height:44px;border-radius:50%;
+  background:var(--card);border:1px solid var(--line-strong);
+  display:grid;place-items:center;
+  box-shadow:var(--shadow-1);
+  opacity:0;pointer-events:none;transition:opacity .25s ease, transform .25s ease;
+  transform:translateY(8px);
+}
+.to-top.show{opacity:1;pointer-events:auto;transform:none}
+.to-top svg{width:18px;height:18px}
+@media (min-width:980px){.to-top{bottom:100px;right:24px}}
+
+/* =========================================================
+   COMMAND PALETTE
+   ========================================================= */
+.cmdk-backdrop{
+  position:fixed;inset:0;z-index:80;
+  background:color-mix(in oklab, var(--dark) 50%, transparent);
+  backdrop-filter:blur(8px);
+  display:none;align-items:flex-start;justify-content:center;
+  padding-top:14vh;
+}
+.cmdk-backdrop.show{display:flex;animation:fadeIn .18s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.cmdk{
+  width:min(560px, 92vw);
+  background:var(--card);
+  border:1px solid var(--line-strong);
+  border-radius:16px;box-shadow:var(--shadow-2);
+  overflow:hidden;
+}
+.cmdk__input{
+  width:100%;padding:18px 20px;border:none;outline:none;background:transparent;color:var(--fg);
+  font-family:var(--font-display);font-size:18px;letter-spacing:-0.01em;
+  border-bottom:1px solid var(--line);
+}
+.cmdk__list{max-height:50vh;overflow-y:auto;padding:8px}
+.cmdk__item{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 14px;border-radius:8px;cursor:pointer;
+}
+.cmdk__item:hover, .cmdk__item.focused{background:var(--chip)}
+.cmdk__item-ico{width:32px;height:32px;border-radius:7px;background:var(--card-2);display:grid;place-items:center;color:var(--forest)}
+.cmdk__item-ico svg{width:16px;height:16px}
+.cmdk__item-txt{flex:1}
+.cmdk__item-title{font-family:var(--font-display);font-size:14px;font-weight:500}
+.cmdk__item-sub{font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin-top:2px}
+.cmdk__hint{font-family:var(--font-mono);font-size:11px;color:var(--muted);padding:10px 16px;border-top:1px solid var(--line);display:flex;justify-content:space-between}
+
+/* JSON modal */
+.json-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 14px;border:1px dashed var(--line-strong);border-radius:10px;
+  font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--muted);
+  transition:color .2s ease, border-color .2s ease;
+}
+.json-btn:hover{color:var(--fg);border-color:var(--forest)}
+.modal-backdrop{
+  position:fixed;inset:0;z-index:85;background:color-mix(in oklab, var(--dark) 60%, transparent);backdrop-filter:blur(8px);
+  display:none;align-items:center;justify-content:center;padding:20px;
+}
+.modal-backdrop.show{display:flex;animation:fadeIn .2s ease}
+.modal{
+  width:min(680px, 100%);max-height:80vh;display:flex;flex-direction:column;
+  background:var(--card);border:1px solid var(--line-strong);border-radius:18px;box-shadow:var(--shadow-2);overflow:hidden;
+}
+.modal__head{padding:18px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.modal__title{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-0.01em}
+.modal__close{width:32px;height:32px;border-radius:8px;border:1px solid var(--line);display:grid;place-items:center}
+.modal__body{padding:20px;overflow:auto;flex:1;background:var(--card-2)}
+.modal__body pre{margin:0;font-family:var(--font-mono);font-size:12px;line-height:1.55;color:var(--fg);white-space:pre-wrap;word-break:break-word}
+.json-key{color:var(--forest)}
+.json-str{color:var(--ink)}
+html[data-theme="dark"] .json-str{color:var(--accent)}
+.json-num{color:#B5772B}
+html[data-theme="dark"] .json-num{color:var(--accent-2)}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer{
+  border-top:1px solid var(--line);
+  padding:32px 0 120px;
+  margin-top:64px;
+}
+@media (min-width:980px){.footer{padding-bottom:140px}}
+.footer__inner{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.footer__txt{font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:0.06em}
+.footer__links{display:flex;gap:18px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}
+.footer__links a:hover{color:var(--fg)}
+
+/* Utility */
+.flag{font-size:16px;line-height:1}
+.flow > * + *{margin-top:14px}
+
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal-stagger > *{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal-stagger.in > *{opacity:1;transform:none}
+.reveal-stagger.in > *:nth-child(1){transition-delay:.04s}
+.reveal-stagger.in > *:nth-child(2){transition-delay:.10s}
+.reveal-stagger.in > *:nth-child(3){transition-delay:.16s}
+.reveal-stagger.in > *:nth-child(4){transition-delay:.22s}
+.reveal-stagger.in > *:nth-child(5){transition-delay:.28s}
+.reveal-stagger.in > *:nth-child(6){transition-delay:.34s}
+.reveal-stagger.in > *:nth-child(7){transition-delay:.40s}
+@media (prefers-reduced-motion: reduce){
+  .reveal,.reveal-stagger>*{opacity:1;transform:none;transition:none}
+}
+
+/* =========================================================
+   COUNTRY BADGE (flag SVG + name)
+   ========================================================= */
+.country-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:5px 10px 5px 5px;border-radius:999px;
+  background:var(--card);
+  border:1px solid var(--line);
+  font-family:var(--font-mono);font-size:11px;letter-spacing:0.02em;
+  color:var(--fg);
+  transition:border-color .2s ease, transform .2s ease, background .2s ease;
+  white-space:nowrap;line-height:1;
+}
+.country-badge:hover{border-color:var(--line-strong);transform:translateY(-1px)}
+.cflag{
+  width:18px;height:13px;border-radius:2px;
+  display:inline-block;flex-shrink:0;
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,0.08);
+  position:relative;overflow:hidden;
+  background-size:cover;background-position:center;
+}
+/* Pure-CSS flags via linear gradients */
+.cflag-de{background:linear-gradient(to bottom,#000 0 33.33%,#DD0000 33.33% 66.66%,#FFCE00 66.66% 100%)}
+.cflag-at{background:linear-gradient(to bottom,#ED2939 0 33.33%,#FFF 33.33% 66.66%,#ED2939 66.66% 100%)}
+.cflag-cz{background:linear-gradient(to bottom,#FFF 50%,#D7141A 50%);position:relative}
+.cflag-cz::before{content:"";position:absolute;left:0;top:0;width:0;height:0;border-style:solid;border-width:6.5px 7px 6.5px 0;border-color:transparent #11457E transparent transparent}
+.cflag-br{background:#009C3B;position:relative}
+.cflag-br::before{content:"";position:absolute;left:50%;top:50%;width:9px;height:6px;background:#FFDF00;transform:translate(-50%,-50%) rotate(0deg);clip-path:polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)}
+.cflag-br::after{content:"";position:absolute;left:50%;top:50%;width:4px;height:4px;border-radius:50%;background:#002776;transform:translate(-50%,-50%)}
+.cflag-us{background:repeating-linear-gradient(to bottom,#B22234 0 1.5px,#FFF 1.5px 3px);position:relative}
+.cflag-us::before{content:"";position:absolute;left:0;top:0;width:8px;height:6px;background:#3C3B6E}
+.cflag-fr{background:linear-gradient(to right,#0055A4 0 33.33%,#FFF 33.33% 66.66%,#EF4135 66.66% 100%)}
+.cflag-it{background:linear-gradient(to right,#009246 0 33.33%,#FFF 33.33% 66.66%,#CE2B37 66.66% 100%)}
+.cflag-ch{background:#DA291C;position:relative}
+.cflag-ch::before{content:"";position:absolute;left:50%;top:50%;width:7px;height:2px;background:#FFF;transform:translate(-50%,-50%)}
+.cflag-ch::after{content:"";position:absolute;left:50%;top:50%;width:2px;height:7px;background:#FFF;transform:translate(-50%,-50%)}
+
+/* =========================================================
+   MAP SECTION
+   ========================================================= */
+/* === MAP HERO (full-width) === */
+.map-card{
+  border:none;
+  border-radius:0;
+  background:transparent;
+  overflow:hidden;
+  box-shadow:none;
+}
+.map-layout{
+  display:flex;
+  flex-direction:column;
+}
+.map-world{
+  position:relative;
+  background:transparent;
+  overflow:hidden;
+}
+.map-world svg{width:100%;height:auto;display:block}
+.map-land{fill:color-mix(in oklab, var(--forest) 18%, var(--card-2));stroke:var(--line);stroke-width:0.8}
+html[data-theme="dark"] .map-land{fill:color-mix(in oklab, var(--accent) 10%, var(--card-2))}
+.map-base-img{
+  filter: invert(1) sepia(1) saturate(0.4) hue-rotate(128deg) brightness(0.55) opacity(0.55);
+}
+html[data-theme="dark"] .map-base-img{
+  filter: invert(1) sepia(1) saturate(0.3) hue-rotate(80deg) brightness(0.45) opacity(0.4);
+}
+
+@media (max-width:779px){
+  .map-base-img{
+    filter: invert(1) sepia(1) saturate(0.6) hue-rotate(128deg) brightness(0.6) opacity(0.7);
+  }
+  html[data-theme="dark"] .map-base-img{
+    filter: invert(1) sepia(1) saturate(0.4) hue-rotate(80deg) brightness(0.5) opacity(0.55);
+  }
+}
+.map-route{fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-dasharray:7 8;filter:drop-shadow(0 0 6px color-mix(in oklab, var(--accent) 60%, transparent));animation:mapDash 24s linear infinite}
+.map-route.secondary{stroke:var(--forest);opacity:.65}
+html[data-theme="dark"] .map-route.secondary{stroke:var(--muted);opacity:.5}
+@keyframes mapDash{to{stroke-dashoffset:-360}}
+.map-dot{fill:var(--accent);stroke:var(--card);stroke-width:2;cursor:pointer;transition:r .2s ease}
+.map-dot:hover,.map-dot.active{r:8}
+.map-dot.hub{fill:var(--accent);r:9}
+.map-eu-ring{
+  fill:none;
+  stroke:var(--forest);stroke-width:1.5;stroke-dasharray:5 4;
+  opacity:0.5;cursor:pointer;
+  transition:opacity .2s ease, stroke-width .2s ease;
+  animation:euPulse 3s ease-in-out infinite;
+}
+.map-eu-ring.active,.map-eu-ring:hover{opacity:1;stroke-width:2;stroke:var(--accent)}
+html[data-theme="dark"] .map-eu-ring{stroke:var(--accent);opacity:0.4}
+@keyframes euPulse{0%,100%{opacity:0.4}50%{opacity:0.65}}
+.map-label{
+  font-family:"Geist Mono",monospace;
+  font-size:11px;letter-spacing:0.07em;text-transform:uppercase;
+  fill:var(--fg);pointer-events:none;font-weight:600;
+}
+.map-label-eu{
+  font-family:"Geist Mono",monospace;
+  font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
+  fill:var(--muted);pointer-events:none;font-weight:500;
+}
+
+/* map-legend base styles moved to new 3-stage block below */
+.map-legend__flag{font-size:14px;line-height:1}
+.map-legend__arrow{
+  font-family:"Geist Mono",monospace;
+  font-size:10px;
+  color:var(--accent);
+}
+
+/* chips kept for backwards compat but hidden in new layout */
+.map-chips{display:none}
+.map-panel{display:none}
+
+/* === MAP LEGEND — 3-stage layout === */
+.map-legend{
+  border-top:1px solid var(--line);
+  background:var(--card-2);
+  padding:0 8px;
+  display:flex;
+  align-items:center;
+  gap:0;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.map-legend::-webkit-scrollbar{display:none}
+.map-legend__stage{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:16px 20px;
+  flex:1;
+  min-width:0;
+  white-space:nowrap;
+}
+.map-legend__stage-num{
+  font-family:var(--font-mono);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.12em;
+  color:var(--muted);
+  width:28px;height:28px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  display:grid;place-items:center;
+  flex-shrink:0;
+  background:var(--card);
+}
+.map-legend__stage-num--hub{
+  background:var(--forest);
+  color:var(--cream);
+  border-color:var(--forest);
+}
+html[data-theme="dark"] .map-legend__stage-num--hub{
+  background:var(--accent);
+  color:var(--dark);
+  border-color:var(--accent);
+}
+.map-legend__stage-body{
+  display:flex;flex-direction:column;gap:3px;min-width:0;
+}
+.map-legend__stage-title{
+  font-family:var(--font-display);
+  font-size:13px;font-weight:600;letter-spacing:-0.01em;
+  color:var(--fg);
+}
+.map-legend__stage-sub{
+  font-family:var(--font-mono);
+  font-size:10px;letter-spacing:0.06em;
+  color:var(--muted);
+  display:flex;align-items:center;gap:4px;
+}
+.map-legend__sep{
+  color:var(--line-strong);
+  display:flex;align-items:center;flex-shrink:0;
+  padding:0 4px;
+}
+
+/* =========================================================
+   JOURNEY — ACCORDION (NEW)
+   ========================================================= */
+.journey-grid{
+  display:flex;flex-direction:column;gap:64px;
+}
+
+/* accordion */
+.journey-accordion{
+  list-style:none;margin:0;padding:0;
+  display:flex;flex-direction:column;gap:10px;
+}
+.j-acc{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+  position:relative;
+}
+.j-acc::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg, var(--forest), var(--accent));
+  opacity:0;transition:opacity .25s ease;
+}
+.j-acc.open{border-color:var(--line-strong);box-shadow:var(--shadow-1)}
+.j-acc.open::before{opacity:1}
+.j-acc:hover:not(.open){border-color:var(--line-strong)}
+
+.j-acc__head{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:14px;align-items:center;
+  padding:16px 18px;cursor:pointer;width:100%;
+  text-align:left;background:none;border:none;
+  font-family:inherit;color:inherit;
+}
+@media (min-width:760px){
+  .j-acc__head{grid-template-columns:auto 1fr auto auto}
+}
+.j-acc__num{
+  width:40px;height:40px;border-radius:50%;
+  border:1px solid var(--line);background:var(--card-2);
+  display:grid;place-items:center;flex-shrink:0;
+  font-family:var(--font-mono);font-size:12px;font-weight:500;
+  transition:all .25s ease;
+}
+.j-acc.open .j-acc__num{
+  background:var(--forest);color:var(--cream);
+  border-color:var(--forest);transform:scale(1.04);
+}
+html[data-theme="dark"] .j-acc.open .j-acc__num{background:var(--accent);color:var(--dark);border-color:var(--accent)}
+.j-acc__title-wrap{display:flex;flex-direction:column;gap:4px;min-width:0}
+.j-acc__title{font-family:var(--font-display);font-size:17px;font-weight:600;letter-spacing:-0.01em;line-height:1.2}
+.j-acc__sub{font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:0.06em}
+.j-acc__badges{
+  display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+}
+/* On mobile/tablet, badges go below title via title-wrap. On desktop, dedicated column. */
+@media (max-width:759px){
+  .j-acc__title-wrap{flex-direction:column}
+  .j-acc__head .j-acc__badges{
+    grid-column:2 / 3;margin-top:6px;
+  }
+}
+@media (min-width:760px){
+  .j-acc__head .j-acc__badges{
+    grid-column:auto;margin-top:0;justify-content:flex-end;max-width:280px;
+  }
+}
+.j-acc__chev{
+  width:32px;height:32px;border-radius:8px;
+  border:1px solid var(--line);display:grid;place-items:center;
+  transition:transform .3s cubic-bezier(.2,.7,.2,1), background .2s ease;
+  flex-shrink:0;
+}
+.j-acc.open .j-acc__chev{transform:rotate(180deg);background:var(--chip)}
+.j-acc__chev svg{width:14px;height:14px}
+
+.j-acc__body{
+  max-height:0;overflow:hidden;
+  transition:max-height .45s cubic-bezier(.2,.7,.2,1);
+  border-top:1px solid transparent;
+}
+.j-acc.open .j-acc__body{max-height:720px;border-top-color:var(--line)}
+.j-acc__body-inner{
+  padding:18px 20px 22px;
+  display:flex;flex-direction:column;gap:14px;
+}
+.j-acc__txt{margin:0;font-size:14.5px;line-height:1.55;color:var(--muted)}
+.j-acc__data{
+  display:grid;gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:10px;overflow:hidden;
+  grid-template-columns:1fr 1fr;
+}
+.j-acc__cell{background:var(--card);padding:12px 14px}
+.j-acc__cell-lbl{font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}
+.j-acc__cell-val{font-size:14px;margin-top:2px}
+
+/* =========================================================
+   AFTERCARE — HORIZONTAL CARDS ON MOBILE
+   ========================================================= */
+@media (max-width:780px){
+  .after-grid{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    gap:14px;
+    padding:6px 2px 18px;
+    margin:0 -20px;
+    padding-left:20px;padding-right:20px;
+    scrollbar-width:none;
+  }
+  .after-grid::-webkit-scrollbar{display:none}
+  .after{
+    flex:0 0 78%;max-width:320px;
+    scroll-snap-align:start;
+    min-height:240px;
+  }
+}
+.after{transition:transform .3s cubic-bezier(.2,.7,.2,1), border-color .3s ease, box-shadow .3s ease}
+.after:hover{box-shadow:var(--shadow-1)}
+
+/* =========================================================
+   ANEXOS (former proof vault) — PREMIUM CARDS
+   ========================================================= */
+.annex-grid{
+  display:grid;gap:14px;
+  grid-template-columns:repeat(1, 1fr);
+}
+@media (min-width:560px){.annex-grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:980px){.annex-grid{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:1180px){.annex-grid{grid-template-columns:repeat(4,1fr)}}
+
+.annex{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:20px;
+  display:flex;flex-direction:column;gap:14px;
+  transition:transform .3s cubic-bezier(.2,.7,.2,1), border-color .25s ease, box-shadow .25s ease;
+  position:relative;overflow:hidden;
+  min-height:200px;
+}
+.annex::after{
+  content:"";position:absolute;
+  inset:auto -40% -40% auto;
+  width:160px;height:160px;border-radius:50%;
+  background:radial-gradient(circle, color-mix(in oklab, var(--forest) 14%, transparent), transparent 70%);
+  opacity:0;transition:opacity .35s ease;
+  pointer-events:none;
+}
+.annex:hover{transform:translateY(-3px);border-color:var(--line-strong);box-shadow:var(--shadow-1)}
+.annex:hover::after{opacity:1}
+.annex__head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.annex__icon{
+  width:44px;height:44px;border-radius:11px;
+  background:var(--chip);color:var(--forest);
+  display:grid;place-items:center;
+  transition:transform .35s ease;
+}
+.annex:hover .annex__icon{transform:rotate(-4deg) scale(1.05)}
+.annex__icon svg{width:20px;height:20px}
+.annex__ext{
+  font-family:var(--font-mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--muted);
+  padding:3px 7px;border:1px solid var(--line);border-radius:5px;
+}
+.annex__title{font-family:var(--font-display);font-size:16px;font-weight:600;letter-spacing:-0.005em;margin:0;line-height:1.25}
+.annex__sub{font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:0.05em;margin:0}
+.annex__meta{
+  display:flex;align-items:center;justify-content:space-between;
+  font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:0.06em;
+  margin-top:auto;padding-top:8px;border-top:1px solid var(--line);
+}
+.annex__cta{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--muted);
+  transition:color .2s ease, gap .2s ease;
+}
+.annex:not([data-locked="true"]):hover .annex__cta{color:var(--forest);gap:10px}
+html[data-theme="dark"] .annex:not([data-locked="true"]):hover .annex__cta{color:var(--accent)}
+.annex__cta svg{width:11px;height:11px}
+.annex[data-locked="true"] .annex__cta{cursor:not-allowed}
+
+/* =========================================================
+   HERO / VISUAL — REFINED INTERACTIONS
+   ========================================================= */
+.hero__visual{transition:transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s ease}
+.h-card{will-change:transform}
+.h-card::after{
+  content:"";position:absolute;left:0;top:0;width:100%;height:1px;
+  background:linear-gradient(90deg, transparent, color-mix(in oklab, var(--forest) 60%, transparent), transparent);
+  transform:translateX(-100%);transition:transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.h-card:hover::after{transform:translateX(0)}
+
+/* Counter number entrance */
+.carbon__number{display:inline-flex}
+.carbon__number .num-val{
+  display:inline-block;font-variant-numeric:tabular-nums;
+  transition:filter .3s ease;
+}
+
+/* Smooth segment hover for breakdown bar */
+.bd-bar{position:relative}
+.bd-seg{position:relative;transition:flex .45s cubic-bezier(.2,.7,.2,1), opacity .25s ease}
+.bd-seg::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(255,255,255,0.18), transparent 50%);
+  opacity:0;transition:opacity .2s ease;
+}
+.bd-seg:hover::after{opacity:1}
+
+/* Subtle parallax for hero pencil on cursor */
+.pencil-svg{will-change:transform}
+
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+<header class="app-header">
+  <div class="app-header__inner">
+    <div class="brand">
+      <div class="brand__mark" aria-hidden="true">P</div>
+      <div>
+        <div class="brand__title" data-i18n="header.title">Passaporte Digital do Produto</div>
+        <div class="brand__sub">powered by Planton</div>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="cmdkOpen" title="Buscar (Ctrl/Cmd + K)" aria-label="Abrir busca">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <button class="icon-btn" id="themeBtn" title="Alternar tema" aria-label="Alternar tema">
+        <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      </button>
+      <div class="lang" id="lang">
+        <button class="lang__btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+          <span class="lang__flag" id="langFlag">🇧🇷</span>
+          <span id="langCode">PT</span>
+          <svg class="lang__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="lang__menu" id="langMenu" role="listbox">
+          <button class="lang__item active" data-lang="pt"><span class="lang__flag">🇧🇷</span>Português <span class="mono">PT-BR</span></button>
+          <button class="lang__item" data-lang="en"><span class="lang__flag">🇺🇸</span>English <span class="mono">EN</span></button>
+          <button class="lang__item" data-lang="es"><span class="lang__flag">🇪🇸</span>Español <span class="mono">ES</span></button>
+          <button class="lang__item" data-lang="de"><span class="lang__flag">🇩🇪</span>Deutsch <span class="mono">DE</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+<section id="produto" class="hero">
+  <div class="container">
+    <div class="hero__grid">
+
+      <!-- VISUAL -->
+      <div class="hero__visual" id="heroVisual">
+        <div class="hero__corner tl">FC-G2011 · 0.7 mm</div>
+        <div class="hero__corner tr">DPP · v0.1</div>
+        <div class="hero__corner bl">LOT-2026-EU-07</div>
+        <div class="hero__corner br">QR + NFC</div>
+
+        <div class="pencil-stage" aria-hidden="true">
+          <!-- Premium CSS/SVG mechanical pencil -->
+          <svg class="pencil-svg" viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bodyGrad" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#3a3a3a"/>
+                <stop offset="0.5" stop-color="#1a1a1a"/>
+                <stop offset="1" stop-color="#0a0a0a"/>
+              </linearGradient>
+              <linearGradient id="metalGrad" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#e8e8e8"/>
+                <stop offset="0.5" stop-color="#9a9a9a"/>
+                <stop offset="1" stop-color="#6a6a6a"/>
+              </linearGradient>
+              <linearGradient id="gripGrad" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#2a2a2a"/>
+                <stop offset="0.5" stop-color="#101010"/>
+                <stop offset="1" stop-color="#000"/>
+              </linearGradient>
+              <linearGradient id="eraserGrad" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#f5e9c8"/>
+                <stop offset="1" stop-color="#d4c594"/>
+              </linearGradient>
+              <pattern id="dots" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+                <circle cx="3" cy="3" r="1" fill="#ADCF78" opacity="0.5"/>
+              </pattern>
+            </defs>
+
+            <!-- eraser top -->
+            <rect x="20" y="48" width="22" height="24" rx="3" fill="url(#eraserGrad)" stroke="#0A2D30" stroke-width="0.5"/>
+            <!-- twist cap -->
+            <rect x="42" y="46" width="10" height="28" rx="1" fill="url(#metalGrad)"/>
+            <line x1="44" y1="46" x2="44" y2="74" stroke="#444" stroke-width="0.3"/>
+            <line x1="46" y1="46" x2="46" y2="74" stroke="#444" stroke-width="0.3"/>
+            <line x1="48" y1="46" x2="48" y2="74" stroke="#444" stroke-width="0.3"/>
+            <line x1="50" y1="46" x2="50" y2="74" stroke="#444" stroke-width="0.3"/>
+            <!-- clip -->
+            <path d="M52 50 L52 90 Q52 95 56 95 L70 95 Q72 95 72 93 L72 52" fill="url(#metalGrad)" stroke="#0A2D30" stroke-width="0.3"/>
+
+            <!-- body main -->
+            <rect x="52" y="44" width="320" height="32" rx="4" fill="url(#bodyGrad)"/>
+            <!-- body sheen -->
+            <rect x="52" y="46" width="320" height="3" rx="1" fill="rgba(255,255,255,0.12)"/>
+            <rect x="52" y="71" width="320" height="2" rx="1" fill="rgba(0,0,0,0.4)"/>
+
+            <!-- branding -->
+            <text x="180" y="64" font-family="Space Grotesk, sans-serif" font-size="11" font-weight="600" fill="#F7F3DB" letter-spacing="2">FABER-CASTELL · GRIP 2011</text>
+            <text x="180" y="74" font-family="Geist Mono, monospace" font-size="6" fill="#ADCF78" letter-spacing="2">0.7 mm · GERMANY</text>
+
+            <!-- grip section with dots -->
+            <rect x="372" y="44" width="130" height="32" rx="4" fill="url(#gripGrad)"/>
+            <rect x="372" y="44" width="130" height="32" rx="4" fill="url(#dots)"/>
+            <rect x="372" y="46" width="130" height="2" rx="1" fill="rgba(255,255,255,0.08)"/>
+
+            <!-- metallic cone -->
+            <path d="M502 44 L545 52 L545 68 L502 76 Z" fill="url(#metalGrad)"/>
+            <path d="M502 44 L545 52 L545 56 L502 48 Z" fill="rgba(255,255,255,0.4)"/>
+
+            <!-- tip cylinder -->
+            <rect x="545" y="55" width="22" height="10" fill="#5a5a5a"/>
+            <rect x="545" y="55" width="22" height="2" fill="#9a9a9a"/>
+
+            <!-- lead -->
+            <line x1="567" y1="60" x2="582" y2="60" stroke="#222" stroke-width="1.2" stroke-linecap="round"/>
+
+            <!-- shadow -->
+            <ellipse cx="300" cy="110" rx="220" ry="3" fill="rgba(10,45,48,0.2)"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- META -->
+      <div class="hero__meta flow">
+        <div class="status-pill">
+          <span class="status-pill__dot"></span>
+          <span data-i18n="hero.status">Registro mock verificado</span>
+        </div>
+
+        <h1 class="hero__title">Faber-Castell <em>Grip 2011</em></h1>
+        <p class="hero__sub" data-i18n="hero.sub">Lapiseira 0.7 mm com passaporte digital de produto. Uma camada de confiança climática entre marca, consumidor e ciclo de vida.</p>
+
+        <div class="id-grid">
+          <div class="id-cell">
+            <span class="id-cell__label">Product ID</span>
+            <span class="id-cell__value">FC-G2011-0.7-SIL</span>
+          </div>
+          <div class="id-cell">
+            <span class="id-cell__label">Passport ID</span>
+            <span class="id-cell__value">PL-DPP-FC-G2011-MOCK-001</span>
+          </div>
+          <div class="id-cell">
+            <span class="id-cell__label">Tipo</span>
+            <span class="id-cell__value">Mechanical pencil · 0.7 mm</span>
+          </div>
+          <div class="id-cell">
+            <span class="id-cell__label">Data carrier</span>
+            <span class="id-cell__value">QR + NFC ready</span>
+          </div>
+          <div class="id-cell">
+            <span class="id-cell__label">Versão</span>
+            <span class="id-cell__value">v0.1 concept</span>
+          </div>
+          <div class="id-cell">
+            <span class="id-cell__label">Última atualização</span>
+            <span class="id-cell__value">2026</span>
+          </div>
+        </div>
+
+        <div class="hero__bottom">
+          <div class="qr-card">
+            <div class="qr-card__qr" aria-hidden="true"></div>
+            <div class="qr-card__txt">
+              <span class="qr-card__lbl">Scan-ready</span>
+              <span class="qr-card__val">Digital passport</span>
+            </div>
+          </div>
+          <button class="json-btn" id="jsonBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+            <span>Ver dados estruturados</span>
+          </button>
+        </div>
+
+        <!-- <div class="mock-disclaimer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+          <span>Protótipo comercial — dados simulados para apresentação. Não é um passaporte oficial Faber-Castell.</span>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     HIGHLIGHTS
+     ========================================================= -->
+<section class="container reveal" style="padding-top:24px;padding-bottom:32px">
+  <div class="highlights reveal-stagger">
+    <article class="h-card">
+      <div class="h-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div>
+      <div class="h-card__num">01 · Refill</div>
+      <h3 class="h-card__title">Recarregável</h3>
+      <p class="h-card__txt">Grafite 0.7 mm substituível para prolongar o ciclo de uso do produto.</p>
+    </article>
+    <article class="h-card">
+      <div class="h-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 7v6c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V7l-8-5z"/></svg></div>
+      <div class="h-card__num">02 · Durability</div>
+      <h3 class="h-card__title">Design durável</h3>
+      <p class="h-card__txt">Formato triangular ergonômico e zona soft grip para uso prolongado.</p>
+    </article>
+    <article class="h-card">
+      <div class="h-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="4" rx="1"/><rect x="3" y="10" width="18" height="4" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/></svg></div>
+      <div class="h-card__num">03 · Layered Data</div>
+      <h3 class="h-card__title">Dados em camadas</h3>
+      <p class="h-card__txt">Informações para consumidor, auditor, varejo e reciclador na mesma fonte.</p>
+    </article>
+    <article class="h-card">
+      <div class="h-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 7h10v10H7z"/><path d="M3 7l4-4M21 7l-4-4M3 17l4 4M21 17l-4 4"/></svg></div>
+      <div class="h-card__num">04 · Circularity</div>
+      <h3 class="h-card__title">Circularidade guiada</h3>
+      <p class="h-card__txt">Orientações de cuidado, refil, desmontagem e fim de vida.</p>
+    </article>
+  </div>
+</section>
+
+<!-- =========================================================
+     CARBON SIGNATURE
+     ========================================================= -->
+<section id="carbono" class="container reveal">
+  <div class="carbon">
+    <div class="carbon__grid">
+      <div>
+        <div class="carbon__eyebrow">Assinatura climática · Mock</div>
+        <h2 class="carbon__title">Pegada<br>de carbono</h2>
+        <p class="carbon__lead">A pegada de carbono funciona como uma assinatura climática do produto: ela mostra onde o impacto nasce, onde pode ser reduzido e como a marca transforma dado técnico em confiança.</p>
+        <div style="margin-top:32px">
+          <div class="carbon__number">
+            <span class="num-val" id="carbonNum" data-target="0.42">0.00</span><sup>kgCO₂e</sup><small>por unidade · simulado</small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="carbon__breakdown">
+          <div class="bd-bar" id="bdBar" role="presentation">
+            <div class="bd-seg" data-step="materiais" style="flex:46;background:#ADCF78"></div>
+            <div class="bd-seg" data-step="producao" style="flex:22;background:#7FB05A"></div>
+            <div class="bd-seg" data-step="transporte" style="flex:18;background:#5D8E45"></div>
+            <div class="bd-seg" data-step="embalagem" style="flex:9;background:#3F6B30"></div>
+            <div class="bd-seg" data-step="fimdevida" style="flex:5;background:#234A1E"></div>
+          </div>
+
+          <div class="bd-list" id="bdList">
+            <button class="bd-item active" data-step="materiais">
+              <span class="bd-item__dot" style="background:#ADCF78"></span>
+              <span class="bd-item__label">Materiais</span>
+              <span class="bd-item__value">46%</span>
+            </button>
+            <button class="bd-item" data-step="producao">
+              <span class="bd-item__dot" style="background:#7FB05A"></span>
+              <span class="bd-item__label">Produção</span>
+              <span class="bd-item__value">22%</span>
+            </button>
+            <button class="bd-item" data-step="transporte">
+              <span class="bd-item__dot" style="background:#5D8E45"></span>
+              <span class="bd-item__label">Transporte</span>
+              <span class="bd-item__value">18%</span>
+            </button>
+            <button class="bd-item" data-step="embalagem">
+              <span class="bd-item__dot" style="background:#3F6B30"></span>
+              <span class="bd-item__label">Embalagem</span>
+              <span class="bd-item__value">9%</span>
+            </button>
+            <button class="bd-item" data-step="fimdevida">
+              <span class="bd-item__dot" style="background:#234A1E"></span>
+              <span class="bd-item__label">Fim de vida</span>
+              <span class="bd-item__value">5%</span>
+            </button>
+          </div>
+
+          <div class="bd-context" id="bdContext">
+            <h4 class="bd-context__title">Materiais · 46%</h4>
+            <p class="bd-context__txt">Maior parcela do impacto estimado. Em uma versão real, este dado viria da composição por massa, fornecedores, fatores de emissão e metodologia de ACV.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+<!-- =========================================================
+     JORNADA DO PRODUTO  (NEW: mapa + acordeão + badges)
+     ========================================================= -->
+<section id="jornada" class="container reveal">
+  <div class="section-head">
+    <div>
+      <!-- <div class="eyebrow">Trace · Lifecycle</div> -->
+      <!-- <h2 class="section-title">Jornada do produto</h2> -->
+    </div>
+    <!-- <p class="section-sub">Da matéria-prima ao fim de vida. Toque em uma etapa para expandir. Abaixo, as rotas globais que tornam este produto possível — Stein, na Alemanha, é o coração da operação.</p> -->
+  </div>
+
+  <div class="journey-grid">
+
+    <!-- MAP — full-width hero -->
+    <div class="map-card">
+      <div class="map-layout">
+        <div class="map-world">
+          <!--
+            Equirectangular projection over viewBox 1200×560
+            lon → x = (lon + 180) / 360 * 1200
+            lat → y = (90 - lat)  / 180 * 560
+
+            Key coords:
+              DE Stein/Nürnberg  lon=11.1 lat=49.4  → x=537  y=252
+              CZ Praha           lon=14.4 lat=50.1  → x=548  y=249
+              AT Wien            lon=16.4 lat=48.2  → x=555  y=256
+              BR São Paulo       lon=-46.6 lat=-23.5 → x=444  y=427
+              EU center          lon=10   lat=50     → x=533  y=250  r=58
+              Atlantic midpoint for curve: lon=-18 lat=16 → x=488 y=232 (arc control)
+          -->
+          <!--
+            Affine calibration (anchored on original HTML viewBox 898×566):
+              DE lon=11.1  lat=49.4  → orig x=460 y=258
+              BR lon=-46.6 lat=-15   → orig x=315 y=435
+            x_orig = 2.513*lon + 432.11
+            y_orig = -2.748*lat + 393.77
+            Scale to 1200×560: sx=1200/898=1.336, sy=560/566=0.989
+          -->
+          <!--
+            viewBox 1200×756 = proporção exata do maa_2.svg (898×566 × 1.3363)
+            Sem distorção. Coords calibrados via afim em espaço 898×566 × scale:
+              x = (2.513*lon + 432.11) * 1.3363
+              y = (-2.748*lat + 393.77) * 1.3363
+          -->
+          <svg id="mapSvg" viewBox="0 0 1200 756" role="img" aria-label="Mapa mundi com rotas de materiais" style="background:transparent">
+            <defs>
+              <clipPath id="mapClip"><rect width="1200" height="756"/></clipPath>
+            </defs>
+            <g clip-path="url(#mapClip)">
+
+            <image href="assets/maa_2.svg" x="0" y="0" width="1200" height="756" class="map-base-img" preserveAspectRatio="xMidYMid meet"/>
+
+            <!-- EU ring: lon=10 lat=50 → x=611 y=343, r=96 -->
+            <circle class="map-eu-ring" data-route="eu" cx="611" cy="343" r="96"/>
+            <text class="map-label-eu" x="530" y="238">União Europeia</text>
+
+            <!-- Route: DE → BR (Atlantic arc) -->
+            <path id="rBR" class="map-route" d="M615,345 C575,390 530,460 500,530 C475,580 445,600 421,613"/>
+
+            <!-- Route: CZ → DE (intra-EU) -->
+            <path id="rCZ" class="map-route secondary" d="M626,342 C622,342 618,343 615,345"/>
+
+            <!-- Route: AT → DE (intra-EU) -->
+            <path id="rAT" class="map-route secondary" d="M633,351 C628,349 622,347 615,345"/>
+
+            <!-- DE: Stein lon=11.1 lat=49.4 → x=615 y=345 (HUB) -->
+            <circle class="map-dot hub active" data-route="germany" cx="615" cy="345" r="8"/>
+            <text class="map-label" x="626" y="350">🇩🇪 Alemanha</text>
+
+            <!-- CZ: Praha lon=14.4 lat=50.1 → x=626 y=342 -->
+            <circle class="map-dot" data-route="czech" cx="626" cy="342" r="6"/>
+            <text class="map-label" x="635" y="336">🇨🇿 Tchéquia</text>
+
+            <!-- AT: Wien lon=16.4 lat=48.2 → x=633 y=351 -->
+            <circle class="map-dot" data-route="austria" cx="633" cy="351" r="6"/>
+            <text class="map-label" x="641" y="365">🇦🇹 Áustria</text>
+
+            <!-- BR: São Paulo lon=-46.6 lat=-23.5 → x=421 y=613 -->
+            <circle class="map-dot" data-route="brazil" cx="421" cy="613" r="7"/>
+            <text class="map-label" x="432" y="607">🇧🇷 Brasil</text>
+
+            </g>
+          </svg>
+        </div>
+
+        <!-- Legend bar -->
+        <div class="map-legend">
+          <div class="map-legend__stage">
+            <span class="map-legend__stage-num">01</span>
+            <div class="map-legend__stage-body">
+              <span class="map-legend__stage-title">Matéria-prima</span>
+              <span class="map-legend__stage-sub">
+                <span class="map-legend__flag">🇨🇿</span> Tchéquia
+                <span class="map-legend__arrow">·</span>
+                <span class="map-legend__flag">🇦🇹</span> Áustria
+                <span class="map-legend__arrow">→</span>
+                <span class="map-legend__flag">🇩🇪</span> Alemanha
+              </span>
+            </div>
+          </div>
+          <div class="map-legend__sep">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+          <div class="map-legend__stage">
+            <span class="map-legend__stage-num map-legend__stage-num--hub">02</span>
+            <div class="map-legend__stage-body">
+              <span class="map-legend__stage-title">Fabricação</span>
+              <span class="map-legend__stage-sub">
+                <span class="map-legend__flag">🇩🇪</span> Stein, Alemanha · fábrica principal
+              </span>
+            </div>
+          </div>
+          <div class="map-legend__sep">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+          <div class="map-legend__stage">
+            <span class="map-legend__stage-num">03</span>
+            <div class="map-legend__stage-body">
+              <span class="map-legend__stage-title">Uso</span>
+              <span class="map-legend__stage-sub">
+                <span class="map-legend__flag">🇩🇪</span> Alemanha
+                <span class="map-legend__arrow">→</span>
+                <span class="map-legend__flag">🇧🇷</span> Brasil &amp; global
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- hidden panel kept for JS compat -->
+        <aside class="map-panel" id="mapPanel" aria-hidden="true">
+          <h3 id="mapTitle"></h3>
+          <p id="mapCopy"></p>
+          <div class="map-panel__meta">
+            <div class="map-panel__row"><span>Etapa</span><b id="mapStage"></b></div>
+            <div class="map-panel__row"><span>Status</span><b id="mapStatus"></b></div>
+            <div class="map-panel__row"><span>Dado crítico</span><b id="mapData"></b></div>
+          </div>
+          <div class="map-chips" id="mapChips">
+            <button class="map-chip active" data-route="germany">🇩🇪 Alemanha</button>
+            <button class="map-chip" data-route="czech">🇨🇿 Embalagem</button>
+            <button class="map-chip" data-route="austria">🇦🇹 Grafite</button>
+            <button class="map-chip" data-route="brazil">🇧🇷 Distribuição</button>
+            <button class="map-chip" data-route="eu">🇪🇺 Mercado UE</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- ACCORDION -->
+    <ol class="journey-accordion reveal-stagger" id="journeyAccordion" role="list">
+
+      <li class="j-acc open" data-step="0">
+        <button class="j-acc__head" aria-expanded="true">
+          <span class="j-acc__num">01</span>
+          <div class="j-acc__title-wrap">
+            <span class="j-acc__title">Matéria-prima</span>
+            <span class="j-acc__sub">Raw materials · multi-origem</span>
+          </div>
+          <div class="j-acc__badges">
+            <span class="country-badge"><span class="cflag cflag-de"></span>Alemanha</span>
+            <span class="country-badge"><span class="cflag cflag-cz"></span>Tchéquia</span>
+            <span class="country-badge"><span class="cflag cflag-at"></span>Áustria</span>
+          </div>
+          <div class="j-acc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+        </button>
+        <div class="j-acc__body">
+          <div class="j-acc__body-inner">
+            <p class="j-acc__txt">Componentes, massa e fornecedores. Em um passaporte real, esta camada conecta cada material à sua cadeia upstream, com fatores de emissão e país de origem por item.</p>
+            <div class="j-acc__data">
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Componentes</div><div class="j-acc__cell-val">6 declarados</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Origens</div><div class="j-acc__cell-val">DE · CZ · AT</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Massa total</div><div class="j-acc__cell-val">mock · a declarar</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Fornecedores</div><div class="j-acc__cell-val">a vincular</div></div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="j-acc" data-step="1">
+        <button class="j-acc__head" aria-expanded="false">
+          <span class="j-acc__num">02</span>
+          <div class="j-acc__title-wrap">
+            <span class="j-acc__title">Fabricação</span>
+            <span class="j-acc__sub">Manufacturing · Stein</span>
+          </div>
+          <div class="j-acc__badges">
+            <span class="country-badge"><span class="cflag cflag-de"></span>Alemanha</span>
+          </div>
+          <div class="j-acc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+        </button>
+        <div class="j-acc__body">
+          <div class="j-acc__body-inner">
+            <p class="j-acc__txt">Lote, planta, mix energético e controles de qualidade. Os indicadores podem ser auditados por terceira parte e versionados a cada batelada.</p>
+            <div class="j-acc__data">
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Lote</div><div class="j-acc__cell-val">LOT-2026-EU-07</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Planta</div><div class="j-acc__cell-val">DE-01 (mock)</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Energia</div><div class="j-acc__cell-val">mock kWh/un</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Qualidade</div><div class="j-acc__cell-val">aprovado mock</div></div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="j-acc" data-step="2">
+        <button class="j-acc__head" aria-expanded="false">
+          <span class="j-acc__num">03</span>
+          <div class="j-acc__title-wrap">
+            <span class="j-acc__title">Montagem</span>
+            <span class="j-acc__sub">Assembly · final</span>
+          </div>
+          <div class="j-acc__badges">
+            <span class="country-badge"><span class="cflag cflag-de"></span>Alemanha</span>
+          </div>
+          <div class="j-acc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+        </button>
+        <div class="j-acc__body">
+          <div class="j-acc__body-inner">
+            <p class="j-acc__txt">Controle final de produto, integração mecânica e versão do passaporte vinculada ao serial/lote.</p>
+            <div class="j-acc__data">
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Versão DPP</div><div class="j-acc__cell-val">v0.1 concept</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Sample</div><div class="j-acc__cell-val">passport.test</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Yield</div><div class="j-acc__cell-val">mock %</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Inspeção</div><div class="j-acc__cell-val">aprovado mock</div></div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="j-acc" data-step="3">
+        <button class="j-acc__head" aria-expanded="false">
+          <span class="j-acc__num">04</span>
+          <div class="j-acc__title-wrap">
+            <span class="j-acc__title">Embalagem</span>
+            <span class="j-acc__sub">Packaging · retail</span>
+          </div>
+          <div class="j-acc__badges">
+            <span class="country-badge"><span class="cflag cflag-cz"></span>Tchéquia</span>
+          </div>
+          <div class="j-acc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+        </button>
+        <div class="j-acc__body">
+          <div class="j-acc__body-inner">
+            <p class="j-acc__txt">Peso, reciclabilidade, materiais e desenho da embalagem unitária — com data carrier impresso (QR/NFC).</p>
+            <div class="j-acc__data">
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Material</div><div class="j-acc__cell-val">papel-cartão mock</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Peso</div><div class="j-acc__cell-val">mock g</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Reciclável</div><div class="j-acc__cell-val">sim · mock</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Data carrier</div><div class="j-acc__cell-val">QR + NFC</div></div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="j-acc" data-step="4">
+        <button class="j-acc__head" aria-expanded="false">
+          <span class="j-acc__num">05</span>
+          <div class="j-acc__title-wrap">
+            <span class="j-acc__title">Distribuição</span>
+            <span class="j-acc__sub">Distribution · global</span>
+          </div>
+          <div class="j-acc__badges">
+            <span class="country-badge"><span class="cflag cflag-br"></span>Brasil</span>
+            <span class="country-badge muted-badge"><span class="cflag cflag-de"></span>Origem DE</span>
+          </div>
+          <div class="j-acc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+        </button>
+        <div class="j-acc__body">
+          <div class="j-acc__body-inner">
+            <p class="j-acc__txt">Modal, rotas e distância até o mercado final. Impacto de transporte calculado por fator de emissão por modal.</p>
+            <div class="j-acc__data">
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Mercado</div><div class="j-acc__cell-val">BR · LatAm (mock)</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Modal</div><div class="j-acc__cell-val">rodo · marítimo</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Distância</div><div class="j-acc__cell-val">mock km</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">CO₂</div><div class="j-acc__cell-val">mock kg</div></div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="j-acc" data-step="5">
+        <button class="j-acc__head" aria-expanded="false">
+          <span class="j-acc__num">06</span>
+          <div class="j-acc__title-wrap">
+            <span class="j-acc__title">Uso</span>
+            <span class="j-acc__sub">In-use · consumidor</span>
+          </div>
+          <div class="j-acc__badges">
+            <span class="country-badge"><span class="cflag cflag-br"></span>Brasil &amp; global</span>
+          </div>
+          <div class="j-acc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+        </button>
+        <div class="j-acc__body">
+          <div class="j-acc__body-inner">
+            <p class="j-acc__txt">Cuidado, refil de grafite, borracha substituível e tempo de uso estimado. A camada onde o consumidor mais interage com o passaporte.</p>
+            <div class="j-acc__data">
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Refil</div><div class="j-acc__cell-val">0.7 mm compatível</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Borracha</div><div class="j-acc__cell-val">substituível</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Uso est.</div><div class="j-acc__cell-val">mock meses</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Cuidado</div><div class="j-acc__cell-val">guia disponível</div></div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="j-acc" data-step="6">
+        <button class="j-acc__head" aria-expanded="false">
+          <span class="j-acc__num">07</span>
+          <div class="j-acc__title-wrap">
+            <span class="j-acc__title">Fim de vida</span>
+            <span class="j-acc__sub">End-of-life · ciclo fechado</span>
+          </div>
+          <div class="j-acc__badges">
+            <span class="country-badge"><span class="cflag cflag-br"></span>Local</span>
+          </div>
+          <div class="j-acc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+        </button>
+        <div class="j-acc__body">
+          <div class="j-acc__body-inner">
+            <p class="j-acc__txt">Desmontagem, reciclagem e logística reversa. Instruções locais para separação de polímero, metal, papel e elastômero.</p>
+            <div class="j-acc__data">
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Desmontagem</div><div class="j-acc__cell-val">3 passos mock</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Reciclável</div><div class="j-acc__cell-val">parcial mock</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Logística reversa</div><div class="j-acc__cell-val">a definir</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Destino</div><div class="j-acc__cell-val">mock local</div></div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<!-- =========================================================
+     MATERIAIS  (movido para depois da jornada)
+     ========================================================= -->
+<section id="materiais" class="container reveal">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Material Passport · Mock</div>
+      <h2 class="section-title">Mapa de materiais</h2>
+    </div>
+    <!-- <p class="section-sub">Cada componente declarado por massa, função, origem e status de validação. Toque para abrir.</p> -->
+  </div>
+
+  <div class="mat-list" id="matList">
+
+    <!-- A -->
+    <article class="mat" data-mat="polimero">
+      <button class="mat__head">
+        <div class="mat__thumb tex-polymer"></div>
+        <div class="mat__main">
+          <span class="mat__name">Corpo polimérico / resina</span>
+          <span class="mat__sub">Resin body · A</span>
+          <div class="mat__mobile-meta">
+            <span class="flag">🇩🇪</span>
+            <span>Alemanha · 53%</span>
+            <span class="status-chip s-pending">a validar</span>
+          </div>
+        </div>
+        <div class="mat__pct">
+          <div class="mat__pct-bar"><div class="mat__pct-fill" style="width:53%"></div></div>
+          <span class="mat__pct-val">53%</span>
+        </div>
+        <div class="mat__origin"><span class="flag">🇩🇪</span><span>DE</span></div>
+        <div class="mat__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+      </button>
+      <div class="mat__body">
+        <div class="mat__body-inner">
+          <div class="mat__info"><span class="mat__info-lbl">Função</span><span class="mat__info-val">Estrutura principal do corpo da lapiseira.</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Origem</span><span class="mat__info-val">🇩🇪 Alemanha</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Status</span><span class="mat__info-val"><span class="status-chip s-pending">a validar com BOM</span></span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Documento</span><span class="mat__info-val">Ficha técnica do polímero + fornecedor</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Fim de vida</span><span class="mat__info-val">Reciclagem de plásticos rígidos · destino local</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Observação</span><span class="mat__info-val">Maior fração mássica do produto; foco prioritário para auditoria de composição.</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- B -->
+    <article class="mat" data-mat="metal">
+      <button class="mat__head">
+        <div class="mat__thumb tex-metal"></div>
+        <div class="mat__main">
+          <span class="mat__name">Partes metálicas</span>
+          <span class="mat__sub">Metal parts · B</span>
+          <div class="mat__mobile-meta">
+            <span class="flag">🇩🇪</span><span>Alemanha · 21%</span>
+            <span class="status-chip s-pending">a validar</span>
+          </div>
+        </div>
+        <div class="mat__pct">
+          <div class="mat__pct-bar"><div class="mat__pct-fill" style="width:21%"></div></div>
+          <span class="mat__pct-val">21%</span>
+        </div>
+        <div class="mat__origin"><span class="flag">🇩🇪</span><span>DE</span></div>
+        <div class="mat__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+      </button>
+      <div class="mat__body">
+        <div class="mat__body-inner">
+          <div class="mat__info"><span class="mat__info-lbl">Função</span><span class="mat__info-val">Ponteira, mecanismo interno e componentes de fixação.</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Origem</span><span class="mat__info-val">🇩🇪 Alemanha</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Status</span><span class="mat__info-val"><span class="status-chip s-pending">a validar</span></span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Documento</span><span class="mat__info-val">Declaração de composição metálica</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Fim de vida</span><span class="mat__info-val">Separação magnética · cadeia de metais</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- C -->
+    <article class="mat" data-mat="embalagem">
+      <button class="mat__head">
+        <div class="mat__thumb tex-paper"></div>
+        <div class="mat__main">
+          <span class="mat__name">Embalagem unitária</span>
+          <span class="mat__sub">Retail packaging · C</span>
+          <div class="mat__mobile-meta">
+            <span class="flag">🇨🇿</span><span>Tchéquia · 10%</span>
+            <span class="status-chip s-mock">placeholder</span>
+          </div>
+        </div>
+        <div class="mat__pct">
+          <div class="mat__pct-bar"><div class="mat__pct-fill" style="width:10%"></div></div>
+          <span class="mat__pct-val">10%</span>
+        </div>
+        <div class="mat__origin"><span class="flag">🇨🇿</span><span>CZ</span></div>
+        <div class="mat__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+      </button>
+      <div class="mat__body">
+        <div class="mat__body-inner">
+          <div class="mat__info"><span class="mat__info-lbl">Função</span><span class="mat__info-val">Embalagem de varejo e proteção.</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Origem</span><span class="mat__info-val">🇨🇿 República Tcheca</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Status</span><span class="mat__info-val"><span class="status-chip s-mock">placeholder</span></span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Documento</span><span class="mat__info-val">Peso, composição e reciclabilidade da embalagem</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Fim de vida</span><span class="mat__info-val">Coleta seletiva · papel/cartão</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- D -->
+    <article class="mat" data-mat="grip">
+      <button class="mat__head">
+        <div class="mat__thumb tex-rubber"></div>
+        <div class="mat__main">
+          <span class="mat__name">Zona soft grip / elastômero</span>
+          <span class="mat__sub">Soft grip zone · D</span>
+          <div class="mat__mobile-meta">
+            <span class="flag">🇩🇪</span><span>Alemanha · 8%</span>
+            <span class="status-chip s-pending">a validar</span>
+          </div>
+        </div>
+        <div class="mat__pct">
+          <div class="mat__pct-bar"><div class="mat__pct-fill" style="width:8%"></div></div>
+          <span class="mat__pct-val">8%</span>
+        </div>
+        <div class="mat__origin"><span class="flag">🇩🇪</span><span>DE</span></div>
+        <div class="mat__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+      </button>
+      <div class="mat__body">
+        <div class="mat__body-inner">
+          <div class="mat__info"><span class="mat__info-lbl">Função</span><span class="mat__info-val">Conforto, aderência e ergonomia.</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Origem</span><span class="mat__info-val">🇩🇪 Alemanha</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Status</span><span class="mat__info-val"><span class="status-chip s-pending">a validar</span></span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Documento</span><span class="mat__info-val">Ficha técnica do elastômero</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Fim de vida</span><span class="mat__info-val">Triagem específica · pode requerer descarte dedicado</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- E -->
+    <article class="mat" data-mat="grafite">
+      <button class="mat__head">
+        <div class="mat__thumb tex-graphite"></div>
+        <div class="mat__main">
+          <span class="mat__name">Grafite e mecanismo interno</span>
+          <span class="mat__sub">Lead &amp; mechanism · E</span>
+          <div class="mat__mobile-meta">
+            <span class="flag">🇦🇹</span><span>Áustria · 5%</span>
+            <span class="status-chip s-mock">mock</span>
+          </div>
+        </div>
+        <div class="mat__pct">
+          <div class="mat__pct-bar"><div class="mat__pct-fill" style="width:5%"></div></div>
+          <span class="mat__pct-val">5%</span>
+        </div>
+        <div class="mat__origin"><span class="flag">🇦🇹</span><span>AT</span></div>
+        <div class="mat__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+      </button>
+      <div class="mat__body">
+        <div class="mat__body-inner">
+          <div class="mat__info"><span class="mat__info-lbl">Função</span><span class="mat__info-val">Escrita e avanço do grafite.</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Origem</span><span class="mat__info-val">🇦🇹 Áustria</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Status</span><span class="mat__info-val"><span class="status-chip s-mock">mock</span></span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Documento</span><span class="mat__info-val">Composição do grafite e compatibilidade de refil</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Fim de vida</span><span class="mat__info-val">Refil prolonga ciclo · componente substituível</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- F -->
+    <article class="mat" data-mat="borracha">
+      <button class="mat__head">
+        <div class="mat__thumb tex-eraser"></div>
+        <div class="mat__main">
+          <span class="mat__name">Borracha PVC-free</span>
+          <span class="mat__sub">PVC-free eraser · F</span>
+          <div class="mat__mobile-meta">
+            <span class="flag">🇩🇪</span><span>Alemanha · 3%</span>
+            <span class="status-chip s-mock">mock</span>
+          </div>
+        </div>
+        <div class="mat__pct">
+          <div class="mat__pct-bar"><div class="mat__pct-fill" style="width:3%"></div></div>
+          <span class="mat__pct-val">3%</span>
+        </div>
+        <div class="mat__origin"><span class="flag">🇩🇪</span><span>DE</span></div>
+        <div class="mat__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+      </button>
+      <div class="mat__body">
+        <div class="mat__body-inner">
+          <div class="mat__info"><span class="mat__info-lbl">Função</span><span class="mat__info-val">Apagamento e reposição.</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Origem</span><span class="mat__info-val">🇩🇪 Alemanha</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Status</span><span class="mat__info-val"><span class="status-chip s-mock">mock</span></span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Documento</span><span class="mat__info-val">Declaração PVC-free</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Fim de vida</span><span class="mat__info-val">Substituível · descarte com resíduos urbanos compatíveis</span></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- =========================================================
+     AFTERCARE / SERVIÇOS  (movido para antes de Anexos)
+     ========================================================= -->
+<section id="servicos" class="container reveal">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Aftercare · Post-purchase</div>
+      <h2 class="section-title">Serviços do produto</h2>
+    </div>
+    <!-- <p class="section-sub">A camada pós-compra do passaporte: estender uso, registrar histórico, cuidar e fechar o ciclo.</p> -->
+  </div>
+
+  <div class="after-grid">
+    <article class="after">
+      <div class="after__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12a9 9 0 1 0 9-9v6l-3-3"/></svg></div>
+      <h3 class="after__title">Comprar refil compatível</h3>
+      <p class="after__txt">Prolongue a vida útil com grafite 0.7 mm e borracha substituível. Encontre referências e revendedores compatíveis.</p>
+      <button class="after__cta">Encontrar refil <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+    </article>
+    <article class="after">
+      <div class="after__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg></div>
+      <h3 class="after__title">Registrar produto</h3>
+      <p class="after__txt">Salve este passaporte e acompanhe histórico, suporte e atualizações em um único lugar.</p>
+      <button class="after__cta">Salvar no passaporte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+    </article>
+    <article class="after">
+      <div class="after__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M22 12a10 10 0 0 0-10-10v10z"/></svg></div>
+      <h3 class="after__title">Aprender a cuidar</h3>
+      <p class="after__txt">Dicas rápidas de limpeza, troca de grafite e conservação para máxima durabilidade.</p>
+      <button class="after__cta">Abrir guia de cuidado <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+    </article>
+    <article class="after">
+      <div class="after__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 19l-4-7 4-7M17 5l4 7-4 7M14 4l-4 16"/></svg></div>
+      <h3 class="after__title">Reciclar ou devolver</h3>
+      <p class="after__txt">Veja instruções locais para separação de materiais e logística reversa quando o produto chegar ao fim de vida.</p>
+      <button class="after__cta">Ver instruções locais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+    </article>
+  </div>
+</section>
+
+<!-- =========================================================
+     ANEXOS  (former Cofre de provas)
+     ========================================================= -->
+<section id="anexos" class="container reveal">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Proof Vault · Documents</div>
+      <h2 class="section-title">Anexos</h2>
+    </div>
+    <!-- <p class="section-sub">Cada afirmação do passaporte vinculada a um documento auditável. Versão mock para apresentação.</p> -->
+  </div>
+
+  <div class="annex-grid reveal-stagger">
+    <article class="annex" data-locked="true">
+      <div class="annex__head">
+        <div class="annex__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 11h6M9 15h6M9 7h2"/><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+        <span class="annex__ext">.PDF</span>
+      </div>
+      <div>
+        <h4 class="annex__title">Bill of Materials</h4>
+        <p class="annex__sub">BOM · composição declarada</p>
+      </div>
+      <div class="annex__meta">
+        <span class="status-chip s-required">required</span>
+        <span class="annex__cta">Em breve <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+    </article>
+
+    <article class="annex" data-locked="true">
+      <div class="annex__head">
+        <div class="annex__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <span class="annex__ext">.PDF</span>
+      </div>
+      <div>
+        <h4 class="annex__title">Declarações de fornecedor</h4>
+        <p class="annex__sub">Supplier declarations</p>
+      </div>
+      <div class="annex__meta">
+        <span class="status-chip s-pending">pending</span>
+        <span class="annex__cta">Em breve <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+    </article>
+
+    <article class="annex" data-locked="true">
+      <div class="annex__head">
+        <div class="annex__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <span class="annex__ext">.PDF</span>
+      </div>
+      <div>
+        <h4 class="annex__title">Substâncias de atenção</h4>
+        <p class="annex__sub">Substances of concern</p>
+      </div>
+      <div class="annex__meta">
+        <span class="status-chip s-mock">mock</span>
+        <span class="annex__cta">Em breve <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+    </article>
+
+    <article class="annex" data-locked="true">
+      <div class="annex__head">
+        <div class="annex__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 8l9-5 9 5"/></svg></div>
+        <span class="annex__ext">.PDF</span>
+      </div>
+      <div>
+        <h4 class="annex__title">Dados da embalagem</h4>
+        <p class="annex__sub">Packaging data</p>
+      </div>
+      <div class="annex__meta">
+        <span class="status-chip s-mock">mock</span>
+        <span class="annex__cta">Em breve <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+    </article>
+
+    <article class="annex" data-locked="true">
+      <div class="annex__head">
+        <div class="annex__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 22s4-8 10-8 10 8 10 8M12 14V2M9 5l3-3 3 3"/></svg></div>
+        <span class="annex__ext">.PDF</span>
+      </div>
+      <div>
+        <h4 class="annex__title">Método de pegada de carbono</h4>
+        <p class="annex__sub">Carbon footprint method</p>
+      </div>
+      <div class="annex__meta">
+        <span class="status-chip s-mock">mock</span>
+        <span class="annex__cta">Em breve <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+    </article>
+
+    <article class="annex" data-locked="true">
+      <div class="annex__head">
+        <div class="annex__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a4 4 0 0 0-5.4 0L4 11.6V20h8.4l5.3-5.3a4 4 0 0 0 0-5.4z"/><path d="M9 11l6 6"/></svg></div>
+        <span class="annex__ext">.PDF</span>
+      </div>
+      <div>
+        <h4 class="annex__title">Reparo &amp; refil</h4>
+        <p class="annex__sub">Repair / refill instructions</p>
+      </div>
+      <div class="annex__meta">
+        <span class="status-chip s-validated">validated</span>
+        <span class="annex__cta">Em breve <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+    </article>
+
+    <article class="annex" data-locked="true">
+      <div class="annex__head">
+        <div class="annex__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg></div>
+        <span class="annex__ext">.PDF</span>
+      </div>
+      <div>
+        <h4 class="annex__title">Fim de vida — guia</h4>
+        <p class="annex__sub">End-of-life guidance</p>
+      </div>
+      <div class="annex__meta">
+        <span class="status-chip s-pending">pending</span>
+        <span class="annex__cta">Em breve <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+    </article>
+
+    <article class="annex" data-locked="true">
+      <div class="annex__head">
+        <div class="annex__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="6"/><path d="M9 13l-2 9 5-3 5 3-2-9"/></svg></div>
+        <span class="annex__ext">.PDF</span>
+      </div>
+      <div>
+        <h4 class="annex__title">Certificados</h4>
+        <p class="annex__sub">Certifications</p>
+      </div>
+      <div class="annex__meta">
+        <span class="status-chip s-mock">mock</span>
+        <span class="annex__cta">Em breve <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+</main>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__txt">
+      Planton · Passaporte Digital do Produto · Protótipo comercial · Dados simulados para apresentação
+    </div>
+    <div class="footer__links">
+      <a href="#produto">Topo</a>
+      <a href="https://design.planton.eco.br" target="_blank" rel="noopener">Design system</a>
+      <a href="#carbono">Pegada de carbono</a>
+      <a href="#anexos">Anexos</a>
+    </div>
+  </div>
+</footer>
+
+<!-- =========================================================
+     MOBILE DOCK NAV
+     ========================================================= -->
+<nav class="dock" id="dock" aria-label="Navegação principal">
+  <button class="dock__btn active" data-target="produto">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    <span>Produto</span>
+  </button>
+  <button class="dock__btn" data-target="carbono">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12c0 5-4 9-9 9s-9-4-9-9c0-3 2-6 4-7l5 7h9z"/></svg>
+    <span>Pegada</span>
+  </button>
+  <button class="dock__btn" data-target="jornada">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+    <span>Jornada</span>
+  </button>
+  <button class="dock__btn" data-target="materiais">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+    <span>Materiais</span>
+  </button>
+  <button class="dock__btn" data-target="servicos">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.36.6.94 1 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+    <span>Serviços</span>
+  </button>
+  <button class="dock__btn" data-target="anexos">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21.4 11.05 12.25 20.2a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66L9.42 17.36a2 2 0 0 1-2.83-2.83l8.49-8.49"/></svg>
+    <span>Anexos</span>
+  </button>
+</nav>
+
+<button class="to-top" id="toTop" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+
+<!-- =========================================================
+     COMMAND PALETTE
+     ========================================================= -->
+<div class="cmdk-backdrop" id="cmdk">
+  <div class="cmdk">
+    <input type="text" class="cmdk__input" id="cmdkInput" placeholder="Buscar carbono, materiais, documentos, reciclagem, ID…" />
+    <div class="cmdk__list" id="cmdkList"></div>
+    <div class="cmdk__hint"><span>Use ↑ ↓ para navegar · Enter para abrir</span><span>ESC para fechar</span></div>
+  </div>
+</div>
+
+<!-- =========================================================
+     JSON MODAL
+     ========================================================= -->
+<div class="modal-backdrop" id="jsonModal">
+  <div class="modal">
+    <div class="modal__head">
+      <div>
+        <div class="modal__title">Dados estruturados do passaporte</div>
+        <div class="mono muted" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;margin-top:2px">application/json · mock</div>
+      </div>
+      <button class="modal__close" id="modalClose"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div class="modal__body"><pre id="jsonOut"></pre></div>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   THEME
+   ========================================================= */
+const themeBtn = document.getElementById('themeBtn');
+const iconSun = document.getElementById('iconSun');
+const iconMoon = document.getElementById('iconMoon');
+function setTheme(t){
+  document.documentElement.setAttribute('data-theme', t);
+  if(t === 'dark'){ iconSun.style.display='none'; iconMoon.style.display='block'; }
+  else { iconSun.style.display='block'; iconMoon.style.display='none'; }
+}
+themeBtn.addEventListener('click', ()=>{
+  const cur = document.documentElement.getAttribute('data-theme');
+  setTheme(cur === 'dark' ? 'light' : 'dark');
+});
+
+/* =========================================================
+   LANGUAGE DROPDOWN (visual mock — selecionar idioma muda chip)
+   ========================================================= */
+const lang = document.getElementById('lang');
+const langBtn = document.getElementById('langBtn');
+const langMenu = document.getElementById('langMenu');
+const langFlag = document.getElementById('langFlag');
+const langCode = document.getElementById('langCode');
+const langMap = {
+  pt:{flag:'🇧🇷', code:'PT'},
+  en:{flag:'🇺🇸', code:'EN'},
+  es:{flag:'🇪🇸', code:'ES'},
+  de:{flag:'🇩🇪', code:'DE'},
+};
+langBtn.addEventListener('click', e=>{
+  e.stopPropagation();
+  lang.classList.toggle('open');
+  langBtn.setAttribute('aria-expanded', lang.classList.contains('open'));
+});
+document.querySelectorAll('.lang__item').forEach(item=>{
+  item.addEventListener('click', ()=>{
+    const code = item.dataset.lang;
+    document.querySelectorAll('.lang__item').forEach(i=>i.classList.remove('active'));
+    item.classList.add('active');
+    langFlag.textContent = langMap[code].flag;
+    langCode.textContent = langMap[code].code;
+    lang.classList.remove('open');
+  });
+});
+document.addEventListener('click', e=>{
+  if(!lang.contains(e.target)) lang.classList.remove('open');
+});
+
+/* =========================================================
+   CARBON BREAKDOWN
+   ========================================================= */
+const carbonContent = {
+  materiais:{
+    title:'Materiais · 46%',
+    txt:'Maior parcela do impacto estimado. Em uma versão real, este dado viria da composição por massa, fornecedores, fatores de emissão e metodologia de ACV.'
+  },
+  producao:{
+    title:'Produção · 22%',
+    txt:'Energia, montagem, perdas de processo e controles de qualidade da planta industrial.'
+  },
+  transporte:{
+    title:'Transporte · 18%',
+    txt:'Distribuição por modal e distância até o mercado final, incluindo intercontinental quando aplicável.'
+  },
+  embalagem:{
+    title:'Embalagem · 9%',
+    txt:'Materiais, peso, reciclabilidade e desenho da embalagem unitária e secundária.'
+  },
+  fimdevida:{
+    title:'Fim de vida · 5%',
+    txt:'Desmontagem, reciclagem, logística reversa e destino local dos componentes ao fim do ciclo.'
+  }
+};
+function setCarbon(step){
+  document.querySelectorAll('.bd-item').forEach(b=>b.classList.toggle('active', b.dataset.step===step));
+  document.querySelectorAll('.bd-seg').forEach(s=>s.style.opacity = s.dataset.step===step ? '1' : '0.55');
+  const ctx = document.getElementById('bdContext');
+  ctx.innerHTML = `<h4 class="bd-context__title">${carbonContent[step].title}</h4><p class="bd-context__txt">${carbonContent[step].txt}</p>`;
+}
+document.querySelectorAll('.bd-item, .bd-seg').forEach(el=>{
+  el.addEventListener('click', ()=>setCarbon(el.dataset.step));
+});
+
+/* =========================================================
+   MATERIALS ACCORDION
+   ========================================================= */
+document.querySelectorAll('.mat__head').forEach(head=>{
+  head.addEventListener('click', ()=>{
+    const mat = head.parentElement;
+    const wasOpen = mat.classList.contains('open');
+    // close all
+    document.querySelectorAll('.mat.open').forEach(m=>m.classList.remove('open'));
+    if(!wasOpen) mat.classList.add('open');
+  });
+});
+
+/* =========================================================
+   MAP
+   ========================================================= */
+const mapRoutes = {
+  germany:{title:'🇩🇪 Alemanha · componentes principais',copy:'Origem mockada do corpo polimérico, partes metálicas e zona soft grip. Em uma versão real, alimentado por fornecedores, plantas, lotes e fatores logísticos.',stage:'Componentes → fabricação',status:'a validar com fornecedores',data:'BOM + supplier ID'},
+  czech:{title:'🇨🇿 Tchéquia · embalagem unitária',copy:'Rota mockada da embalagem de varejo: papel-cartão, composição, pesos e reciclabilidade. Esta camada conecta QR, prateleira e compliance.',stage:'Embalagem → distribuição',status:'placeholder',data:'peso + composição'},
+  austria:{title:'🇦🇹 Áustria · grafite e mecanismo',copy:'Origem mockada de insumos relacionados ao grafite e mecanismo interno. O DPP real deve ligar esta camada à compatibilidade de refil e composição.',stage:'Insumo → montagem',status:'mock',data:'refil + composição'},
+  brazil:{title:'🇧🇷 Brasil · distribuição demonstrativa',copy:'Exemplo de rota internacional para o mercado brasileiro, útil para demonstrar como o passaporte adapta instruções de reciclagem por localização.',stage:'Fábrica → mercado',status:'simulação',data:'modal + distância'},
+  eu:{title:'🇪🇺 União Europeia · mercado regulado',copy:'Camada de mercado para DPP europeu: idioma, acesso por perfil, documentos, substâncias e fim de vida conforme exigências aplicáveis.',stage:'Fábrica → mercado UE',status:'conceito',data:'requirements by category'}
+};
+function setMapRoute(key){
+  const d = mapRoutes[key];
+  document.getElementById('mapTitle').textContent = d.title;
+  document.getElementById('mapCopy').textContent = d.copy;
+  document.getElementById('mapStage').textContent = d.stage;
+  document.getElementById('mapStatus').textContent = d.status;
+  document.getElementById('mapData').textContent = d.data;
+  document.querySelectorAll('.map-chip').forEach(c=>c.classList.toggle('active', c.dataset.route===key));
+  document.querySelectorAll('.map-dot, .map-eu-ring').forEach(el=>{
+    el.classList.toggle('active', el.dataset.route===key);
+  });
+}
+document.querySelectorAll('.map-chip').forEach(c=>c.addEventListener('click',()=>setMapRoute(c.dataset.route)));
+document.querySelectorAll('.map-dot, .map-eu-ring').forEach(el=>el.addEventListener('click',()=>setMapRoute(el.dataset.route)));
+
+/* =========================================================
+   JOURNEY ACCORDION
+   ========================================================= */
+document.querySelectorAll('.j-acc').forEach((el)=>{
+  const head = el.querySelector('.j-acc__head');
+  head.addEventListener('click', ()=>{
+    const wasOpen = el.classList.contains('open');
+    document.querySelectorAll('.j-acc.open').forEach(a=>a.classList.remove('open'));
+    if(!wasOpen) el.classList.add('open');
+  });
+});
+
+/* =========================================================
+   SCROLL SPY + DOCK
+   ========================================================= */
+const sections = ['produto','carbono','jornada','materiais','servicos','anexos'];
+const dockBtns = document.querySelectorAll('.dock__btn');
+dockBtns.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const id = btn.dataset.target;
+    document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+const spy = new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      dockBtns.forEach(b=>b.classList.toggle('active', b.dataset.target===en.target.id));
+    }
+  });
+}, {rootMargin:'-40% 0px -55% 0px', threshold:0});
+sections.forEach(id=>{ const el = document.getElementById(id); if(el) spy.observe(el); });
+
+/* =========================================================
+   BACK TO TOP
+   ========================================================= */
+const toTop = document.getElementById('toTop');
+window.addEventListener('scroll', ()=>{
+  toTop.classList.toggle('show', window.scrollY > 600);
+});
+toTop.addEventListener('click', ()=>window.scrollTo({top:0, behavior:'smooth'}));
+
+/* =========================================================
+   COMMAND PALETTE
+   ========================================================= */
+const cmdk = document.getElementById('cmdk');
+const cmdkInput = document.getElementById('cmdkInput');
+const cmdkList = document.getElementById('cmdkList');
+const cmdkOpen = document.getElementById('cmdkOpen');
+const cmdItems = [
+  {title:'Pegada de carbono', sub:'Assinatura climática · seção', target:'carbono', ico:'M21 12c0 5-4 9-9 9s-9-4-9-9c0-3 2-6 4-7l5 7h9z'},
+  {title:'Jornada do produto', sub:'Trace · lifecycle · mapa', target:'jornada', ico:'M3 12h4l3-8 4 16 3-8h4'},
+  {title:'Materiais', sub:'Mapa de materiais · seção', target:'materiais', ico:'M3 3h7v7H3zm11 0h7v7h-7zM3 14h7v7H3zm11 0h7v7h-7z'},
+  {title:'Anexos', sub:'Documentos auditáveis · seção', target:'anexos', ico:'M21.4 11.05 12.25 20.2a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66L9.42 17.36'},
+  {title:'Reciclagem & fim de vida', sub:'End-of-life · serviços', target:'servicos', ico:'M7 19l-4-7 4-7M17 5l4 7-4 7M14 4l-4 16'},
+  {title:'ID do produto', sub:'FC-G2011-0.7-SIL · hero', target:'produto', ico:'M12 2L2 7l10 5 10-5-10-5z'},
+  {title:'Refil de grafite', sub:'Aftercare · serviços', target:'servicos', ico:'M3 12a9 9 0 1 0 9-9v6'}
+];
+let cmdkFocus = 0;
+function renderCmd(q=''){
+  const filtered = cmdItems.filter(i => (i.title+' '+i.sub).toLowerCase().includes(q.toLowerCase()));
+  cmdkList.innerHTML = filtered.map((i, idx)=>`
+    <div class="cmdk__item ${idx===cmdkFocus?'focused':''}" data-target="${i.target}">
+      <div class="cmdk__item-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="${i.ico}"/></svg></div>
+      <div class="cmdk__item-txt">
+        <div class="cmdk__item-title">${i.title}</div>
+        <div class="cmdk__item-sub">${i.sub}</div>
+      </div>
+    </div>`).join('') || `<div class="cmdk__item"><div class="cmdk__item-txt"><div class="cmdk__item-title">Sem resultados</div><div class="cmdk__item-sub">Tente outro termo</div></div></div>`;
+  cmdkList.querySelectorAll('.cmdk__item[data-target]').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      document.getElementById(el.dataset.target).scrollIntoView({behavior:'smooth'});
+      closeCmd();
+    });
+  });
+}
+function openCmd(){ cmdk.classList.add('show'); cmdkInput.value=''; cmdkFocus=0; renderCmd(''); setTimeout(()=>cmdkInput.focus(), 50); }
+function closeCmd(){ cmdk.classList.remove('show'); }
+cmdkOpen.addEventListener('click', openCmd);
+cmdk.addEventListener('click', e=>{ if(e.target===cmdk) closeCmd(); });
+cmdkInput.addEventListener('input', e=>{ cmdkFocus=0; renderCmd(e.target.value); });
+document.addEventListener('keydown', e=>{
+  if((e.ctrlKey || e.metaKey) && e.key.toLowerCase()==='k'){ e.preventDefault(); openCmd(); }
+  if(e.key==='Escape') closeCmd();
+  if(cmdk.classList.contains('show')){
+    const items = cmdkList.querySelectorAll('.cmdk__item[data-target]');
+    if(e.key==='ArrowDown'){ e.preventDefault(); cmdkFocus = Math.min(cmdkFocus+1, items.length-1); renderCmd(cmdkInput.value); }
+    if(e.key==='ArrowUp'){ e.preventDefault(); cmdkFocus = Math.max(cmdkFocus-1, 0); renderCmd(cmdkInput.value); }
+    if(e.key==='Enter' && items[cmdkFocus]){ document.getElementById(items[cmdkFocus].dataset.target).scrollIntoView({behavior:'smooth'}); closeCmd(); }
+  }
+});
+
+/* =========================================================
+   JSON MODAL
+   ========================================================= */
+const jsonBtn = document.getElementById('jsonBtn');
+const jsonModal = document.getElementById('jsonModal');
+const jsonOut = document.getElementById('jsonOut');
+const modalClose = document.getElementById('modalClose');
+const passportJson = {
+  schema: "planton.dpp.v0.1",
+  status: "mock",
+  product: {
+    name: "Faber-Castell Grip 2011",
+    type: "mechanical_pencil",
+    lead: "0.7mm",
+    productId: "FC-G2011-0.7-SIL",
+    passportId: "PL-DPP-FC-G2011-MOCK-001",
+    lot: "LOT-2026-EU-07",
+    version: "v0.1 concept",
+    dataCarrier: ["QR","NFC"],
+    lastUpdate: "2026"
+  },
+  carbon: {
+    unit: "kgCO2e",
+    perItem: 0.42,
+    method: "mock",
+    breakdown: { materials: 0.46, production: 0.22, transport: 0.18, packaging: 0.09, endOfLife: 0.05 }
+  },
+  materials: [
+    {id:"A", name:"Resin body", origin:"DE", massShare:0.53, status:"pending"},
+    {id:"B", name:"Metal parts", origin:"DE", massShare:0.21, status:"pending"},
+    {id:"C", name:"Retail packaging", origin:"CZ", massShare:0.10, status:"mock"},
+    {id:"D", name:"Soft grip elastomer", origin:"DE", massShare:0.08, status:"pending"},
+    {id:"E", name:"Lead & mechanism", origin:"AT", massShare:0.05, status:"mock"},
+    {id:"F", name:"PVC-free eraser", origin:"DE", massShare:0.03, status:"mock"}
+  ],
+  highlights: ["refillable","durable_design","layered_data","guided_circularity"],
+  disclaimer: "Protótipo comercial. Dados simulados para apresentação."
+};
+function syntaxHighlight(obj){
+  let json = JSON.stringify(obj, null, 2);
+  json = json.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function(m){
+    let cls = 'json-num';
+    if(/^"/.test(m)) cls = /:$/.test(m) ? 'json-key' : 'json-str';
+    else if(/true|false|null/.test(m)) cls = 'json-num';
+    return '<span class="'+cls+'">'+m+'</span>';
+  });
+}
+jsonBtn.addEventListener('click', ()=>{ jsonOut.innerHTML = syntaxHighlight(passportJson); jsonModal.classList.add('show'); });
+modalClose.addEventListener('click', ()=>jsonModal.classList.remove('show'));
+jsonModal.addEventListener('click', e=>{ if(e.target===jsonModal) jsonModal.classList.remove('show'); });
+
+/* =========================================================
+   SCROLL REVEAL (premium fade-in cascade)
+   ========================================================= */
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!prefersReducedMotion){
+  const revealObs = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){
+        en.target.classList.add('in');
+        revealObs.unobserve(en.target);
+      }
+    });
+  }, {threshold:0.08, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => revealObs.observe(el));
+}else{
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => el.classList.add('in'));
+}
+
+/* =========================================================
+   CARBON COUNTER ANIMATION
+   ========================================================= */
+const carbonNumEl = document.getElementById('carbonNum');
+if(carbonNumEl){
+  const target = parseFloat(carbonNumEl.dataset.target);
+  let started = false;
+  const counterObs = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting && !started){
+        started = true;
+        const dur = prefersReducedMotion ? 0 : 1600;
+        const t0 = performance.now();
+        const step = (now)=>{
+          const t = Math.min(1, (now - t0)/dur);
+          const eased = 1 - Math.pow(1-t, 3);
+          carbonNumEl.textContent = (target * eased).toFixed(2);
+          if(t < 1) requestAnimationFrame(step);
+          else carbonNumEl.textContent = target.toFixed(2);
+        };
+        requestAnimationFrame(step);
+      }
+    });
+  }, {threshold:0.4});
+  counterObs.observe(carbonNumEl);
+}
+
+/* =========================================================
+   HERO PENCIL — SUBTLE PARALLAX + TILT
+   ========================================================= */
+const heroVisual = document.getElementById('heroVisual');
+const pencilSvg = document.querySelector('.pencil-svg');
+if(heroVisual && pencilSvg && !prefersReducedMotion){
+  let rafId = null, tx = 0, ty = 0;
+  heroVisual.addEventListener('mousemove', e => {
+    const r = heroVisual.getBoundingClientRect();
+    const x = (e.clientX - r.left)/r.width - 0.5;
+    const y = (e.clientY - r.top)/r.height - 0.5;
+    tx = x * 18;
+    ty = y * 14;
+    if(rafId) return;
+    rafId = requestAnimationFrame(()=>{
+      pencilSvg.style.transform = `rotate(-22deg) translate(${tx}px, ${ty}px)`;
+      rafId = null;
+    });
+  });
+  heroVisual.addEventListener('mouseleave', ()=>{
+    pencilSvg.style.transform = '';
+  });
+}
+
+/* =========================================================
+   MAGNETIC HOVER — CTAs PREMIUM
+   ========================================================= */
+if(!prefersReducedMotion){
+  document.querySelectorAll('.after__cta, .json-btn, .annex').forEach(el => {
+    let raf = null;
+    el.addEventListener('mousemove', e => {
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left)/r.width - 0.5;
+      const y = (e.clientY - r.top)/r.height - 0.5;
+      if(raf) return;
+      raf = requestAnimationFrame(()=>{
+        el.style.transform = `translate(${x*5}px, ${y*4}px)`;
+        raf = null;
+      });
+    });
+    el.addEventListener('mouseleave', ()=>{ el.style.transform = ''; });
+  });
+}
+
+/* =========================================================
+   HEADER SHRINK ON SCROLL
+   ========================================================= */
+const appHeader = document.querySelector('.app-header');
+let lastScrollY = 0;
+window.addEventListener('scroll', ()=>{
+  const y = window.scrollY;
+  if(appHeader){
+    appHeader.style.boxShadow = y > 8 ? '0 1px 0 var(--line), 0 12px 28px -22px rgba(10,45,48,0.18)' : 'none';
+  }
+  lastScrollY = y;
+}, {passive:true});
+
+/* =========================================================
+   MAP — responsive viewBox (mobile zoom EU + BR)
+   ========================================================= */
+const mapSvg = document.getElementById('mapSvg');
+const VB_FULL   = '0 0 1200 756';
+const VB_MOBILE = '370 220 340 460';
+function updateMapViewBox(){
+  if(!mapSvg) return;
+  mapSvg.setAttribute('viewBox', window.innerWidth < 780 ? VB_MOBILE : VB_FULL);
+}
+updateMapViewBox();
+window.addEventListener('resize', updateMapViewBox, {passive:true});
+
+
+</script>
+</body>
+</html>

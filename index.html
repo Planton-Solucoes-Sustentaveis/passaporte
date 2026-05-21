@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#F5F3EE" />
+<title>Passaporte Digital do Produto — Faber-Castell Grip 2011 · Planton</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+<header class="app-header">
+  <div class="app-header__inner">
+    <div class="brand">
+      <div class="brand__mark" aria-hidden="true">P</div>
+      <div>
+        <div class="brand__title" data-i18n="header.title">Passaporte Digital do Produto</div>
+        <div class="brand__sub">powered by Planton</div>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="cmdkOpen" title="Buscar (Ctrl/Cmd + K)" aria-label="Abrir busca">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <button class="icon-btn" id="themeBtn" title="Alternar tema" aria-label="Alternar tema">
+        <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      </button>
+      <div class="lang" id="lang">
+        <button class="lang__btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+          <span class="lang__flag cflag cflag-br" id="langFlag"></span>
+          <span id="langCode">PT</span>
+          <svg class="lang__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="lang__menu" id="langMenu" role="listbox">
+          <button class="lang__item active" data-lang="pt"><span class="lang__flag cflag cflag-br"></span>Português <span class="mono">PT-BR</span></button>
+          <button class="lang__item" data-lang="en"><span class="lang__flag cflag cflag-us"></span>English <span class="mono">EN</span></button>
+          <button class="lang__item" data-lang="es"><span class="lang__flag cflag cflag-es"></span>Español <span class="mono">ES</span></button>
+          <button class="lang__item" data-lang="de"><span class="lang__flag cflag cflag-de"></span>Deutsch <span class="mono">DE</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+<section id="produto" class="hero">
+  <div class="container">
+    <div class="hero__grid">
+
+      <!-- VISUAL -->
+      <div class="hero__visual" id="heroVisual">
+        <div class="pencil-stage" aria-hidden="true">
+          <div class="pencil-wrap">
+            <img src="assets/lapiseira.png" alt="Faber-Castell Grip 2011" class="pencil-img"/>
+            <img src="assets/badge_passaporte.png" alt="" class="pencil-badge" aria-hidden="true"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- META -->
+      <div class="hero__meta flow">
+
+        <h1 class="hero__title">Faber-Castell <br>Grip 2011</h1>
+        <p class="hero__sub" data-i18n="hero.sub">Lapiseira 0.7 mm com passaporte digital de produto. Uma camada de confiança climática entre marca, consumidor e ciclo de vida.</p>
+
+        <div class="id-grid">
+          <div class="id-cell">
+            <span class="id-cell__label">Product ID</span>
+            <span class="id-cell__value">FC-G2011-0.7-SIL</span>
+          </div>
+          <div class="id-cell">
+            <span class="id-cell__label">Passport ID</span>
+            <span class="id-cell__value">PL-DPP-FC-G2011-MOCK-001</span>
+          </div>
+          <div class="id-cell">
+            <span class="id-cell__label">Tipo</span>
+            <span class="id-cell__value">Mechanical pencil · 0.7 mm</span>
+          </div>
+          <div class="id-cell">
+            <span class="id-cell__label">Data carrier</span>
+            <span class="id-cell__value">QR + NFC ready</span>
+          </div>
+          <div class="id-cell">
+            <span class="id-cell__label">Versão</span>
+            <span class="id-cell__value">v0.1 concept</span>
+          </div>
+          <div class="id-cell">
+            <span class="id-cell__label">Última atualização</span>
+            <span class="id-cell__value">2026</span>
+          </div>
+        </div>
+
+        <div class="hero__bottom">
+          <div class="qr-card">
+            <div class="qr-card__qr" aria-hidden="true"></div>
+            <div class="qr-card__txt">
+              <span class="qr-card__lbl">Scan-ready</span>
+              <span class="qr-card__val">Digital passport</span>
+            </div>
+          </div>
+          <button class="json-btn" id="jsonBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+            <span>Ver dados estruturados</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     HIGHLIGHTS
+     ========================================================= -->
+<section class="container reveal" style="padding-top:24px;padding-bottom:32px">
+  <div class="highlights reveal-stagger">
+    <article class="h-card">
+      <div class="h-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div>
+      <div class="h-card__num">01 · Refill</div>
+      <h3 class="h-card__title">Recarregável</h3>
+      <p class="h-card__txt">Grafite 0.7 mm substituível para prolongar o ciclo de uso do produto.</p>
+    </article>
+    <article class="h-card">
+      <div class="h-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 7v6c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V7l-8-5z"/></svg></div>
+      <div class="h-card__num">02 · Durability</div>
+      <h3 class="h-card__title">Design durável</h3>
+      <p class="h-card__txt">Formato triangular ergonômico e zona soft grip para uso prolongado.</p>
+    </article>
+    <article class="h-card">
+      <div class="h-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="4" rx="1"/><rect x="3" y="10" width="18" height="4" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/></svg></div>
+      <div class="h-card__num">03 · Layered Data</div>
+      <h3 class="h-card__title">Dados em camadas</h3>
+      <p class="h-card__txt">Informações para consumidor, auditor, varejo e reciclador na mesma fonte.</p>
+    </article>
+    <article class="h-card">
+      <div class="h-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 7h10v10H7z"/><path d="M3 7l4-4M21 7l-4-4M3 17l4 4M21 17l-4 4"/></svg></div>
+      <div class="h-card__num">04 · Circularity</div>
+      <h3 class="h-card__title">Circularidade guiada</h3>
+      <p class="h-card__txt">Orientações de cuidado, refil, desmontagem e fim de vida.</p>
+    </article>
+  </div>
+</section>
+
+<!-- =========================================================
+     JORNADA DO PRODUTO — MAPA
+     ========================================================= -->
+<section id="jornada-mapa-legado" class="reveal" style="padding:0">
+  <div>
+
+    <!-- MAP — full-width hero (legado, substituído pelo acordeão) -->
+    <div class="map-card">
+      <div class="map-layout">
+        <div class="map-world">
+          <svg id="mapSvg" viewBox="0 0 1200 756" role="img" aria-label="Mapa mundi com rotas de materiais" style="background:transparent">
+            <defs>
+              <clipPath id="mapClip"><rect width="1200" height="756"/></clipPath>
+            </defs>
+            <g clip-path="url(#mapClip)">
+
+            <image href="assets/maa_2.svg" x="0" y="0" width="1200" height="756" class="map-base-img" preserveAspectRatio="xMidYMid meet"/>
+
+            <!-- EU ring: lon=10 lat=50 → x=611 y=343, r=96 -->
+            <circle class="map-eu-ring" data-route="eu" cx="611" cy="343" r="96"/>
+            <text class="map-label-eu" x="530" y="238">União Europeia</text>
+
+            <!-- Route: DE → BR (Atlantic arc) -->
+            <path id="rBR" class="map-route" d="M615,345 C575,390 530,460 500,530 C475,580 445,600 421,613"/>
+
+            <!-- Route: CZ → DE (intra-EU) -->
+            <path id="rCZ" class="map-route secondary" d="M626,342 C622,342 618,343 615,345"/>
+
+            <!-- Route: AT → DE (intra-EU) -->
+            <path id="rAT" class="map-route secondary" d="M633,351 C628,349 622,347 615,345"/>
+
+            <!-- DE: Stein lon=11.1 lat=49.4 → x=615 y=345 (HUB) -->
+            <circle class="map-dot hub active" data-route="germany" cx="615" cy="345" r="8"/>
+            <text class="map-label" x="626" y="350">🇩🇪 Alemanha</text>
+
+            <!-- CZ: Praha lon=14.4 lat=50.1 → x=626 y=342 -->
+            <circle class="map-dot" data-route="czech" cx="626" cy="342" r="6"/>
+            <text class="map-label" x="635" y="336">🇨🇿 Tchéquia</text>
+
+            <!-- AT: Wien lon=16.4 lat=48.2 → x=633 y=351 -->
+            <circle class="map-dot" data-route="austria" cx="633" cy="351" r="6"/>
+            <text class="map-label" x="641" y="365">🇦🇹 Áustria</text>
+
+            <!-- BR: São Paulo lon=-46.6 lat=-23.5 → x=421 y=613 -->
+            <circle class="map-dot" data-route="brazil" cx="421" cy="613" r="7"/>
+            <text class="map-label" x="432" y="607">🇧🇷 Brasil</text>
+
+            </g>
+          </svg>
+        </div>
+
+        <!-- Legend bar -->
+        <div class="map-legend">
+          <div class="map-legend__stage">
+            <span class="map-legend__stage-num">01</span>
+            <div class="map-legend__stage-body">
+              <span class="map-legend__stage-title">Matéria-prima</span>
+              <span class="map-legend__stage-sub">
+                <span class="map-legend__flag cflag cflag-cz"></span> Tchéquia
+                <span class="map-legend__arrow">·</span>
+                <span class="map-legend__flag cflag cflag-at"></span> Áustria
+                <span class="map-legend__arrow">→</span>
+                <span class="map-legend__flag cflag cflag-de"></span> Alemanha
+              </span>
+            </div>
+          </div>
+          <div class="map-legend__sep">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+          <div class="map-legend__stage">
+            <span class="map-legend__stage-num map-legend__stage-num--hub">02</span>
+            <div class="map-legend__stage-body">
+              <span class="map-legend__stage-title">Fabricação</span>
+              <span class="map-legend__stage-sub">
+                <span class="map-legend__flag cflag cflag-de"></span> Stein, Alemanha · fábrica principal
+              </span>
+            </div>
+          </div>
+          <div class="map-legend__sep">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+          <div class="map-legend__stage">
+            <span class="map-legend__stage-num">03</span>
+            <div class="map-legend__stage-body">
+              <span class="map-legend__stage-title">Uso</span>
+              <span class="map-legend__stage-sub">
+                <span class="map-legend__flag cflag cflag-de"></span> Alemanha
+                <span class="map-legend__arrow">→</span>
+                <span class="map-legend__flag cflag cflag-br"></span> Brasil &amp; global
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- hidden panel kept for JS compat -->
+        <aside class="map-panel" id="mapPanel" aria-hidden="true">
+          <h3 id="mapTitle"></h3>
+          <p id="mapCopy"></p>
+          <div class="map-panel__meta">
+            <div class="map-panel__row"><span>Etapa</span><b id="mapStage"></b></div>
+            <div class="map-panel__row"><span>Status</span><b id="mapStatus"></b></div>
+            <div class="map-panel__row"><span>Dado crítico</span><b id="mapData"></b></div>
+          </div>
+          <div class="map-chips" id="mapChips">
+            <button class="map-chip active" data-route="germany"><span class="cflag cflag-de"></span> Alemanha</button>
+            <button class="map-chip" data-route="czech"><span class="cflag cflag-cz"></span> Embalagem</button>
+            <button class="map-chip" data-route="austria"><span class="cflag cflag-at"></span> Grafite</button>
+            <button class="map-chip" data-route="brazil"><span class="cflag cflag-br"></span> Distribuição</button>
+            <button class="map-chip" data-route="eu">🇪🇺 Mercado UE</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================================
+     JORNADA DO PRODUTO  (NEW: carbon + acordeão + badges)
+     ========================================================= -->
+<section id="jornada" class="container reveal">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Trace · Lifecycle</div>
+      <h2 class="section-title">Jornada do produto</h2>
+    </div>
+    <p class="section-sub">Da matéria-prima ao fim de vida. Toque em uma etapa para expandir.</p>
+  </div>
+
+  <div class="journey-grid">
+
+    <!-- ACCORDION — left column -->
+    <ol class="journey-accordion reveal-stagger" id="journeyAccordion" role="list">
+
+      <li class="j-acc open" data-step="0">
+        <button class="j-acc__head" aria-expanded="true">
+          <span class="j-acc__num">01</span>
+          <div class="j-acc__title-wrap">
+            <span class="j-acc__title">Matéria-prima</span>
+            <span class="j-acc__sub">Raw materials · multi-origem</span>
+          </div>
+          <div class="j-acc__badges">
+            <span class="country-badge"><span class="cflag cflag-de"></span>Alemanha</span>
+            <span class="country-badge"><span class="cflag cflag-cz"></span>Tchéquia</span>
+            <span class="country-badge"><span class="cflag cflag-at"></span>Áustria</span>
+          </div>
+          <div class="j-acc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+        </button>
+        <div class="j-acc__body">
+          <div class="j-acc__body-inner">
+            <p class="j-acc__txt">Componentes, massa e fornecedores. Em um passaporte real, esta camada conecta cada material à sua cadeia upstream, com fatores de emissão e país de origem por item.</p>
+            <div class="j-acc__data">
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Componentes</div><div class="j-acc__cell-val">6 declarados</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Origens</div><div class="j-acc__cell-val">DE · CZ · AT</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Massa total</div><div class="j-acc__cell-val">mock · a declarar</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Fornecedores</div><div class="j-acc__cell-val">a vincular</div></div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="j-acc" data-step="1">
+        <button class="j-acc__head" aria-expanded="false">
+          <span class="j-acc__num">02</span>
+          <div class="j-acc__title-wrap">
+            <span class="j-acc__title">Fabricação</span>
+            <span class="j-acc__sub">Manufacturing · Stein</span>
+          </div>
+          <div class="j-acc__badges">
+            <span class="country-badge"><span class="cflag cflag-de"></span>Alemanha</span>
+          </div>
+          <div class="j-acc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+        </button>
+        <div class="j-acc__body">
+          <div class="j-acc__body-inner">
+            <p class="j-acc__txt">Lote, planta, mix energético e controles de qualidade. Os indicadores podem ser auditados por terceira parte e versionados a cada batelada.</p>
+            <div class="j-acc__data">
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Lote</div><div class="j-acc__cell-val">LOT-2026-EU-07</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Planta</div><div class="j-acc__cell-val">DE-01 (mock)</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Energia</div><div class="j-acc__cell-val">mock kWh/un</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Qualidade</div><div class="j-acc__cell-val">aprovado mock</div></div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="j-acc" data-step="2">
+        <button class="j-acc__head" aria-expanded="false">
+          <span class="j-acc__num">03</span>
+          <div class="j-acc__title-wrap">
+            <span class="j-acc__title">Montagem</span>
+            <span class="j-acc__sub">Assembly · final</span>
+          </div>
+          <div class="j-acc__badges">
+            <span class="country-badge"><span class="cflag cflag-de"></span>Alemanha</span>
+          </div>
+          <div class="j-acc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+        </button>
+        <div class="j-acc__body">
+          <div class="j-acc__body-inner">
+            <p class="j-acc__txt">Controle final de produto, integração mecânica e versão do passaporte vinculada ao serial/lote.</p>
+            <div class="j-acc__data">
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Versão DPP</div><div class="j-acc__cell-val">v0.1 concept</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Sample</div><div class="j-acc__cell-val">passport.test</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Yield</div><div class="j-acc__cell-val">mock %</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Inspeção</div><div class="j-acc__cell-val">aprovado mock</div></div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="j-acc" data-step="3">
+        <button class="j-acc__head" aria-expanded="false">
+          <span class="j-acc__num">04</span>
+          <div class="j-acc__title-wrap">
+            <span class="j-acc__title">Embalagem</span>
+            <span class="j-acc__sub">Packaging · retail</span>
+          </div>
+          <div class="j-acc__badges">
+            <span class="country-badge"><span class="cflag cflag-cz"></span>Tchéquia</span>
+          </div>
+          <div class="j-acc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+        </button>
+        <div class="j-acc__body">
+          <div class="j-acc__body-inner">
+            <p class="j-acc__txt">Peso, reciclabilidade, materiais e desenho da embalagem unitária — com data carrier impresso (QR/NFC).</p>
+            <div class="j-acc__data">
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Material</div><div class="j-acc__cell-val">papel-cartão mock</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Peso</div><div class="j-acc__cell-val">mock g</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Reciclável</div><div class="j-acc__cell-val">sim · mock</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Data carrier</div><div class="j-acc__cell-val">QR + NFC</div></div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="j-acc" data-step="4">
+        <button class="j-acc__head" aria-expanded="false">
+          <span class="j-acc__num">05</span>
+          <div class="j-acc__title-wrap">
+            <span class="j-acc__title">Distribuição</span>
+            <span class="j-acc__sub">Distribution · global</span>
+          </div>
+          <div class="j-acc__badges">
+            <span class="country-badge"><span class="cflag cflag-br"></span>Brasil</span>
+            <span class="country-badge muted-badge"><span class="cflag cflag-de"></span>Origem DE</span>
+          </div>
+          <div class="j-acc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+        </button>
+        <div class="j-acc__body">
+          <div class="j-acc__body-inner">
+            <p class="j-acc__txt">Modal, rotas e distância até o mercado final. Impacto de transporte calculado por fator de emissão por modal.</p>
+            <div class="j-acc__data">
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Mercado</div><div class="j-acc__cell-val">BR · LatAm (mock)</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Modal</div><div class="j-acc__cell-val">rodo · marítimo</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Distância</div><div class="j-acc__cell-val">mock km</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">CO₂</div><div class="j-acc__cell-val">mock kg</div></div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="j-acc" data-step="5">
+        <button class="j-acc__head" aria-expanded="false">
+          <span class="j-acc__num">06</span>
+          <div class="j-acc__title-wrap">
+            <span class="j-acc__title">Uso</span>
+            <span class="j-acc__sub">In-use · consumidor</span>
+          </div>
+          <div class="j-acc__badges">
+            <span class="country-badge"><span class="cflag cflag-br"></span>Brasil &amp; global</span>
+          </div>
+          <div class="j-acc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+        </button>
+        <div class="j-acc__body">
+          <div class="j-acc__body-inner">
+            <p class="j-acc__txt">Cuidado, refil de grafite, borracha substituível e tempo de uso estimado. A camada onde o consumidor mais interage com o passaporte.</p>
+            <div class="j-acc__data">
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Refil</div><div class="j-acc__cell-val">0.7 mm compatível</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Borracha</div><div class="j-acc__cell-val">substituível</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Uso est.</div><div class="j-acc__cell-val">mock meses</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Cuidado</div><div class="j-acc__cell-val">guia disponível</div></div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="j-acc" data-step="6">
+        <button class="j-acc__head" aria-expanded="false">
+          <span class="j-acc__num">07</span>
+          <div class="j-acc__title-wrap">
+            <span class="j-acc__title">Fim de vida</span>
+            <span class="j-acc__sub">End-of-life · ciclo fechado</span>
+          </div>
+          <div class="j-acc__badges">
+            <span class="country-badge"><span class="cflag cflag-br"></span>Local</span>
+          </div>
+          <div class="j-acc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+        </button>
+        <div class="j-acc__body">
+          <div class="j-acc__body-inner">
+            <p class="j-acc__txt">Desmontagem, reciclagem e logística reversa. Instruções locais para separação de polímero, metal, papel e elastômero.</p>
+            <div class="j-acc__data">
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Desmontagem</div><div class="j-acc__cell-val">3 passos mock</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Reciclável</div><div class="j-acc__cell-val">parcial mock</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Logística reversa</div><div class="j-acc__cell-val">a definir</div></div>
+              <div class="j-acc__cell"><div class="j-acc__cell-lbl">Destino</div><div class="j-acc__cell-val">mock local</div></div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+    </ol>
+
+    <!-- CARBON SIGNATURE — right column -->
+    <aside id="carbono" class="journey-carbon" aria-label="Assinatura de carbono do produto">
+      <div class="carbon">
+        <div class="carbon__eyebrow">Assinatura climática · Mock</div>
+        <h2 class="carbon__title">Pegada de carbono</h2>
+        <p class="carbon__lead">A pegada de carbono funciona como uma assinatura climática do produto: ela mostra onde o impacto nasce, onde pode ser reduzido e como a marca transforma dado técnico em confiança.</p>
+        <div style="margin-top:32px">
+          <div class="carbon__number">
+            <span class="num-val" id="carbonNum" data-target="0.42">0.00</span><sup>kgCO₂e</sup><small>por unidade · simulado</small>
+          </div>
+        </div>
+
+        <div class="carbon__breakdown" style="margin-top:32px">
+          <div class="bd-bar" id="bdBar" role="presentation">
+            <div class="bd-seg" data-step="materiais" style="flex:46;background:#C8A030"></div>
+            <div class="bd-seg" data-step="producao" style="flex:22;background:#A88228"></div>
+            <div class="bd-seg" data-step="transporte" style="flex:18;background:#876420"></div>
+            <div class="bd-seg" data-step="embalagem" style="flex:9;background:#634916"></div>
+            <div class="bd-seg" data-step="fimdevida" style="flex:5;background:#3E2D0C"></div>
+          </div>
+
+          <div class="bd-list" id="bdList">
+            <button class="bd-item active" data-step="materiais">
+              <span class="bd-item__dot" style="background:#C8A030"></span>
+              <span class="bd-item__label">Materiais</span>
+              <span class="bd-item__value">46%</span>
+            </button>
+            <button class="bd-item" data-step="producao">
+              <span class="bd-item__dot" style="background:#A88228"></span>
+              <span class="bd-item__label">Produção</span>
+              <span class="bd-item__value">22%</span>
+            </button>
+            <button class="bd-item" data-step="transporte">
+              <span class="bd-item__dot" style="background:#876420"></span>
+              <span class="bd-item__label">Transporte</span>
+              <span class="bd-item__value">18%</span>
+            </button>
+            <button class="bd-item" data-step="embalagem">
+              <span class="bd-item__dot" style="background:#634916"></span>
+              <span class="bd-item__label">Embalagem</span>
+              <span class="bd-item__value">9%</span>
+            </button>
+            <button class="bd-item" data-step="fimdevida">
+              <span class="bd-item__dot" style="background:#3E2D0C"></span>
+              <span class="bd-item__label">Fim de vida</span>
+              <span class="bd-item__value">5%</span>
+            </button>
+          </div>
+
+          <div class="bd-context" id="bdContext">
+            <h4 class="bd-context__title">Materiais · 46%</h4>
+            <p class="bd-context__txt">Maior parcela do impacto estimado. Em uma versão real, este dado viria da composição por massa, fornecedores, fatores de emissão e metodologia de ACV.</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<!-- =========================================================
+     MATERIAIS  (movido para depois da jornada)
+     ========================================================= -->
+<section id="materiais" class="container reveal">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Material Passport · Mock</div>
+      <h2 class="section-title">Mapa de materiais</h2>
+    </div>
+    <p class="section-sub">Cada componente declarado por massa, função, origem e status de validação. Toque para abrir.</p>
+  </div>
+
+  <div class="mat-list" id="matList">
+
+    <!-- A -->
+    <article class="mat" data-mat="polimero">
+      <button class="mat__head">
+        <div class="mat__thumb tex-polymer"></div>
+        <div class="mat__main">
+          <span class="mat__name">Corpo polimérico / resina</span>
+          <span class="mat__sub">Resin body · A</span>
+          <div class="mat__mobile-meta">
+            <span class="flag cflag cflag-de"></span>
+            <span>Alemanha · 53%</span>
+            <span class="status-chip s-pending">a validar</span>
+          </div>
+        </div>
+        <div class="mat__pct">
+          <div class="mat__pct-row"><div class="mat__pct-bar"><div class="mat__pct-fill" style="width:53%"></div></div>
+          <span class="mat__pct-val">53%</span></div>
+        </div>
+        <div class="mat__origin"><span class="flag cflag cflag-de"></span><span>DE</span></div>
+        <div class="mat__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+      </button>
+      <div class="mat__body">
+        <div class="mat__body-inner">
+          <div class="mat__info"><span class="mat__info-lbl">Função</span><span class="mat__info-val">Estrutura principal do corpo da lapiseira.</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Origem</span><span class="mat__info-val"><span class="cflag cflag-de"></span> Alemanha</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Status</span><span class="mat__info-val"><span class="status-chip s-pending">a validar com BOM</span></span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Documento</span><span class="mat__info-val">Ficha técnica do polímero + fornecedor</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Fim de vida</span><span class="mat__info-val">Reciclagem de plásticos rígidos · destino local</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Observação</span><span class="mat__info-val">Maior fração mássica do produto; foco prioritário para auditoria de composição.</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- B -->
+    <article class="mat" data-mat="metal">
+      <button class="mat__head">
+        <div class="mat__thumb tex-metal"></div>
+        <div class="mat__main">
+          <span class="mat__name">Partes metálicas</span>
+          <span class="mat__sub">Metal parts · B</span>
+          <div class="mat__mobile-meta">
+            <span class="flag cflag cflag-de"></span><span>Alemanha · 21%</span>
+            <span class="status-chip s-pending">a validar</span>
+          </div>
+        </div>
+        <div class="mat__pct">
+          <div class="mat__pct-row"><div class="mat__pct-bar"><div class="mat__pct-fill" style="width:21%"></div></div>
+          <span class="mat__pct-val">21%</span></div>
+        </div>
+        <div class="mat__origin"><span class="flag cflag cflag-de"></span><span>DE</span></div>
+        <div class="mat__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+      </button>
+      <div class="mat__body">
+        <div class="mat__body-inner">
+          <div class="mat__info"><span class="mat__info-lbl">Função</span><span class="mat__info-val">Ponteira, mecanismo interno e componentes de fixação.</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Origem</span><span class="mat__info-val"><span class="cflag cflag-de"></span> Alemanha</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Status</span><span class="mat__info-val"><span class="status-chip s-pending">a validar</span></span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Documento</span><span class="mat__info-val">Declaração de composição metálica</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Fim de vida</span><span class="mat__info-val">Separação magnética · cadeia de metais</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- C -->
+    <article class="mat" data-mat="embalagem">
+      <button class="mat__head">
+        <div class="mat__thumb tex-paper"></div>
+        <div class="mat__main">
+          <span class="mat__name">Embalagem unitária</span>
+          <span class="mat__sub">Retail packaging · C</span>
+          <div class="mat__mobile-meta">
+            <span class="flag cflag cflag-cz"></span><span>Tchéquia · 10%</span>
+            <span class="status-chip s-mock">placeholder</span>
+          </div>
+        </div>
+        <div class="mat__pct">
+          <div class="mat__pct-row"><div class="mat__pct-bar"><div class="mat__pct-fill" style="width:10%"></div></div>
+          <span class="mat__pct-val">10%</span></div>
+        </div>
+        <div class="mat__origin"><span class="flag cflag cflag-cz"></span><span>CZ</span></div>
+        <div class="mat__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+      </button>
+      <div class="mat__body">
+        <div class="mat__body-inner">
+          <div class="mat__info"><span class="mat__info-lbl">Função</span><span class="mat__info-val">Embalagem de varejo e proteção.</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Origem</span><span class="mat__info-val"><span class="cflag cflag-cz"></span> República Tcheca</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Status</span><span class="mat__info-val"><span class="status-chip s-mock">placeholder</span></span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Documento</span><span class="mat__info-val">Peso, composição e reciclabilidade da embalagem</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Fim de vida</span><span class="mat__info-val">Coleta seletiva · papel/cartão</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- D -->
+    <article class="mat" data-mat="grip">
+      <button class="mat__head">
+        <div class="mat__thumb tex-rubber"></div>
+        <div class="mat__main">
+          <span class="mat__name">Zona soft grip / elastômero</span>
+          <span class="mat__sub">Soft grip zone · D</span>
+          <div class="mat__mobile-meta">
+            <span class="flag cflag cflag-de"></span><span>Alemanha · 8%</span>
+            <span class="status-chip s-pending">a validar</span>
+          </div>
+        </div>
+        <div class="mat__pct">
+          <div class="mat__pct-row"><div class="mat__pct-bar"><div class="mat__pct-fill" style="width:8%"></div></div>
+          <span class="mat__pct-val">8%</span></div>
+        </div>
+        <div class="mat__origin"><span class="flag cflag cflag-de"></span><span>DE</span></div>
+        <div class="mat__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+      </button>
+      <div class="mat__body">
+        <div class="mat__body-inner">
+          <div class="mat__info"><span class="mat__info-lbl">Função</span><span class="mat__info-val">Conforto, aderência e ergonomia.</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Origem</span><span class="mat__info-val"><span class="cflag cflag-de"></span> Alemanha</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Status</span><span class="mat__info-val"><span class="status-chip s-pending">a validar</span></span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Documento</span><span class="mat__info-val">Ficha técnica do elastômero</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Fim de vida</span><span class="mat__info-val">Triagem específica · pode requerer descarte dedicado</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- E -->
+    <article class="mat" data-mat="grafite">
+      <button class="mat__head">
+        <div class="mat__thumb tex-graphite"></div>
+        <div class="mat__main">
+          <span class="mat__name">Grafite e mecanismo interno</span>
+          <span class="mat__sub">Lead &amp; mechanism · E</span>
+          <div class="mat__mobile-meta">
+            <span class="flag cflag cflag-at"></span><span>Áustria · 5%</span>
+            <span class="status-chip s-mock">mock</span>
+          </div>
+        </div>
+        <div class="mat__pct">
+          <div class="mat__pct-row"><div class="mat__pct-bar"><div class="mat__pct-fill" style="width:5%"></div></div>
+          <span class="mat__pct-val">5%</span></div>
+        </div>
+        <div class="mat__origin"><span class="flag cflag cflag-at"></span><span>AT</span></div>
+        <div class="mat__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+      </button>
+      <div class="mat__body">
+        <div class="mat__body-inner">
+          <div class="mat__info"><span class="mat__info-lbl">Função</span><span class="mat__info-val">Escrita e avanço do grafite.</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Origem</span><span class="mat__info-val"><span class="cflag cflag-at"></span> Áustria</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Status</span><span class="mat__info-val"><span class="status-chip s-mock">mock</span></span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Documento</span><span class="mat__info-val">Composição do grafite e compatibilidade de refil</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Fim de vida</span><span class="mat__info-val">Refil prolonga ciclo · componente substituível</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- F -->
+    <article class="mat" data-mat="borracha">
+      <button class="mat__head">
+        <div class="mat__thumb tex-eraser"></div>
+        <div class="mat__main">
+          <span class="mat__name">Borracha PVC-free</span>
+          <span class="mat__sub">PVC-free eraser · F</span>
+          <div class="mat__mobile-meta">
+            <span class="flag cflag cflag-de"></span><span>Alemanha · 3%</span>
+            <span class="status-chip s-mock">mock</span>
+          </div>
+        </div>
+        <div class="mat__pct">
+          <div class="mat__pct-row"><div class="mat__pct-bar"><div class="mat__pct-fill" style="width:3%"></div></div>
+          <span class="mat__pct-val">3%</span></div>
+        </div>
+        <div class="mat__origin"><span class="flag cflag cflag-de"></span><span>DE</span></div>
+        <div class="mat__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+      </button>
+      <div class="mat__body">
+        <div class="mat__body-inner">
+          <div class="mat__info"><span class="mat__info-lbl">Função</span><span class="mat__info-val">Apagamento e reposição.</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Origem</span><span class="mat__info-val"><span class="cflag cflag-de"></span> Alemanha</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Status</span><span class="mat__info-val"><span class="status-chip s-mock">mock</span></span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Documento</span><span class="mat__info-val">Declaração PVC-free</span></div>
+          <div class="mat__info"><span class="mat__info-lbl">Fim de vida</span><span class="mat__info-val">Substituível · descarte com resíduos urbanos compatíveis</span></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- =========================================================
+     AFTERCARE / SERVIÇOS  (movido para antes de Anexos)
+     ========================================================= -->
+<section id="servicos" class="container reveal">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Aftercare · Post-purchase</div>
+      <h2 class="section-title">Serviços do produto</h2>
+    </div>
+    <p class="section-sub">A camada pós-compra do passaporte: estender uso, registrar histórico, cuidar e fechar o ciclo.</p>
+  </div>
+
+  <div class="after-grid" id="afterGrid">
+    <article class="after">
+      <div class="after__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12a9 9 0 1 0 9-9v6l-3-3"/></svg></div>
+      <h3 class="after__title">Comprar refil compatível</h3>
+      <p class="after__txt">Prolongue a vida útil com grafite 0.7 mm e borracha substituível. Encontre referências e revendedores compatíveis.</p>
+      <button class="after__cta">Encontrar refil <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+    </article>
+    <article class="after">
+      <div class="after__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg></div>
+      <h3 class="after__title">Registrar produto</h3>
+      <p class="after__txt">Salve este passaporte e acompanhe histórico, suporte e atualizações em um único lugar.</p>
+      <button class="after__cta">Salvar no passaporte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+    </article>
+    <article class="after">
+      <div class="after__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M22 12a10 10 0 0 0-10-10v10z"/></svg></div>
+      <h3 class="after__title">Aprender a cuidar</h3>
+      <p class="after__txt">Dicas rápidas de limpeza, troca de grafite e conservação para máxima durabilidade.</p>
+      <button class="after__cta">Abrir guia de cuidado <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+    </article>
+    <article class="after">
+      <div class="after__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 19l-4-7 4-7M17 5l4 7-4 7M14 4l-4 16"/></svg></div>
+      <h3 class="after__title">Reciclar ou devolver</h3>
+      <p class="after__txt">Veja instruções locais para separação de materiais e logística reversa quando o produto chegar ao fim de vida.</p>
+      <button class="after__cta">Ver instruções locais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+    </article>
+  </div>
+  <div class="scroll-dots" id="afterDots">
+    <button class="scroll-dot active" data-idx="0" aria-label="Serviço 1"></button>
+    <button class="scroll-dot" data-idx="1" aria-label="Serviço 2"></button>
+    <button class="scroll-dot" data-idx="2" aria-label="Serviço 3"></button>
+    <button class="scroll-dot" data-idx="3" aria-label="Serviço 4"></button>
+  </div>
+</section>
+
+<!-- =========================================================
+     ANEXOS  (former Cofre de provas)
+     ========================================================= -->
+<section id="anexos" class="container reveal">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Proof Vault · Documents</div>
+      <h2 class="section-title">Anexos</h2>
+    </div>
+    <p class="section-sub">Cada afirmação do passaporte vinculada a um documento auditável. Versão mock para apresentação.</p>
+  </div>
+
+  <div class="annex-grid reveal-stagger" id="annexGrid">
+    <article class="annex" data-locked="true">
+      <div class="annex__head">
+        <div class="annex__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 11h6M9 15h6M9 7h2"/><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+        <span class="annex__ext">.PDF</span>
+      </div>
+      <div>
+        <h4 class="annex__title">Bill of Materials</h4>
+        <p class="annex__sub">BOM · composição declarada</p>
+      </div>
+      <div class="annex__meta">
+        <span class="status-chip s-required">required</span>
+        <span class="annex__cta">Em breve <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+    </article>
+
+    <article class="annex" data-locked="true">
+      <div class="annex__head">
+        <div class="annex__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <span class="annex__ext">.PDF</span>
+      </div>
+      <div>
+        <h4 class="annex__title">Declarações de fornecedor</h4>
+        <p class="annex__sub">Supplier declarations</p>
+      </div>
+      <div class="annex__meta">
+        <span class="status-chip s-pending">pending</span>
+        <span class="annex__cta">Em breve <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+    </article>
+
+    <article class="annex" data-locked="true">
+      <div class="annex__head">
+        <div class="annex__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <span class="annex__ext">.PDF</span>
+      </div>
+      <div>
+        <h4 class="annex__title">Substâncias de atenção</h4>
+        <p class="annex__sub">Substances of concern</p>
+      </div>
+      <div class="annex__meta">
+        <span class="status-chip s-mock">mock</span>
+        <span class="annex__cta">Em breve <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+    </article>
+
+    <article class="annex" data-locked="true">
+      <div class="annex__head">
+        <div class="annex__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 8l9-5 9 5"/></svg></div>
+        <span class="annex__ext">.PDF</span>
+      </div>
+      <div>
+        <h4 class="annex__title">Dados da embalagem</h4>
+        <p class="annex__sub">Packaging data</p>
+      </div>
+      <div class="annex__meta">
+        <span class="status-chip s-mock">mock</span>
+        <span class="annex__cta">Em breve <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+    </article>
+
+    <article class="annex" data-locked="true">
+      <div class="annex__head">
+        <div class="annex__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 22s4-8 10-8 10 8 10 8M12 14V2M9 5l3-3 3 3"/></svg></div>
+        <span class="annex__ext">.PDF</span>
+      </div>
+      <div>
+        <h4 class="annex__title">Método de pegada de carbono</h4>
+        <p class="annex__sub">Carbon footprint method</p>
+      </div>
+      <div class="annex__meta">
+        <span class="status-chip s-mock">mock</span>
+        <span class="annex__cta">Em breve <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+    </article>
+
+    <article class="annex" data-locked="true">
+      <div class="annex__head">
+        <div class="annex__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a4 4 0 0 0-5.4 0L4 11.6V20h8.4l5.3-5.3a4 4 0 0 0 0-5.4z"/><path d="M9 11l6 6"/></svg></div>
+        <span class="annex__ext">.PDF</span>
+      </div>
+      <div>
+        <h4 class="annex__title">Reparo &amp; refil</h4>
+        <p class="annex__sub">Repair / refill instructions</p>
+      </div>
+      <div class="annex__meta">
+        <span class="status-chip s-validated">validated</span>
+        <span class="annex__cta">Em breve <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+    </article>
+
+    <article class="annex" data-locked="true">
+      <div class="annex__head">
+        <div class="annex__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg></div>
+        <span class="annex__ext">.PDF</span>
+      </div>
+      <div>
+        <h4 class="annex__title">Fim de vida — guia</h4>
+        <p class="annex__sub">End-of-life guidance</p>
+      </div>
+      <div class="annex__meta">
+        <span class="status-chip s-pending">pending</span>
+        <span class="annex__cta">Em breve <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+    </article>
+
+    <article class="annex" data-locked="true">
+      <div class="annex__head">
+        <div class="annex__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="6"/><path d="M9 13l-2 9 5-3 5 3-2-9"/></svg></div>
+        <span class="annex__ext">.PDF</span>
+      </div>
+      <div>
+        <h4 class="annex__title">Certificados</h4>
+        <p class="annex__sub">Certifications</p>
+      </div>
+      <div class="annex__meta">
+        <span class="status-chip s-mock">mock</span>
+        <span class="annex__cta">Em breve <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </div>
+    </article>
+
+  </div>
+  <div class="scroll-dots" id="annexDots">
+    <button class="scroll-dot active" data-idx="0" aria-label="Anexo 1"></button>
+    <button class="scroll-dot" data-idx="1" aria-label="Anexo 2"></button>
+    <button class="scroll-dot" data-idx="2" aria-label="Anexo 3"></button>
+    <button class="scroll-dot" data-idx="3" aria-label="Anexo 4"></button>
+    <button class="scroll-dot" data-idx="4" aria-label="Anexo 5"></button>
+    <button class="scroll-dot" data-idx="5" aria-label="Anexo 6"></button>
+    <button class="scroll-dot" data-idx="6" aria-label="Anexo 7"></button>
+    <button class="scroll-dot" data-idx="7" aria-label="Anexo 8"></button>
+  </div>
+</section>
+
+</main>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__txt">
+      Planton · Passaporte Digital do Produto · Protótipo comercial · Dados simulados para apresentação
+    </div>
+    <div class="footer__links">
+      <a href="#produto">Topo</a>
+      <a href="https://design.planton.eco.br" target="_blank" rel="noopener">Design system</a>
+      <a href="#carbono">Pegada de carbono</a>
+      <a href="#anexos">Anexos</a>
+    </div>
+  </div>
+</footer>
+
+<!-- =========================================================
+     MOBILE DOCK NAV
+     ========================================================= -->
+<nav class="dock" id="dock" aria-label="Navegação principal">
+  <button class="dock__btn active" data-target="produto">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    <span>Produto</span>
+  </button>
+  <button class="dock__btn" data-target="carbono">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12c0 5-4 9-9 9s-9-4-9-9c0-3 2-6 4-7l5 7h9z"/></svg>
+    <span>Pegada</span>
+  </button>
+  <button class="dock__btn" data-target="jornada">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+    <span>Jornada</span>
+  </button>
+  <button class="dock__btn" data-target="materiais">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+    <span>Materiais</span>
+  </button>
+  <button class="dock__btn" data-target="servicos">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.36.6.94 1 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+    <span>Serviços</span>
+  </button>
+  <button class="dock__btn" data-target="anexos">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21.4 11.05 12.25 20.2a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66L9.42 17.36a2 2 0 0 1-2.83-2.83l8.49-8.49"/></svg>
+    <span>Anexos</span>
+  </button>
+</nav>
+
+<button class="to-top" id="toTop" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+
+<!-- =========================================================
+     COMMAND PALETTE
+     ========================================================= -->
+<div class="cmdk-backdrop" id="cmdk">
+  <div class="cmdk">
+    <input type="text" class="cmdk__input" id="cmdkInput" placeholder="Buscar carbono, materiais, documentos, reciclagem, ID…" />
+    <div class="cmdk__list" id="cmdkList"></div>
+    <div class="cmdk__hint"><span>Use ↑ ↓ para navegar · Enter para abrir</span><span>ESC para fechar</span></div>
+  </div>
+</div>
+
+<!-- =========================================================
+     JSON MODAL
+     ========================================================= -->
+<div class="modal-backdrop" id="jsonModal">
+  <div class="modal">
+    <div class="modal__head">
+      <div>
+        <div class="modal__title">Dados estruturados do passaporte</div>
+        <div class="mono muted" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;margin-top:2px">application/json · mock</div>
+      </div>
+      <button class="modal__close" id="modalClose"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div class="modal__body"><pre id="jsonOut"></pre></div>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   THEME
+   ========================================================= */
+const themeBtn = document.getElementById('themeBtn');
+const iconSun = document.getElementById('iconSun');
+const iconMoon = document.getElementById('iconMoon');
+function setTheme(t){
+  document.documentElement.setAttribute('data-theme', t);
+  if(t === 'dark'){ iconSun.style.display='none'; iconMoon.style.display='block'; }
+  else { iconSun.style.display='block'; iconMoon.style.display='none'; }
+}
+themeBtn.addEventListener('click', ()=>{
+  const cur = document.documentElement.getAttribute('data-theme');
+  setTheme(cur === 'dark' ? 'light' : 'dark');
+});
+
+/* =========================================================
+   LANGUAGE DROPDOWN (visual mock — selecionar idioma muda chip)
+   ========================================================= */
+const lang = document.getElementById('lang');
+const langBtn = document.getElementById('langBtn');
+const langMenu = document.getElementById('langMenu');
+const langFlag = document.getElementById('langFlag');
+const langCode = document.getElementById('langCode');
+const langMap = {
+  pt:{flagClass:'cflag-br', code:'PT'},
+  en:{flagClass:'cflag-us', code:'EN'},
+  es:{flagClass:'cflag-es', code:'ES'},
+  de:{flagClass:'cflag-de', code:'DE'},
+};
+langBtn.addEventListener('click', e=>{
+  e.stopPropagation();
+  lang.classList.toggle('open');
+  langBtn.setAttribute('aria-expanded', lang.classList.contains('open'));
+});
+document.querySelectorAll('.lang__item').forEach(item=>{
+  item.addEventListener('click', ()=>{
+    const code = item.dataset.lang;
+    document.querySelectorAll('.lang__item').forEach(i=>i.classList.remove('active'));
+    item.classList.add('active');
+    langFlag.className = 'lang__flag cflag ' + langMap[code].flagClass;
+    langCode.textContent = langMap[code].code;
+    lang.classList.remove('open');
+  });
+});
+document.addEventListener('click', e=>{
+  if(!lang.contains(e.target)) lang.classList.remove('open');
+});
+
+/* =========================================================
+   CARBON BREAKDOWN
+   ========================================================= */
+const carbonContent = {
+  materiais:{
+    title:'Materiais · 46%',
+    txt:'Maior parcela do impacto estimado. Em uma versão real, este dado viria da composição por massa, fornecedores, fatores de emissão e metodologia de ACV.'
+  },
+  producao:{
+    title:'Produção · 22%',
+    txt:'Energia, montagem, perdas de processo e controles de qualidade da planta industrial.'
+  },
+  transporte:{
+    title:'Transporte · 18%',
+    txt:'Distribuição por modal e distância até o mercado final, incluindo intercontinental quando aplicável.'
+  },
+  embalagem:{
+    title:'Embalagem · 9%',
+    txt:'Materiais, peso, reciclabilidade e desenho da embalagem unitária e secundária.'
+  },
+  fimdevida:{
+    title:'Fim de vida · 5%',
+    txt:'Desmontagem, reciclagem, logística reversa e destino local dos componentes ao fim do ciclo.'
+  }
+};
+function setCarbon(step){
+  document.querySelectorAll('.bd-item').forEach(b=>b.classList.toggle('active', b.dataset.step===step));
+  document.querySelectorAll('.bd-seg').forEach(s=>s.style.opacity = s.dataset.step===step ? '1' : '0.55');
+  const ctx = document.getElementById('bdContext');
+  ctx.innerHTML = `<h4 class="bd-context__title">${carbonContent[step].title}</h4><p class="bd-context__txt">${carbonContent[step].txt}</p>`;
+}
+document.querySelectorAll('.bd-item, .bd-seg').forEach(el=>{
+  el.addEventListener('click', ()=>setCarbon(el.dataset.step));
+});
+
+/* =========================================================
+   MATERIALS ACCORDION
+   ========================================================= */
+document.querySelectorAll('.mat__head').forEach(head=>{
+  head.addEventListener('click', ()=>{
+    const mat = head.parentElement;
+    const wasOpen = mat.classList.contains('open');
+    // close all
+    document.querySelectorAll('.mat.open').forEach(m=>m.classList.remove('open'));
+    if(!wasOpen) mat.classList.add('open');
+  });
+});
+
+/* =========================================================
+   JOURNEY — ACCORDION + MAP
+   ========================================================= */
+// Coordenadas dos pontos (viewBox 1000x500, equirectangular)
+const MAP_POINTS = {
+  DE: {x:528, y:130, label:'Stein, DE'},
+  AT: {x:546, y:142, label:'Áustria'},
+  CZ: {x:548, y:131, label:'Tchéquia'},
+  BR: {x:370, y:320, label:'Brasil'}
+};
+// Cada step da jornada indica seu(s) país(es) de origem e destino
+const JOURNEY_FOCUS = {
+  0:{origins:['AT','CZ','DE'], destination:'DE'},      // matéria-prima → fábrica
+  1:{origins:['DE'], destination:'DE'},                  // fabricação
+  2:{origins:['DE'], destination:'DE'},                  // montagem
+  3:{origins:['CZ'], destination:'DE'},                  // embalagem
+  4:{origins:['DE'], destination:'BR'},                  // distribuição
+  5:{origins:['BR'], destination:'BR'},                  // uso
+  6:{origins:['BR'], destination:'BR'}                   // fim de vida
+};
+
+// Bezier curve helper: smooth arc between two points
+function curvedPath(a, b, lift=0.28){
+  const mx = (a.x+b.x)/2;
+  const my = (a.y+b.y)/2;
+  const dx = b.x-a.x, dy = b.y-a.y;
+  const dist = Math.hypot(dx,dy);
+  // perpendicular offset
+  const nx = -dy/dist, ny = dx/dist;
+  const cx = mx + nx*dist*lift;
+  const cy = my + ny*dist*lift - dist*0.06;
+  return `M ${a.x} ${a.y} Q ${cx} ${cy} ${b.x} ${b.y}`;
+}
+
+const mapRoutes = document.getElementById('mapRoutes');
+const mapPoints = document.querySelectorAll('.map-point, .map-pulse');
+
+function drawRoutes(stepIdx){
+  if(!mapRoutes) return;
+  const focus = JOURNEY_FOCUS[stepIdx];
+  if(!focus) return;
+  const dest = MAP_POINTS[focus.destination];
+  mapRoutes.innerHTML = '';
+
+  // primary: each origin -> destination
+  focus.origins.forEach((iso, i)=>{
+    if(iso === focus.destination) return;
+    const origin = MAP_POINTS[iso];
+    if(!origin) return;
+    const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('d', curvedPath(origin, dest, 0.32));
+    path.setAttribute('class','map-route');
+    mapRoutes.appendChild(path);
+    requestAnimationFrame(()=>path.classList.add('in'));
+  });
+
+  // for matéria-prima (step 0): also show origins converging
+  // for distribuição (step 4): also show secondary line DE→BR with a long arc
+  if(stepIdx === 4){
+    // already drawn above; could add a continuation line
+  }
+
+  // highlight active points
+  document.querySelectorAll('.map-point').forEach(p=>{
+    const iso = p.dataset.iso;
+    const isActive = focus.origins.includes(iso) || iso === focus.destination;
+    p.classList.toggle('is-active', isActive);
+  });
+  document.querySelectorAll('.map-pulse').forEach(p=>{
+    p.classList.toggle('is-active', p.dataset.iso === focus.destination);
+  });
+}
+
+function setJourney(i){
+  const items = document.querySelectorAll('.j-acc');
+  items.forEach((el, idx)=>{
+    const open = idx === i;
+    el.classList.toggle('open', open);
+    const head = el.querySelector('.j-acc__head');
+    if(head) head.setAttribute('aria-expanded', open);
+  });
+  drawRoutes(i);
+}
+
+document.querySelectorAll('.j-acc').forEach((el, idx)=>{
+  const head = el.querySelector('.j-acc__head');
+  head.addEventListener('click', ()=>{
+    const isOpen = el.classList.contains('open');
+    if(isOpen){
+      // collapsing the active leaves nothing open — keep at least one (toggle behavior)
+      // here we let it collapse, but routes stay on last
+      el.classList.remove('open');
+      head.setAttribute('aria-expanded','false');
+      return;
+    }
+    setJourney(idx);
+  });
+});
+
+// initialize map with first step
+setJourney(0);
+
+/* =========================================================
+   SCROLL SPY + DOCK
+   ========================================================= */
+const sections = ['produto','jornada','materiais','servicos','anexos'];
+const dockBtns = document.querySelectorAll('.dock__btn');
+dockBtns.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const id = btn.dataset.target;
+    document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+const spy = new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      dockBtns.forEach(b=>b.classList.toggle('active', b.dataset.target===en.target.id));
+    }
+  });
+}, {rootMargin:'-40% 0px -55% 0px', threshold:0});
+sections.forEach(id=>{ const el = document.getElementById(id); if(el) spy.observe(el); });
+
+/* =========================================================
+   BACK TO TOP
+   ========================================================= */
+const toTop = document.getElementById('toTop');
+window.addEventListener('scroll', ()=>{
+  toTop.classList.toggle('show', window.scrollY > 600);
+});
+toTop.addEventListener('click', ()=>window.scrollTo({top:0, behavior:'smooth'}));
+
+/* =========================================================
+   COMMAND PALETTE
+   ========================================================= */
+const cmdk = document.getElementById('cmdk');
+const cmdkInput = document.getElementById('cmdkInput');
+const cmdkList = document.getElementById('cmdkList');
+const cmdkOpen = document.getElementById('cmdkOpen');
+const cmdItems = [
+  {title:'Pegada de carbono', sub:'Assinatura climática · seção', target:'carbono', ico:'M21 12c0 5-4 9-9 9s-9-4-9-9c0-3 2-6 4-7l5 7h9z'},
+  {title:'Jornada do produto', sub:'Trace · lifecycle · mapa', target:'jornada', ico:'M3 12h4l3-8 4 16 3-8h4'},
+  {title:'Materiais', sub:'Mapa de materiais · seção', target:'materiais', ico:'M3 3h7v7H3zm11 0h7v7h-7zM3 14h7v7H3zm11 0h7v7h-7z'},
+  {title:'Anexos', sub:'Documentos auditáveis · seção', target:'anexos', ico:'M21.4 11.05 12.25 20.2a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66L9.42 17.36'},
+  {title:'Reciclagem & fim de vida', sub:'End-of-life · serviços', target:'servicos', ico:'M7 19l-4-7 4-7M17 5l4 7-4 7M14 4l-4 16'},
+  {title:'ID do produto', sub:'FC-G2011-0.7-SIL · hero', target:'produto', ico:'M12 2L2 7l10 5 10-5-10-5z'},
+  {title:'Refil de grafite', sub:'Aftercare · serviços', target:'servicos', ico:'M3 12a9 9 0 1 0 9-9v6'}
+];
+let cmdkFocus = 0;
+function renderCmd(q=''){
+  const filtered = cmdItems.filter(i => (i.title+' '+i.sub).toLowerCase().includes(q.toLowerCase()));
+  cmdkList.innerHTML = filtered.map((i, idx)=>`
+    <div class="cmdk__item ${idx===cmdkFocus?'focused':''}" data-target="${i.target}">
+      <div class="cmdk__item-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="${i.ico}"/></svg></div>
+      <div class="cmdk__item-txt">
+        <div class="cmdk__item-title">${i.title}</div>
+        <div class="cmdk__item-sub">${i.sub}</div>
+      </div>
+    </div>`).join('') || `<div class="cmdk__item"><div class="cmdk__item-txt"><div class="cmdk__item-title">Sem resultados</div><div class="cmdk__item-sub">Tente outro termo</div></div></div>`;
+  cmdkList.querySelectorAll('.cmdk__item[data-target]').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      document.getElementById(el.dataset.target).scrollIntoView({behavior:'smooth'});
+      closeCmd();
+    });
+  });
+}
+function openCmd(){ cmdk.classList.add('show'); cmdkInput.value=''; cmdkFocus=0; renderCmd(''); setTimeout(()=>cmdkInput.focus(), 50); }
+function closeCmd(){ cmdk.classList.remove('show'); }
+cmdkOpen.addEventListener('click', openCmd);
+cmdk.addEventListener('click', e=>{ if(e.target===cmdk) closeCmd(); });
+cmdkInput.addEventListener('input', e=>{ cmdkFocus=0; renderCmd(e.target.value); });
+document.addEventListener('keydown', e=>{
+  if((e.ctrlKey || e.metaKey) && e.key.toLowerCase()==='k'){ e.preventDefault(); openCmd(); }
+  if(e.key==='Escape') closeCmd();
+  if(cmdk.classList.contains('show')){
+    const items = cmdkList.querySelectorAll('.cmdk__item[data-target]');
+    if(e.key==='ArrowDown'){ e.preventDefault(); cmdkFocus = Math.min(cmdkFocus+1, items.length-1); renderCmd(cmdkInput.value); }
+    if(e.key==='ArrowUp'){ e.preventDefault(); cmdkFocus = Math.max(cmdkFocus-1, 0); renderCmd(cmdkInput.value); }
+    if(e.key==='Enter' && items[cmdkFocus]){ document.getElementById(items[cmdkFocus].dataset.target).scrollIntoView({behavior:'smooth'}); closeCmd(); }
+  }
+});
+
+/* =========================================================
+   JSON MODAL
+   ========================================================= */
+const jsonBtn = document.getElementById('jsonBtn');
+const jsonModal = document.getElementById('jsonModal');
+const jsonOut = document.getElementById('jsonOut');
+const modalClose = document.getElementById('modalClose');
+const passportJson = {
+  schema: "planton.dpp.v0.1",
+  status: "mock",
+  product: {
+    name: "Faber-Castell Grip 2011",
+    type: "mechanical_pencil",
+    lead: "0.7mm",
+    productId: "FC-G2011-0.7-SIL",
+    passportId: "PL-DPP-FC-G2011-MOCK-001",
+    lot: "LOT-2026-EU-07",
+    version: "v0.1 concept",
+    dataCarrier: ["QR","NFC"],
+    lastUpdate: "2026"
+  },
+  carbon: {
+    unit: "kgCO2e",
+    perItem: 0.42,
+    method: "mock",
+    breakdown: { materials: 0.46, production: 0.22, transport: 0.18, packaging: 0.09, endOfLife: 0.05 }
+  },
+  materials: [
+    {id:"A", name:"Resin body", origin:"DE", massShare:0.53, status:"pending"},
+    {id:"B", name:"Metal parts", origin:"DE", massShare:0.21, status:"pending"},
+    {id:"C", name:"Retail packaging", origin:"CZ", massShare:0.10, status:"mock"},
+    {id:"D", name:"Soft grip elastomer", origin:"DE", massShare:0.08, status:"pending"},
+    {id:"E", name:"Lead & mechanism", origin:"AT", massShare:0.05, status:"mock"},
+    {id:"F", name:"PVC-free eraser", origin:"DE", massShare:0.03, status:"mock"}
+  ],
+  highlights: ["refillable","durable_design","layered_data","guided_circularity"],
+  disclaimer: "Protótipo comercial. Dados simulados para apresentação."
+};
+function syntaxHighlight(obj){
+  let json = JSON.stringify(obj, null, 2);
+  json = json.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function(m){
+    let cls = 'json-num';
+    if(/^"/.test(m)) cls = /:$/.test(m) ? 'json-key' : 'json-str';
+    else if(/true|false|null/.test(m)) cls = 'json-num';
+    return '<span class="'+cls+'">'+m+'</span>';
+  });
+}
+jsonBtn.addEventListener('click', ()=>{ jsonOut.innerHTML = syntaxHighlight(passportJson); jsonModal.classList.add('show'); });
+modalClose.addEventListener('click', ()=>jsonModal.classList.remove('show'));
+jsonModal.addEventListener('click', e=>{ if(e.target===jsonModal) jsonModal.classList.remove('show'); });
+
+/* =========================================================
+   SCROLL REVEAL (premium fade-in cascade)
+   ========================================================= */
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!prefersReducedMotion){
+  const revealObs = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){
+        en.target.classList.add('in');
+        revealObs.unobserve(en.target);
+      }
+    });
+  }, {threshold:0.08, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => revealObs.observe(el));
+}else{
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => el.classList.add('in'));
+}
+
+/* =========================================================
+   CARBON COUNTER ANIMATION
+   ========================================================= */
+const carbonNumEl = document.getElementById('carbonNum');
+if(carbonNumEl){
+  const target = parseFloat(carbonNumEl.dataset.target);
+  let started = false;
+  const counterObs = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting && !started){
+        started = true;
+        const dur = prefersReducedMotion ? 0 : 1600;
+        const t0 = performance.now();
+        const step = (now)=>{
+          const t = Math.min(1, (now - t0)/dur);
+          const eased = 1 - Math.pow(1-t, 3);
+          carbonNumEl.textContent = (target * eased).toFixed(2);
+          if(t < 1) requestAnimationFrame(step);
+          else carbonNumEl.textContent = target.toFixed(2);
+        };
+        requestAnimationFrame(step);
+      }
+    });
+  }, {threshold:0.4});
+  counterObs.observe(carbonNumEl);
+}
+
+/* =========================================================
+   HERO PENCIL — SUBTLE PARALLAX + TILT
+   ========================================================= */
+const heroVisual = document.getElementById('heroVisual');
+const pencilSvg = document.querySelector('.pencil-svg');
+if(heroVisual && pencilSvg && !prefersReducedMotion){
+  let rafId = null, tx = 0, ty = 0;
+  heroVisual.addEventListener('mousemove', e => {
+    const r = heroVisual.getBoundingClientRect();
+    const x = (e.clientX - r.left)/r.width - 0.5;
+    const y = (e.clientY - r.top)/r.height - 0.5;
+    tx = x * 18;
+    ty = y * 14;
+    if(rafId) return;
+    rafId = requestAnimationFrame(()=>{
+      pencilSvg.style.transform = `rotate(-22deg) translate(${tx}px, ${ty}px)`;
+      rafId = null;
+    });
+  });
+  heroVisual.addEventListener('mouseleave', ()=>{
+    pencilSvg.style.transform = '';
+  });
+}
+
+/* =========================================================
+   MAGNETIC HOVER — CTAs PREMIUM
+   ========================================================= */
+if(!prefersReducedMotion){
+  document.querySelectorAll('.after__cta, .json-btn, .annex').forEach(el => {
+    let raf = null;
+    el.addEventListener('mousemove', e => {
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left)/r.width - 0.5;
+      const y = (e.clientY - r.top)/r.height - 0.5;
+      if(raf) return;
+      raf = requestAnimationFrame(()=>{
+        el.style.transform = `translate(${x*5}px, ${y*4}px)`;
+        raf = null;
+      });
+    });
+    el.addEventListener('mouseleave', ()=>{ el.style.transform = ''; });
+  });
+}
+
+/* =========================================================
+   HEADER SHRINK ON SCROLL
+   ========================================================= */
+const appHeader = document.querySelector('.app-header');
+let lastScrollY = 0;
+window.addEventListener('scroll', ()=>{
+  const y = window.scrollY;
+  if(appHeader){
+    appHeader.style.boxShadow = y > 8 ? '0 1px 0 var(--line), 0 12px 28px -22px rgba(10,45,48,0.18)' : 'none';
+  }
+  lastScrollY = y;
+}, {passive:true});
+
+/* =========================================================
+   SCROLL CAROUSEL DOTS — Serviços & Anexos
+   ========================================================= */
+function initCarouselDots(gridId, dotsId){
+  const grid = document.getElementById(gridId);
+  const dots = document.getElementById(dotsId);
+  if(!grid || !dots) return;
+
+  const dotBtns = dots.querySelectorAll('.scroll-dot');
+  const items = grid.querySelectorAll('article');
+
+  // Click dot → scroll to item
+  dotBtns.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const idx = +btn.dataset.idx;
+      const item = items[idx];
+      if(!item) return;
+      // Scroll so item aligns with left edge + page padding
+      const gridRect = grid.getBoundingClientRect();
+      const itemRect = item.getBoundingClientRect();
+      grid.scrollBy({left: itemRect.left - gridRect.left - 20, behavior:'smooth'});
+    });
+  });
+
+  // Sync dots on scroll (IntersectionObserver per item)
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(!en.isIntersecting) return;
+      const idx = [...items].indexOf(en.target);
+      dotBtns.forEach((d,i)=>d.classList.toggle('active', i===idx));
+    });
+  }, {root:grid, threshold:0.55});
+
+  items.forEach(item=>io.observe(item));
+}
+
+initCarouselDots('afterGrid', 'afterDots');
+initCarouselDots('annexGrid', 'annexDots');
+
+/* =========================================================
+   KEYBOARD: arrow keys cycle journey accordion
+   ========================================================= */
+document.addEventListener('keydown', e=>{
+  if(cmdk.classList.contains('show')) return;
+  if(jsonModal.classList.contains('show')) return;
+  const items = document.querySelectorAll('.j-acc');
+  const openIdx = [...items].findIndex(el => el.classList.contains('open'));
+  const inJourney = document.activeElement && document.activeElement.closest && document.activeElement.closest('#jornada');
+  if(!inJourney) return;
+  if(e.key === 'ArrowDown'){
+    e.preventDefault();
+    const next = Math.min(items.length-1, (openIdx<0?0:openIdx+1));
+    setJourney(next);
+    items[next].querySelector('.j-acc__head').focus();
+  }
+  if(e.key === 'ArrowUp'){
+    e.preventDefault();
+    const prev = Math.max(0, (openIdx<0?0:openIdx-1));
+    setJourney(prev);
+    items[prev].querySelector('.j-acc__head').focus();
+  }
+});
+
+</script>
+</body>
+</html>
