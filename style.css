@@ -382,6 +382,7 @@ section{padding:56px 0;scroll-margin-top:80px}
    ========================================================= */
 .highlights{
   display:flex;
+  flex-wrap:nowrap;
   gap:14px;
   overflow-x:auto;
   scroll-snap-type:x mandatory;
@@ -556,7 +557,7 @@ html[data-theme="dark"] .bd-context__txt{color:var(--muted)}
 .mat.open{border-color:var(--line-strong);box-shadow:var(--shadow-1)}
 .mat__head{
   display:grid;
-  grid-template-columns:56px 1fr auto;
+  grid-template-columns:56px 1fr 1fr auto;
   gap:14px;align-items:center;
   padding:14px;cursor:pointer;width:100%;text-align:left;
 }
@@ -573,9 +574,8 @@ html[data-theme="dark"] .bd-context__txt{color:var(--muted)}
 .mat__name{font-family:var(--font-display);font-size:16px;font-weight:600;letter-spacing:-0.01em}
 .mat__sub{font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:0.08em}
 .mat__pct{
-  display:none;flex-direction:column;gap:5px;
+  display:flex;flex-direction:column;gap:5px;
 }
-@media (min-width:700px){.mat__pct{display:flex}}
 .mat__pct::before{
   content:"Rastreabilidade";
   font-family:var(--font-mono);font-size:8.5px;
@@ -596,11 +596,8 @@ html[data-theme="dark"] .bd-context__txt{color:var(--muted)}
 .mat__chev svg{width:14px;height:14px}
 
 .mat__mobile-meta{
-  display:flex;align-items:center;gap:10px;
-  font-family:var(--font-mono);font-size:11px;color:var(--muted);
-  margin-top:4px;
+  display:none;
 }
-@media (min-width:700px){.mat__mobile-meta{display:none}}
 
 .mat__body{
   max-height:0;overflow:hidden;
