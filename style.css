@@ -763,15 +763,21 @@ html[data-theme="dark"] .scroll-dot.active{background:var(--accent)}
   bottom:16px;z-index:55;
   display:flex;align-items:center;gap:2px;
   padding:6px;
-  background:color-mix(in oklab, var(--card) 92%, transparent);
-  backdrop-filter:saturate(140%) blur(20px);
-  -webkit-backdrop-filter:saturate(140%) blur(20px);
-  border:1px solid var(--line-strong);
+  background:rgba(255,255,255,0.55);
+  backdrop-filter:blur(16px) saturate(1.4);
+  -webkit-backdrop-filter:blur(16px) saturate(1.4);
+  border:1px solid rgba(255,255,255,0.7);
   border-radius:99px;
   box-shadow:var(--shadow-2);
   max-width:calc(100vw - 24px);
   overflow-x:auto;
   scrollbar-width:none;
+}
+html[data-theme="dark"] .dock{
+  background:rgba(14,28,11,0.6);
+  backdrop-filter:blur(16px) saturate(1.6);
+  -webkit-backdrop-filter:blur(16px) saturate(1.6);
+  border-color:rgba(240,235,216,0.12);
 }
 .dock::-webkit-scrollbar{display:none}
 .dock__btn{
