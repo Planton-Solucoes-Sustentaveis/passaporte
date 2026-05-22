@@ -74,8 +74,12 @@
       <!-- META -->
       <div class="hero__meta flow">
 
-        <h1 class="hero__title">Faber-Castell <br>Grip 2011</h1>
-        <p class="hero__sub" data-i18n="hero.sub">Lapiseira 0.7 mm com passaporte digital de produto. Uma camada de confiança climática entre marca, consumidor e ciclo de vida.</p>
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          <span>Seu produto</span>
+        </div>
+
+        <h1 class="hero__title">Faber-Castell Grip 2011</h1>
 
         <div class="id-grid">
           <div class="id-cell">
@@ -94,13 +98,12 @@
             <span class="id-cell__label">Data carrier</span>
             <span class="id-cell__value">QR + NFC ready</span>
           </div>
-          <div class="id-cell">
-            <span class="id-cell__label">Versão</span>
-            <span class="id-cell__value">v0.1 concept</span>
-          </div>
-          <div class="id-cell">
-            <span class="id-cell__label">Última atualização</span>
-            <span class="id-cell__value">2026</span>
+          <div class="id-cell id-cell--wide">
+            <span class="id-cell__label">Produced in</span>
+            <div class="id-cell__flags">
+              <span class="country-badge"><span class="cflag cflag-br"></span> Brasil</span>
+              <span class="country-badge"><span class="cflag cflag-de"></span> Alemanha</span>
+            </div>
           </div>
         </div>
 
@@ -125,7 +128,7 @@
 <!-- =========================================================
      HIGHLIGHTS
      ========================================================= -->
-<section class="container reveal" style="padding-top:24px;padding-bottom:32px">
+<section class="container reveal" style="padding-top:24px;padding-bottom:32px;position:relative;z-index:2">
   <div class="highlights reveal-stagger" id="highlightsGrid">
     <article class="h-card">
       <div class="h-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div>
@@ -178,43 +181,46 @@
 
             <image href="assets/maa_2.svg" x="0" y="0" width="1200" height="756" class="map-base-img" preserveAspectRatio="xMidYMid meet"/>
 
-            <!-- EU ring: lon=10 lat=50 → x=611 y=343, r=96 -->
+            <!-- EU ring -->
             <circle class="map-eu-ring" data-route="eu" cx="611" cy="343" r="96"/>
             <text class="map-label-eu" x="530" y="238">União Europeia</text>
 
-            <!-- Route: DE → BR (Atlantic arc) -->
-            <path id="rBR" class="map-route" d="M615,345 C575,390 530,460 500,530 C475,580 445,600 421,613"/>
+            <!-- ── STAGE 01: Matéria-prima (azul) CZ→DE, AT→DE ── -->
+            <path class="map-route route-01" d="M626,330 C622,334 618,340 615,345"/>
+            <path class="map-route route-01" d="M636,356 C630,353 623,349 615,345"/>
 
-            <!-- Route: CZ → DE (intra-EU) -->
-            <path id="rCZ" class="map-route secondary" d="M626,342 C622,342 618,343 615,345"/>
+            <!-- ── STAGE 02: Fabricação — hub pulse ring (dourado) ── -->
+            <!-- (sem rota; hub é o ponto DE) -->
 
-            <!-- Route: AT → DE (intra-EU) -->
-            <path id="rAT" class="map-route secondary" d="M633,351 C628,349 622,347 615,345"/>
+            <!-- ── STAGE 03: Distribuição (verde) DE→BR ── -->
+            <path class="map-route route-03" d="M615,345 C575,390 530,460 500,530 C475,580 445,600 421,613"/>
 
-            <!-- DE: Stein lon=11.1 lat=49.4 → x=615 y=345 (HUB) -->
-            <circle class="map-dot hub active" data-route="germany" cx="615" cy="345" r="8"/>
-            <text class="map-label" x="626" y="350">🇩🇪 Alemanha</text>
+            <!-- CZ — stage 01 (azul) -->
+            <circle class="map-dot dot-01" data-route="czech" cx="626" cy="330" r="6"/>
+            <text class="map-label" x="636" y="323">Tchéquia</text>
 
-            <!-- CZ: Praha lon=14.4 lat=50.1 → x=626 y=342 -->
-            <circle class="map-dot" data-route="czech" cx="626" cy="342" r="6"/>
-            <text class="map-label" x="635" y="336">🇨🇿 Tchéquia</text>
+            <!-- AT — stage 01 (azul) -->
+            <circle class="map-dot dot-01" data-route="austria" cx="636" cy="356" r="6"/>
+            <text class="map-label" x="646" y="371">Áustria</text>
 
-            <!-- AT: Wien lon=16.4 lat=48.2 → x=633 y=351 -->
-            <circle class="map-dot" data-route="austria" cx="633" cy="351" r="6"/>
-            <text class="map-label" x="641" y="365">🇦🇹 Áustria</text>
+            <!-- DE HUB — stage 02 (dourado, maior) -->
+            <circle class="map-dot dot-02 hub" data-route="germany" cx="615" cy="345" r="9"/>
+            <circle class="map-hub-ring" cx="615" cy="345" r="16"/>
+            <text class="map-label" x="628" y="337">Alemanha</text>
 
-            <!-- BR: São Paulo lon=-46.6 lat=-23.5 → x=421 y=613 -->
-            <circle class="map-dot" data-route="brazil" cx="421" cy="613" r="7"/>
-            <text class="map-label" x="432" y="607">🇧🇷 Brasil</text>
+            <!-- BR — stage 03 (verde) -->
+            <circle class="map-dot dot-03" data-route="brazil" cx="421" cy="613" r="7"/>
+            <text class="map-label" x="434" y="607">Brasil</text>
 
             </g>
           </svg>
+
         </div>
 
-        <!-- Legend bar -->
+        <!-- Legend: absolute overlay on desktop, static below map on mobile -->
         <div class="map-legend">
           <div class="map-legend__stage">
-            <span class="map-legend__stage-num">01</span>
+            <span class="map-legend__stage-num stage-01">01</span>
             <div class="map-legend__stage-body">
               <span class="map-legend__stage-title">Matéria-prima</span>
               <span class="map-legend__stage-sub">
@@ -222,29 +228,23 @@
                 <span class="map-legend__arrow">·</span>
                 <span class="map-legend__flag cflag cflag-at"></span> Áustria
                 <span class="map-legend__arrow">→</span>
-                <span class="map-legend__flag cflag cflag-de"></span> Alemanha
+                <span class="map-legend__flag cflag cflag-de"></span> DE
               </span>
             </div>
           </div>
-          <div class="map-legend__sep">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m9 18 6-6-6-6"/></svg>
-          </div>
           <div class="map-legend__stage">
-            <span class="map-legend__stage-num map-legend__stage-num--hub">02</span>
+            <span class="map-legend__stage-num stage-02">02</span>
             <div class="map-legend__stage-body">
               <span class="map-legend__stage-title">Fabricação</span>
               <span class="map-legend__stage-sub">
-                <span class="map-legend__flag cflag cflag-de"></span> Stein, Alemanha · fábrica principal
+                <span class="map-legend__flag cflag cflag-de"></span> Stein, Alemanha
               </span>
             </div>
           </div>
-          <div class="map-legend__sep">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m9 18 6-6-6-6"/></svg>
-          </div>
           <div class="map-legend__stage">
-            <span class="map-legend__stage-num">03</span>
+            <span class="map-legend__stage-num stage-03">03</span>
             <div class="map-legend__stage-body">
-              <span class="map-legend__stage-title">Uso</span>
+              <span class="map-legend__stage-title">Distribuição</span>
               <span class="map-legend__stage-sub">
                 <span class="map-legend__flag cflag cflag-de"></span> Alemanha
                 <span class="map-legend__arrow">→</span>
@@ -286,7 +286,6 @@
       <div class="eyebrow">Trace · Lifecycle</div>
       <h2 class="section-title">Jornada do produto</h2>
     </div>
-    <p class="section-sub">Da matéria-prima ao fim de vida. Toque em uma etapa para expandir.</p>
   </div>
 
   <div class="journey-grid">
@@ -482,7 +481,7 @@
         <p class="carbon__lead">A pegada de carbono funciona como uma assinatura climática do produto: ela mostra onde o impacto nasce, onde pode ser reduzido e como a marca transforma dado técnico em confiança.</p>
         <div style="margin-top:32px">
           <div class="carbon__number">
-            <span class="num-val" id="carbonNum" data-target="0.42">0.00</span><sup>kgCO₂e</sup><small>por unidade · simulado</small>
+            <span class="num-val" id="carbonNum" data-target="0.42">0.00</span><sup>kgCO₂e</sup><small>por unidade</small>
           </div>
         </div>
 
@@ -543,7 +542,6 @@
       <div class="eyebrow">Material Passport · Mock</div>
       <h2 class="section-title">Mapa de materiais</h2>
     </div>
-    <p class="section-sub">Cada componente declarado por massa, função, origem e status de validação. Toque para abrir.</p>
   </div>
 
   <div class="mat-list" id="matList">
@@ -728,52 +726,6 @@
 </section>
 
 <!-- =========================================================
-     AFTERCARE / SERVIÇOS  (movido para antes de Anexos)
-     ========================================================= -->
-<section id="servicos" class="container reveal">
-  <div class="section-head">
-    <div>
-      <div class="eyebrow">Aftercare · Post-purchase</div>
-      <h2 class="section-title">Serviços do produto</h2>
-    </div>
-    <p class="section-sub">A camada pós-compra do passaporte: estender uso, registrar histórico, cuidar e fechar o ciclo.</p>
-  </div>
-
-  <div class="after-grid" id="afterGrid">
-    <article class="after">
-      <div class="after__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12a9 9 0 1 0 9-9v6l-3-3"/></svg></div>
-      <h3 class="after__title">Comprar refil compatível</h3>
-      <p class="after__txt">Prolongue a vida útil com grafite 0.7 mm e borracha substituível. Encontre referências e revendedores compatíveis.</p>
-      <button class="after__cta">Encontrar refil <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
-    </article>
-    <article class="after">
-      <div class="after__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg></div>
-      <h3 class="after__title">Registrar produto</h3>
-      <p class="after__txt">Salve este passaporte e acompanhe histórico, suporte e atualizações em um único lugar.</p>
-      <button class="after__cta">Salvar no passaporte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
-    </article>
-    <article class="after">
-      <div class="after__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M22 12a10 10 0 0 0-10-10v10z"/></svg></div>
-      <h3 class="after__title">Aprender a cuidar</h3>
-      <p class="after__txt">Dicas rápidas de limpeza, troca de grafite e conservação para máxima durabilidade.</p>
-      <button class="after__cta">Abrir guia de cuidado <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
-    </article>
-    <article class="after">
-      <div class="after__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 19l-4-7 4-7M17 5l4 7-4 7M14 4l-4 16"/></svg></div>
-      <h3 class="after__title">Reciclar ou devolver</h3>
-      <p class="after__txt">Veja instruções locais para separação de materiais e logística reversa quando o produto chegar ao fim de vida.</p>
-      <button class="after__cta">Ver instruções locais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
-    </article>
-  </div>
-  <div class="scroll-dots" id="afterDots">
-    <button class="scroll-dot active" data-idx="0" aria-label="Serviço 1"></button>
-    <button class="scroll-dot" data-idx="1" aria-label="Serviço 2"></button>
-    <button class="scroll-dot" data-idx="2" aria-label="Serviço 3"></button>
-    <button class="scroll-dot" data-idx="3" aria-label="Serviço 4"></button>
-  </div>
-</section>
-
-<!-- =========================================================
      ANEXOS  (former Cofre de provas)
      ========================================================= -->
 <section id="anexos" class="container reveal">
@@ -782,7 +734,6 @@
       <div class="eyebrow">Proof Vault · Documents</div>
       <h2 class="section-title">Anexos</h2>
     </div>
-    <p class="section-sub">Cada afirmação do passaporte vinculada a um documento auditável. Versão mock para apresentação.</p>
   </div>
 
   <div class="annex-grid reveal-stagger" id="annexGrid">
@@ -957,10 +908,6 @@
   <button class="dock__btn" data-target="materiais">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
     <span>Materiais</span>
-  </button>
-  <button class="dock__btn" data-target="servicos">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.36.6.94 1 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-    <span>Serviços</span>
   </button>
   <button class="dock__btn" data-target="anexos">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21.4 11.05 12.25 20.2a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66L9.42 17.36a2 2 0 0 1-2.83-2.83l8.49-8.49"/></svg>
@@ -1202,7 +1149,7 @@ setJourney(0);
 /* =========================================================
    SCROLL SPY + DOCK
    ========================================================= */
-const sections = ['produto','jornada-mapa-legado','jornada','carbono','materiais','servicos','anexos'];
+const sections = ['produto','jornada-mapa-legado','jornada','carbono','materiais','anexos'];
 const dockBtns = document.querySelectorAll('.dock__btn');
 dockBtns.forEach(btn=>{
   btn.addEventListener('click', ()=>{
@@ -1243,9 +1190,8 @@ const cmdItems = [
   {title:'Jornada do produto', sub:'Trace · lifecycle · mapa', target:'jornada', ico:'M3 12h4l3-8 4 16 3-8h4'},
   {title:'Materiais', sub:'Mapa de materiais · seção', target:'materiais', ico:'M3 3h7v7H3zm11 0h7v7h-7zM3 14h7v7H3zm11 0h7v7h-7z'},
   {title:'Anexos', sub:'Documentos auditáveis · seção', target:'anexos', ico:'M21.4 11.05 12.25 20.2a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66L9.42 17.36'},
-  {title:'Reciclagem & fim de vida', sub:'End-of-life · serviços', target:'servicos', ico:'M7 19l-4-7 4-7M17 5l4 7-4 7M14 4l-4 16'},
   {title:'ID do produto', sub:'FC-G2011-0.7-SIL · hero', target:'produto', ico:'M12 2L2 7l10 5 10-5-10-5z'},
-  {title:'Refil de grafite', sub:'Aftercare · serviços', target:'servicos', ico:'M3 12a9 9 0 1 0 9-9v6'}
+  {title:'Fim de vida', sub:'End-of-life · materiais', target:'materiais', ico:'M7 19l-4-7 4-7M17 5l4 7-4 7M14 4l-4 16'}
 ];
 let cmdkFocus = 0;
 function renderCmd(q=''){
@@ -1472,7 +1418,6 @@ function initCarouselDots(gridId, dotsId){
 }
 
 initCarouselDots('highlightsGrid', 'highlightsDots');
-initCarouselDots('afterGrid', 'afterDots');
 initCarouselDots('annexGrid', 'annexDots');
 
 /* =========================================================
@@ -1498,6 +1443,21 @@ document.addEventListener('keydown', e=>{
     items[prev].querySelector('.j-acc__head').focus();
   }
 });
+
+/* =========================================================
+   MAP VIEWBOX — zoom on mobile to route area
+   Points: CZ(626,330) AT(636,356) DE(615,345) BR(421,613)
+   Cropped viewBox with padding: x=360 y=260 w=340 h=410
+   ========================================================= */
+const mapSvg = document.getElementById('mapSvg');
+const MAP_VB_FULL   = '0 0 1200 756';
+const MAP_VB_MOBILE = '260 60 520 700';
+function updateMapViewBox(){
+  if(!mapSvg) return;
+  mapSvg.setAttribute('viewBox', window.innerWidth <= 779 ? MAP_VB_MOBILE : MAP_VB_FULL);
+}
+updateMapViewBox();
+window.addEventListener('resize', updateMapViewBox);
 
 </script>
 </body>
