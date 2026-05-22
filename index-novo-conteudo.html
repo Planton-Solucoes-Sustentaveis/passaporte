@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="assets/favicon-light.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,7 +22,7 @@
         <img src="assets/faber-castell.svg" alt="Faber-Castell" class="brand__fc-logo"/>
       </div>
       <div>
-        <div class="brand__title" data-i18n="header.title">Passaporte Digital<br class="brand__title-br"> do Produto</div>
+        <div class="brand__title" data-i18n="header.title">Passaporte Digital do Produto</div>
         <div class="brand__sub">powered by Planton</div>
       </div>
     </div>
@@ -77,7 +76,7 @@
 
         <div class="hero__badge">
           <span class="hero__badge-dot"></span>
-          <span>Seu produto certificado</span>
+          <span>Produto certificado · FSC · Carbono neutro</span>
         </div>
 
         <h1 class="hero__title">Faber-Castell <em>Ecolápis</em></h1>
@@ -103,14 +102,14 @@
             <span class="id-cell__label">Fabricado em</span>
             <div class="id-cell__flags">
               <span class="country-badge"><span class="cflag cflag-br"></span> Brasil</span>
-              <span class="country-badge" style="opacity:.7;font-size:9px"><span class="cflag cflag-de"></span> Alemanha</span>
+              <span class="country-badge" style="opacity:.7;font-size:9px"><span class="cflag cflag-de"></span> Componentes DE</span>
             </div>
           </div>
         </div>
 
         <div class="hero__bottom">
           <div class="qr-card">
-            <img class="qr-card__qr" src="assets/qr-code-passaporte.svg" alt="QR code passaporte digital" width="56" height="56">
+            <div class="qr-card__qr" aria-hidden="true"></div>
             <div class="qr-card__txt">
               <span class="qr-card__lbl">Reg. (UE) 2024/1781</span>
               <span class="qr-card__val">ESPR · Digital Passport</span>
@@ -165,12 +164,10 @@
 </section>
 
 <!-- =========================================================
-     JORNADA DO PRODUTO — MAPA
+     MAPA — rota de materiais e distribuição
      ========================================================= -->
 <section id="jornada-mapa-legado" class="reveal" style="padding:0">
   <div>
-
-    <!-- MAP — full-width hero (legado, substituído pelo acordeão) -->
     <div class="map-card">
       <div class="map-layout">
         <div class="map-world">
@@ -184,13 +181,13 @@
 
             <!-- Mercado EU ring -->
             <circle class="map-eu-ring" data-route="eu" cx="611" cy="335" r="88"/>
-            <text class="map-label-eu" x="565" y="238">União Europeia</text>
+            <text class="map-label-eu" x="535" y="238">Mercado EU</text>
 
             <!-- STAGE 01: Componentes (azul) DE→BR -->
             <path class="map-route route-01" d="M615,345 C575,390 530,460 500,530 C475,580 445,600 421,613"/>
 
-            <!-- STAGE 03: Distribuição (verde) BR→EU — termina na borda do círculo EU -->
-            <path class="map-route route-03" d="M421,613 C448,572 488,528 530,487 C556,462 562,440 561,408"/>
+            <!-- STAGE 03: Distribuição (verde) BR→EU -->
+            <path class="map-route route-03" d="M421,613 C448,572 488,528 530,487 C568,450 600,408 642,352"/>
 
             <!-- DE — fornecedor (azul) -->
             <circle class="map-dot dot-01" data-route="germany" cx="615" cy="345" r="6"/>
@@ -203,10 +200,9 @@
 
             </g>
           </svg>
-
         </div>
 
-        <!-- Legend: absolute overlay on desktop, static below map on mobile -->
+        <!-- Legend -->
         <div class="map-legend">
           <div class="map-legend__stage">
             <span class="map-legend__stage-num stage-01">01</span>
@@ -241,7 +237,6 @@
           </div>
         </div>
 
-        <!-- hidden panel kept for JS compat -->
         <aside class="map-panel" id="mapPanel" aria-hidden="true">
           <h3 id="mapTitle"></h3>
           <p id="mapCopy"></p>
@@ -250,33 +245,26 @@
             <div class="map-panel__row"><span>Status</span><b id="mapStatus"></b></div>
             <div class="map-panel__row"><span>Dado crítico</span><b id="mapData"></b></div>
           </div>
-          <div class="map-chips" id="mapChips">
-            <button class="map-chip active" data-route="germany"><span class="cflag cflag-de"></span> Alemanha</button>
-            <button class="map-chip" data-route="czech"><span class="cflag cflag-cz"></span> Embalagem</button>
-            <button class="map-chip" data-route="austria"><span class="cflag cflag-at"></span> Grafite</button>
-            <button class="map-chip" data-route="brazil"><span class="cflag cflag-br"></span> Distribuição</button>
-            <button class="map-chip" data-route="eu">🇪🇺 Mercado UE</button>
-          </div>
         </aside>
       </div>
     </div>
-
   </div>
 </section>
 
 <!-- =========================================================
-     JORNADA DO PRODUTO  (NEW: carbon + acordeão + badges)
+     JORNADA DO PRODUTO — acordeão + carbono
      ========================================================= -->
 <section id="jornada" class="container reveal">
   <div class="section-head">
     <div>
+      <div class="eyebrow">Trace · Lifecycle · ESPR Art. 8</div>
       <h2 class="section-title">Jornada do produto</h2>
     </div>
   </div>
 
   <div class="journey-grid">
 
-    <!-- ACCORDION — left column -->
+    <!-- ACCORDION — coluna esquerda -->
     <ol class="journey-accordion reveal-stagger" id="journeyAccordion" role="list">
 
       <li class="j-acc open" data-step="0">
@@ -458,7 +446,7 @@
 
     </ol>
 
-    <!-- CARBON SIGNATURE — right column -->
+    <!-- PEGADA DE CARBONO — coluna direita -->
     <aside id="carbono" class="journey-carbon" aria-label="Pegada de carbono do Ecolápis">
       <div class="carbon">
         <div class="carbon__eyebrow">Assinatura climática · ISO 14064 · Mock</div>
@@ -519,16 +507,16 @@
 </section>
 
 <!-- =========================================================
-     MATERIAIS  (movido para depois da jornada)
+     MATERIAIS  — mapa de materiais
      ========================================================= -->
 <section id="materiais" class="container reveal">
-  <button class="section-head section-toggle" data-target="materiaisBody" aria-expanded="true">
-    <h2 class="section-title">Mapa de materiais</h2>
-    <span class="section-toggle__line"></span>
-    <div class="section-toggle__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
-  </button>
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Material Passport · ESPR Art. 8(2)</div>
+      <h2 class="section-title">Mapa de materiais</h2>
+    </div>
+  </div>
 
-  <div class="section-body" id="materiaisBody">
   <div class="mat-list" id="matList">
 
     <!-- A — Madeira -->
@@ -679,66 +667,20 @@
     </article>
 
   </div>
-  </div><!-- /section-body materiaisBody -->
 </section>
 
 <!-- =========================================================
-     SERVIÇOS DO PRODUTO  (Aftercare · Post-purchase)
-     ========================================================= -->
-<section id="servicos" class="container reveal">
-  <button class="section-head section-toggle" data-target="servicosBody" aria-expanded="false">
-    <h2 class="section-title">Serviços do produto</h2>
-    <span class="section-toggle__line"></span>
-    <div class="section-toggle__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
-  </button>
-
-  <div class="section-body collapsed" id="servicosBody">
-  <div class="after-grid reveal-stagger" id="servicosGrid">
-    <article class="after">
-      <div class="after__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12a9 9 0 1 0 9-9v6l-3-3"/></svg></div>
-      <h3 class="after__title">Comprar refil compatível</h3>
-      <p class="after__txt">Prolongue a vida útil com grafite HB e borracha substituível. Encontre referências e revendedores compatíveis.</p>
-      <button class="after__cta">Encontrar refil <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
-    </article>
-    <article class="after">
-      <div class="after__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg></div>
-      <h3 class="after__title">Registrar produto</h3>
-      <p class="after__txt">Salve este passaporte e acompanhe histórico, suporte e atualizações em um único lugar.</p>
-      <button class="after__cta">Salvar no passaporte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
-    </article>
-    <article class="after">
-      <div class="after__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M22 12a10 10 0 0 0-10-10v10z"/></svg></div>
-      <h3 class="after__title">Aprender a cuidar</h3>
-      <p class="after__txt">Dicas rápidas de conservação e apontamento para máxima durabilidade do lápis.</p>
-      <button class="after__cta">Abrir guia de cuidado <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
-    </article>
-    <article class="after">
-      <div class="after__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 19l-4-7 4-7M17 5l4 7-4 7M14 4l-4 16"/></svg></div>
-      <h3 class="after__title">Reciclar ou devolver</h3>
-      <p class="after__txt">Veja instruções locais para separação de materiais e logística reversa quando o produto chegar ao fim de vida.</p>
-      <button class="after__cta">Ver instruções locais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
-    </article>
-  </div>
-  <div class="scroll-dots" id="servicosDots">
-    <button class="scroll-dot active" data-idx="0" aria-label="Serviço 1"></button>
-    <button class="scroll-dot" data-idx="1" aria-label="Serviço 2"></button>
-    <button class="scroll-dot" data-idx="2" aria-label="Serviço 3"></button>
-    <button class="scroll-dot" data-idx="3" aria-label="Serviço 4"></button>
-  </div>
-  </div><!-- /section-body servicosBody -->
-</section>
-
-<!-- =========================================================
-     ANEXOS  (former Cofre de provas)
+     ANEXOS  — documentos auditáveis (ESPR)
      ========================================================= -->
 <section id="anexos" class="container reveal">
-  <button class="section-head section-toggle" data-target="anexosBody" aria-expanded="false">
-    <h2 class="section-title">Anexos</h2>
-    <span class="section-toggle__line"></span>
-    <div class="section-toggle__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
-  </button>
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Proof Vault · ESPR Art. 8(3) · Documents</div>
+      <h2 class="section-title">Anexos</h2>
+    </div>
+    <p class="section-sub">Documentos exigidos ou recomendados pelo Regulamento (UE) 2024/1781 para conformidade do Passaporte Digital do Produto.</p>
+  </div>
 
-  <div class="section-body collapsed" id="anexosBody">
   <div class="annex-grid reveal-stagger" id="annexGrid">
 
     <article class="annex">
@@ -808,7 +750,6 @@
     <button class="scroll-dot" data-idx="2" aria-label="Anexo 3"></button>
     <button class="scroll-dot" data-idx="3" aria-label="Anexo 4"></button>
   </div>
-  </div><!-- /section-body anexosBody -->
 </section>
 
 </main>
@@ -818,17 +759,12 @@
      ========================================================= -->
 <footer class="footer">
   <div class="container footer__inner">
-    <div class="footer__brand">
-      <a href="https://planton.eco.br/" target="_blank" aria-label="Planton">
-        <img src="assets/Logo_Planton_01.svg" alt="Planton" class="footer__logo" />
-      </a>
-    </div>
     <div class="footer__txt">
       Planton · Passaporte Digital do Produto · Reg. (UE) 2024/1781 · Protótipo comercial · Dados simulados para apresentação
     </div>
     <div class="footer__links">
       <a href="#produto">Topo</a>
-      <a href="https://planton.eco.br/" target="_blank">Planton</a>
+      <a href="https://design.planton.eco.br" target="_blank" rel="noopener">Design system</a>
       <a href="#carbono">Pegada de carbono</a>
       <a href="#anexos">Anexos</a>
     </div>
@@ -884,7 +820,7 @@
     <div class="modal__head">
       <div>
         <div class="modal__title">Dados estruturados do passaporte</div>
-        <div class="mono muted" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;margin-top:2px">application/json</div>
+        <div class="mono muted" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;margin-top:2px">application/json · Reg. (UE) 2024/1781 · mock</div>
       </div>
       <button class="modal__close" id="modalClose"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
     </div>
@@ -910,7 +846,7 @@ themeBtn.addEventListener('click', ()=>{
 });
 
 /* =========================================================
-   LANGUAGE DROPDOWN (visual mock — selecionar idioma muda chip)
+   LANGUAGE DROPDOWN
    ========================================================= */
 const lang = document.getElementById('lang');
 const langBtn = document.getElementById('langBtn');
@@ -984,7 +920,6 @@ document.querySelectorAll('.mat__head').forEach(head=>{
   head.addEventListener('click', ()=>{
     const mat = head.parentElement;
     const wasOpen = mat.classList.contains('open');
-    // close all
     document.querySelectorAll('.mat.open').forEach(m=>m.classList.remove('open'));
     if(!wasOpen) mat.classList.add('open');
   });
@@ -993,13 +928,12 @@ document.querySelectorAll('.mat__head').forEach(head=>{
 /* =========================================================
    JOURNEY — ACCORDION + MAP
    ========================================================= */
-// Coordenadas dos pontos (viewBox 1200x756)
 const MAP_POINTS = {
   DE: {x:615, y:345, label:'Alemanha'},
   BR: {x:421, y:613, label:'Prata, MG · Brasil'},
   EU: {x:640, y:335, label:'Mercado EU'}
 };
-// Cada step da jornada indica seu(s) país(es) de origem e destino
+
 const JOURNEY_FOCUS = {
   0:{origins:['BR'], destination:'BR'},            // floresta
   1:{origins:['DE','BR'], destination:'BR'},        // matéria-prima
@@ -1010,13 +944,11 @@ const JOURNEY_FOCUS = {
   6:{origins:['EU','BR'], destination:'BR'}         // fim de vida
 };
 
-// Bezier curve helper: smooth arc between two points
 function curvedPath(a, b, lift=0.28){
   const mx = (a.x+b.x)/2;
   const my = (a.y+b.y)/2;
   const dx = b.x-a.x, dy = b.y-a.y;
   const dist = Math.hypot(dx,dy);
-  // perpendicular offset
   const nx = -dy/dist, ny = dx/dist;
   const cx = mx + nx*dist*lift;
   const cy = my + ny*dist*lift - dist*0.06;
@@ -1032,9 +964,7 @@ function drawRoutes(stepIdx){
   if(!focus) return;
   const dest = MAP_POINTS[focus.destination];
   mapRoutes.innerHTML = '';
-
-  // primary: each origin -> destination
-  focus.origins.forEach((iso, i)=>{
+  focus.origins.forEach((iso)=>{
     if(iso === focus.destination) return;
     const origin = MAP_POINTS[iso];
     if(!origin) return;
@@ -1044,14 +974,6 @@ function drawRoutes(stepIdx){
     mapRoutes.appendChild(path);
     requestAnimationFrame(()=>path.classList.add('in'));
   });
-
-  // for matéria-prima (step 0): also show origins converging
-  // for distribuição (step 4): also show secondary line DE→BR with a long arc
-  if(stepIdx === 4){
-    // already drawn above; could add a continuation line
-  }
-
-  // highlight active points
   document.querySelectorAll('.map-point').forEach(p=>{
     const iso = p.dataset.iso;
     const isActive = focus.origins.includes(iso) || iso === focus.destination;
@@ -1078,8 +1000,6 @@ document.querySelectorAll('.j-acc').forEach((el, idx)=>{
   head.addEventListener('click', ()=>{
     const isOpen = el.classList.contains('open');
     if(isOpen){
-      // collapsing the active leaves nothing open — keep at least one (toggle behavior)
-      // here we let it collapse, but routes stay on last
       el.classList.remove('open');
       head.setAttribute('aria-expanded','false');
       return;
@@ -1087,13 +1007,12 @@ document.querySelectorAll('.j-acc').forEach((el, idx)=>{
     setJourney(idx);
   });
 });
-
 setJourney(0);
 
 /* =========================================================
    SCROLL SPY + DOCK
    ========================================================= */
-const sections = ['produto','jornada-mapa-legado','jornada','carbono','materiais','servicos','anexos'];
+const sections = ['produto','jornada-mapa-legado','jornada','carbono','materiais','anexos'];
 const dockBtns = document.querySelectorAll('.dock__btn');
 dockBtns.forEach(btn=>{
   btn.addEventListener('click', ()=>{
@@ -1105,7 +1024,6 @@ const spy = new IntersectionObserver(entries=>{
   entries.forEach(en=>{
     if(en.isIntersecting){
       const id = en.target.id;
-      // jornada-mapa-legado activates the jornada button
       const target = id === 'jornada-mapa-legado' ? 'jornada' : id;
       dockBtns.forEach(b=>b.classList.toggle('active', b.dataset.target===target));
     }
@@ -1251,7 +1169,7 @@ modalClose.addEventListener('click', ()=>jsonModal.classList.remove('show'));
 jsonModal.addEventListener('click', e=>{ if(e.target===jsonModal) jsonModal.classList.remove('show'); });
 
 /* =========================================================
-   SCROLL REVEAL (premium fade-in cascade)
+   SCROLL REVEAL
    ========================================================= */
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!prefersReducedMotion){
@@ -1306,34 +1224,28 @@ if(heroVisual && pencilSvg && !prefersReducedMotion){
     const r = heroVisual.getBoundingClientRect();
     const x = (e.clientX - r.left)/r.width - 0.5;
     const y = (e.clientY - r.top)/r.height - 0.5;
-    tx = x * 18;
-    ty = y * 14;
+    tx = x * 18; ty = y * 14;
     if(rafId) return;
     rafId = requestAnimationFrame(()=>{
       pencilSvg.style.transform = `rotate(-22deg) translate(${tx}px, ${ty}px)`;
       rafId = null;
     });
   });
-  heroVisual.addEventListener('mouseleave', ()=>{
-    pencilSvg.style.transform = '';
-  });
+  heroVisual.addEventListener('mouseleave', ()=>{ pencilSvg.style.transform = ''; });
 }
 
 /* =========================================================
-   MAGNETIC HOVER — CTAs PREMIUM
+   MAGNETIC HOVER — CTAs
    ========================================================= */
 if(!prefersReducedMotion){
-  document.querySelectorAll('.after__cta, .json-btn, .annex').forEach(el => {
+  document.querySelectorAll('.json-btn, .annex').forEach(el => {
     let raf = null;
     el.addEventListener('mousemove', e => {
       const r = el.getBoundingClientRect();
       const x = (e.clientX - r.left)/r.width - 0.5;
       const y = (e.clientY - r.top)/r.height - 0.5;
       if(raf) return;
-      raf = requestAnimationFrame(()=>{
-        el.style.transform = `translate(${x*5}px, ${y*4}px)`;
-        raf = null;
-      });
+      raf = requestAnimationFrame(()=>{ el.style.transform = `translate(${x*5}px, ${y*4}px)`; raf = null; });
     });
     el.addEventListener('mouseleave', ()=>{ el.style.transform = ''; });
   });
@@ -1343,40 +1255,33 @@ if(!prefersReducedMotion){
    HEADER SHRINK ON SCROLL
    ========================================================= */
 const appHeader = document.querySelector('.app-header');
-let lastScrollY = 0;
 window.addEventListener('scroll', ()=>{
-  const y = window.scrollY;
   if(appHeader){
-    appHeader.style.boxShadow = y > 8 ? '0 1px 0 var(--line), 0 12px 28px -22px rgba(10,45,48,0.18)' : 'none';
+    appHeader.style.boxShadow = window.scrollY > 8
+      ? '0 1px 0 var(--line), 0 12px 28px -22px rgba(0,30,10,0.18)'
+      : 'none';
   }
-  lastScrollY = y;
 }, {passive:true});
 
 /* =========================================================
-   SCROLL CAROUSEL DOTS — Serviços & Anexos
+   CAROUSEL DOTS — Highlights & Anexos
    ========================================================= */
 function initCarouselDots(gridId, dotsId){
   const grid = document.getElementById(gridId);
   const dots = document.getElementById(dotsId);
   if(!grid || !dots) return;
-
   const dotBtns = dots.querySelectorAll('.scroll-dot');
   const items = grid.querySelectorAll('article');
-
-  // Click dot → scroll to item
   dotBtns.forEach(btn=>{
     btn.addEventListener('click', ()=>{
       const idx = +btn.dataset.idx;
       const item = items[idx];
       if(!item) return;
-      // Scroll so item aligns with left edge + page padding
       const gridRect = grid.getBoundingClientRect();
       const itemRect = item.getBoundingClientRect();
       grid.scrollBy({left: itemRect.left - gridRect.left - 20, behavior:'smooth'});
     });
   });
-
-  // Sync dots on scroll (IntersectionObserver per item)
   const io = new IntersectionObserver(entries=>{
     entries.forEach(en=>{
       if(!en.isIntersecting) return;
@@ -1384,25 +1289,10 @@ function initCarouselDots(gridId, dotsId){
       dotBtns.forEach((d,i)=>d.classList.toggle('active', i===idx));
     });
   }, {root:grid, threshold:0.55});
-
   items.forEach(item=>io.observe(item));
 }
-
 initCarouselDots('highlightsGrid', 'highlightsDots');
-initCarouselDots('servicosGrid', 'servicosDots');
 initCarouselDots('annexGrid', 'annexDots');
-
-/* =========================================================
-   SECTION TOGGLES (materiais / servicos / anexos)
-   ========================================================= */
-document.querySelectorAll('.section-toggle').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    const body = document.getElementById(btn.dataset.target);
-    btn.setAttribute('aria-expanded', !expanded);
-    body.classList.toggle('collapsed', expanded);
-  });
-});
 
 /* =========================================================
    KEYBOARD: arrow keys cycle journey accordion
@@ -1429,9 +1319,7 @@ document.addEventListener('keydown', e=>{
 });
 
 /* =========================================================
-   MAP VIEWBOX — zoom on mobile to route area
-   Points: CZ(626,330) AT(636,356) DE(615,345) BR(421,613)
-   Cropped viewBox with padding: x=360 y=260 w=340 h=410
+   MAP VIEWBOX — zoom on mobile
    ========================================================= */
 const mapSvg = document.getElementById('mapSvg');
 const MAP_VB_FULL   = '0 0 1200 756';
