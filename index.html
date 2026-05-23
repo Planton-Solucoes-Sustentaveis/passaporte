@@ -279,8 +279,8 @@
     <!-- ACCORDION — left column -->
     <ol class="journey-accordion reveal-stagger" id="journeyAccordion" role="list">
 
-      <li class="j-acc open" data-step="0">
-        <button class="j-acc__head" aria-expanded="true">
+      <li class="j-acc" data-step="0">
+        <button class="j-acc__head" aria-expanded="false">
           <span class="j-acc__num">01</span>
           <div class="j-acc__title-wrap">
             <span class="j-acc__title">Floresta própria</span>
@@ -461,7 +461,7 @@
     <!-- CARBON SIGNATURE — right column -->
     <aside id="carbono" class="journey-carbon" aria-label="Pegada de carbono do Ecolápis">
       <div class="carbon">
-        <div class="carbon__eyebrow">Assinatura climática · ISO 14064 · Mock</div>
+        <div class="carbon__eyebrow">Assinatura climática · ISO 14064</div>
         <h2 class="carbon__title">Pegada de carbono</h2>
         <p class="carbon__lead">Floresta própria que sequestra carbono. Emissão bruta por unidade compensada integralmente por projetos certificados — resultando em produto com status de carbono neutro verificado por terceira parte.</p>
         <div style="margin-top:32px">
@@ -974,8 +974,37 @@ function setCarbon(step){
   ctx.innerHTML = `<h4 class="bd-context__title">${carbonContent[step].title}</h4><p class="bd-context__txt">${carbonContent[step].txt}</p>`;
 }
 document.querySelectorAll('.bd-item, .bd-seg').forEach(el=>{
-  el.addEventListener('click', ()=>setCarbon(el.dataset.step));
+  el.addEventListener('click', ()=>{
+    stopCarbonAutoCycle();
+    setCarbon(el.dataset.step);
+  });
 });
+
+/* Auto-cycle carbon steps every 2s until user interacts */
+let carbonCycleTimer = null;
+function stopCarbonAutoCycle(){
+  if(carbonCycleTimer){ clearInterval(carbonCycleTimer); carbonCycleTimer = null; }
+}
+function startCarbonAutoCycle(){
+  const steps = ['materiais','producao','transporte','embalagem','fimdevida'];
+  let i = 0;
+  setCarbon(steps[0]);
+  carbonCycleTimer = setInterval(()=>{
+    i = (i + 1) % steps.length;
+    setCarbon(steps[i]);
+  }, 2000);
+}
+// engage cycle only once carbon section enters viewport
+const carbonObs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting && !carbonCycleTimer){
+      startCarbonAutoCycle();
+      carbonObs.disconnect();
+    }
+  });
+}, {threshold:0.3});
+const carbonEl = document.getElementById('carbono');
+if(carbonEl) carbonObs.observe(carbonEl);
 
 /* =========================================================
    MATERIALS ACCORDION
@@ -1088,7 +1117,7 @@ document.querySelectorAll('.j-acc').forEach((el, idx)=>{
   });
 });
 
-setJourney(0);
+drawRoutes(0);
 
 /* =========================================================
    SCROLL SPY + DOCK
@@ -1442,6 +1471,137 @@ function updateMapViewBox(){
 }
 updateMapViewBox();
 window.addEventListener('resize', updateMapViewBox);
+
+/* =========================================================
+   MAP LEGEND — sticky scroll (desktop only)
+   Legend sticks to top while user scrolls section,
+   then locks at original bottom position when section ends.
+   ========================================================= */
+(function(){
+  const legend = document.querySelector('#jornada-mapa-legado .map-legend');
+  const layout = document.querySelector('#jornada-mapa-legado .map-layout');
+  if(!legend || !layout) return;
+
+  const mq = window.matchMedia('(min-width: 780px)');
+  const START_OFFSET = 200; // initial top offset inside layout (clear previous section cards overlap)
+  // dynamic top pad: pin around viewport center so legend follows user's gaze
+  function topPad(){ return Math.round(window.innerHeight * 0.35); }
+
+  let ticking = false;
+  let baseStyle = null;
+
+  function captureBase(){
+    if(baseStyle) return;
+    baseStyle = {
+      position: legend.style.position,
+      top: legend.style.top,
+      left: legend.style.left,
+      bottom: legend.style.bottom,
+      width: legend.style.width
+    };
+  }
+
+  function reset(){
+    if(!baseStyle) return;
+    legend.style.position = baseStyle.position;
+    legend.style.top = baseStyle.top;
+    legend.style.left = baseStyle.left;
+    legend.style.bottom = baseStyle.bottom;
+    legend.style.width = baseStyle.width;
+  }
+
+  // measure original left (from CSS absolute) once
+  let originalLeftPx = null;
+  function measureLeft(){
+    // temporarily ensure absolute baseline for measurement
+    const prev = {
+      position: legend.style.position,
+      top: legend.style.top,
+      left: legend.style.left,
+      bottom: legend.style.bottom,
+      width: legend.style.width
+    };
+    legend.style.position = '';
+    legend.style.top = '';
+    legend.style.left = '';
+    legend.style.bottom = '';
+    legend.style.width = '';
+    const layoutRect = layout.getBoundingClientRect();
+    const legendRect = legend.getBoundingClientRect();
+    originalLeftPx = legendRect.left - layoutRect.left;
+    // restore (will be overwritten by update anyway)
+    legend.style.position = prev.position;
+    legend.style.top = prev.top;
+    legend.style.left = prev.left;
+    legend.style.bottom = prev.bottom;
+    legend.style.width = prev.width;
+  }
+
+  function update(){
+    ticking = false;
+    if(!mq.matches){ reset(); return; }
+    if(originalLeftPx === null) measureLeft();
+
+    captureBase();
+
+    const rect = layout.getBoundingClientRect();
+    const legendH = legend.offsetHeight;
+    const legendW = legend.offsetWidth;
+    const viewportTop = topPad();
+    // final resting offset from layout top (matches absolute bottom:16px)
+    const finalOffset = rect.height - legendH - 16;
+    // distance from layout top to current viewport top
+    const scrolled = -rect.top;
+    // sticky engages when legend's initial slot reaches viewportTop
+    const stickyEngageScroll = START_OFFSET - viewportTop;
+    // sticky disengages at final resting position
+    const stickyEndScroll = finalOffset - viewportTop;
+
+    if(scrolled < stickyEngageScroll){
+      // pre-sticky — legend parked at START_OFFSET inside layout
+      legend.style.position = 'absolute';
+      legend.style.top = START_OFFSET + 'px';
+      legend.style.bottom = 'auto';
+      legend.style.left = '';
+      legend.style.width = '';
+      legend.style.zIndex = '';
+    } else if(scrolled < stickyEndScroll){
+      // sticky window — pin to viewport
+      const fixedLeft = rect.left + originalLeftPx;
+      legend.style.position = 'fixed';
+      legend.style.top = viewportTop + 'px';
+      legend.style.bottom = 'auto';
+      legend.style.left = fixedLeft + 'px';
+      legend.style.width = legendW + 'px';
+      legend.style.zIndex = '51'; // above header (z:50)
+    } else {
+      // reached final — lock at original absolute bottom:16px
+      legend.style.position = 'absolute';
+      legend.style.top = 'auto';
+      legend.style.bottom = '16px';
+      legend.style.left = '';
+      legend.style.width = '';
+      legend.style.zIndex = '';
+    }
+  }
+
+  function onScroll(){
+    if(ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  }
+
+  function onResize(){
+    reset();
+    baseStyle = null;
+    onScroll();
+  }
+
+  if(mq.matches) onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onResize);
+  mq.addEventListener('change', onResize);
+})();
 
 </script>
 </body>
