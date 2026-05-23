@@ -1523,7 +1523,7 @@ html[data-theme="dark"] .map-eu-ring{stroke:var(--accent);opacity:0.4}
 .map-legend__arrow{font-family:"Geist Mono",monospace;font-size:10px;color:var(--accent)}
 .map-chips{display:none}
 .map-panel{display:none}
-.map-legend{position:absolute;bottom:16px;left:max(20px, calc((100% - 1280px) / 2 + 20px));background:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.7);border-radius:0;padding:12px 14px;display:flex;flex-direction:column;gap:0;backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);z-index:10;max-width:270px;box-shadow:0 4px 24px -6px rgba(10,45,48,0.18)}
+.map-legend{position:absolute;bottom:16px;left:max(20px, calc((100% - 1280px) / 2 + 20px));background:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.7);border-radius:0;padding:12px 14px;display:flex;flex-direction:column;gap:0;backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);z-index:10;max-width:320px;box-shadow:0 4px 24px -6px rgba(10,45,48,0.18)}
 html[data-theme="dark"] .map-legend{background:rgba(14,28,11,0.6);border-color:rgba(240,235,216,0.12);backdrop-filter:blur(16px) saturate(1.6);-webkit-backdrop-filter:blur(16px) saturate(1.6)}
 .map-legend__stage{display:flex;align-items:flex-start;gap:10px;padding:10px 0;white-space:nowrap}
 .map-legend__stage:not(:last-child){border-bottom:1px solid var(--line)}
@@ -1535,7 +1535,7 @@ html[data-theme="dark"] .stage-01{background:#7AAFD4}
 html[data-theme="dark"] .stage-03{background:#5EAD86}
 .map-legend__stage-body{display:flex;flex-direction:column;gap:3px;min-width:0}
 .map-legend__stage-title{font-family:var(--font-display);font-size:12px;font-weight:600;letter-spacing:-0.01em;color:var(--fg)}
-.map-legend__stage-sub{font-family:var(--font-mono);font-size:9px;letter-spacing:0.06em;color:var(--muted);display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.map-legend__stage-sub{font-family:var(--font-mono);font-size:9px;letter-spacing:0.06em;color:var(--muted);display:flex;align-items:center;gap:4px;flex-wrap:nowrap;white-space:nowrap}
 .map-legend__sep{display:none}
 @media (max-width:779px){
   .map-legend{display:none}
