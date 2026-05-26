@@ -498,6 +498,7 @@ html[data-theme="dark"] .h-card:hover{border-color:rgba(240,235,216,0.25)}
 .h-card__icon--seal{width:auto;height:auto;min-width:40px;padding:0;background:transparent;border-radius:0;place-items:start;margin-bottom:10px}
 .h-card__icon{margin-bottom:10px}
 .h-card__seal{height:36px;width:auto;display:block}
+.h-card__seal--planton{height:22px}
 .h-card__num{
   font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);
 }
